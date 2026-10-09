@@ -17,7 +17,7 @@ export function StoryVideoButton() {
   return (
     <>
       <button onClick={() => setOpen(true)} className="group flex items-center gap-3 px-3 py-3 text-sm font-semibold text-white">
-        <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-white/50 bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-hf-lime group-hover:bg-hf-lime group-hover:text-hf-forest">
+        <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/50 sm:h-12 sm:w-12 bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-hf-lime group-hover:bg-hf-lime group-hover:text-hf-forest">
           <span aria-hidden className="hf-ping absolute inset-0 rounded-full text-white/25" />
           <Play size={14} fill="currentColor" className="relative" />
         </span>

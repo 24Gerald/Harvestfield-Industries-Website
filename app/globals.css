@@ -315,7 +315,9 @@
 .hf-marquee-track { display: flex; width: max-content; animation: hf-marquee 32s linear infinite; }
 .hf-marquee:hover .hf-marquee-track { animation-play-state: paused; }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .hf-gloss::after { animation-duration: 6s; }
+  /* Phones: slimmer buttons so pairs of them fit on one row */
+  .hf-btn { padding: .8rem 1.2rem; font-size: 13px; gap: .5rem; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }

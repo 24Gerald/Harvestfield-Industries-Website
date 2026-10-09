@@ -6,8 +6,8 @@ import { ArrowUpRight, CircleCheck, Send } from 'lucide-react'
 import { contact, contactTopics } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
 
-const field = 'w-full rounded-2xl border border-hf-line bg-white/80 px-4 py-3.5 text-[15px] text-hf-forest shadow-[inset_0_1px_2px_rgba(23,60,43,.05)] outline-none transition-all duration-300 placeholder:text-hf-sage/60 hover:border-hf-sage/50 focus:border-hf-gold focus:bg-white focus:ring-4 focus:ring-hf-gold/15'
-const label = 'mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-hf-slate'
+const field = 'w-full rounded-2xl border border-hf-line bg-white/80 px-4 py-3 text-[15px] sm:py-3.5 text-hf-forest shadow-[inset_0_1px_2px_rgba(23,60,43,.05)] outline-none transition-all duration-300 placeholder:text-hf-sage/60 hover:border-hf-sage/50 focus:border-hf-gold focus:bg-white focus:ring-4 focus:ring-hf-gold/15'
+const label = 'mb-1.5 block text-xs font-bold uppercase tracking-[0.14em] text-hf-slate sm:mb-2'
 
 /** No backend yet: the form opens the visitor's email app with the message ready to send. */
 export function ContactForm({ topic, item }: { topic?: string; item?: string }) {
@@ -30,7 +30,7 @@ export function ContactForm({ topic, item }: { topic?: string; item?: string }) 
 
   if (sent) {
     return (
-      <div className="hf-pop flex min-h-[520px] flex-col items-center justify-center text-center">
+      <div className="hf-pop flex min-h-[380px] flex-col sm:min-h-[520px] items-center justify-center text-center">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-hf-lime text-hf-forest shadow-[0_20px_40px_-15px_rgba(215,227,107,.9)]"><CircleCheck size={28} /></span>
         <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em]">Almost there</h3>
         <p className="mt-3 max-w-sm leading-7 text-hf-sage">Your email app should now be open with your message ready to send. If it didn&apos;t open, email us at <a href={`mailto:${contact.email}`} className="font-bold text-hf-forest underline decoration-hf-gold underline-offset-4">{contact.email}</a> or call <a href={contact.phoneHref} className="font-bold text-hf-forest">{contact.phone}</a>.</p>
@@ -40,19 +40,19 @@ export function ContactForm({ topic, item }: { topic?: string; item?: string }) 
   }
 
   return (
-    <form key={`${topic}-${item}`} onSubmit={onSubmit} className="grid gap-6">
+    <form key={`${topic}-${item}`} onSubmit={onSubmit} className="grid gap-5 sm:gap-6">
       <fieldset>
         <legend className={label}>What can we help with?</legend>
         <div className="flex flex-wrap gap-2">
           {contactTopics.map((option) => (
             <label key={option.value} className="cursor-pointer">
               <input type="radio" name="topic" value={option.value} defaultChecked={option.value === initialTopic} className="peer sr-only" />
-              <span className={cn('block rounded-full border border-hf-line bg-white/70 px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:border-hf-sage/60', 'peer-checked:border-hf-forest peer-checked:bg-hf-forest peer-checked:text-white peer-checked:shadow-[inset_0_1px_0_rgba(255,255,255,.2),0_8px_20px_-10px_rgba(23,60,43,.8)] peer-focus-visible:ring-4 peer-focus-visible:ring-hf-gold/30')}>{option.label}</span>
+              <span className={cn('block rounded-full border border-hf-line bg-white/70 px-3.5 py-2 text-[13px] font-semibold sm:px-4 sm:py-2.5 sm:text-sm transition-all duration-300 hover:border-hf-sage/60', 'peer-checked:border-hf-forest peer-checked:bg-hf-forest peer-checked:text-white peer-checked:shadow-[inset_0_1px_0_rgba(255,255,255,.2),0_8px_20px_-10px_rgba(23,60,43,.8)] peer-focus-visible:ring-4 peer-focus-visible:ring-hf-gold/30')}>{option.label}</span>
             </label>
           ))}
         </div>
       </fieldset>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <div><label htmlFor="name" className={label}>Full name</label><input id="name" name="name" required autoComplete="name" placeholder="Your name" className={field} /></div>
         <div><label htmlFor="email" className={label}>Email</label><input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={field} /></div>
         <div><label htmlFor="phone" className={label}>Phone <span className="font-medium normal-case tracking-normal text-hf-sage">(optional)</span></label><input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="0800 000 0000" className={field} /></div>
