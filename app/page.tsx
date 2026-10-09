@@ -2,14 +2,14 @@ import Link from 'next/link'
 import { ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react'
 import { SafeImg } from '@/components/safe-img'
 import { StoryVideoButton } from '@/components/story-video'
-import { contact, distributionPartners, ftzBenefits, ftzStats, nepzaQuote, offices, products } from '@/lib/site-data'
+import { contact, distributionPartners, ftzBenefits, ftzStats, heroImage, nepzaQuote, offices, products } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export default function Page() {
   return (
     <div className="overflow-hidden bg-[#f5f5ed] text-[#173c2b]">
       <section id="top" className="relative flex min-h-[720px] items-end overflow-hidden bg-[#28583a] px-5 pb-10 pt-40 sm:min-h-[760px] sm:pb-16 sm:pt-44 lg:min-h-[820px] lg:px-10 lg:pb-24">
-        <img src="/harvest-hero.png" alt="Farmer standing in a green crop field" className="hf-hero-image absolute inset-0 h-full w-full object-cover object-center opacity-90" />
+        <img src={heroImage} alt="Farmer standing in a green crop field" className="hf-hero-image absolute inset-0 h-full w-full object-cover object-center opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#102f25]/90 via-[#173c2b]/45 to-transparent" />
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#102f25]/70 to-transparent" />
         <div className="relative mx-auto w-full max-w-[1320px]">

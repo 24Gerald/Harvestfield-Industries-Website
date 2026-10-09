@@ -4,6 +4,7 @@ import { Instrument_Serif, Manrope } from 'next/font/google'
 import { MotionProvider } from '@/components/motion-provider'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
+import { basePath } from '@/lib/site-data'
 import './globals.css'
 
 const sans = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
@@ -19,19 +20,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: `${basePath}/icon-light-32x32.png`,
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: `${basePath}/icon-dark-32x32.png`,
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: `${basePath}/icon.svg`,
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: `${basePath}/apple-icon.png`,
   },
 }
 
@@ -52,7 +53,8 @@ export default function RootLayout({
         <main id="main" className="min-h-screen overflow-x-clip">{children}</main>
         <SiteFooter />
         <MotionProvider />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {/* Vercel Analytics only exists on Vercel; the GitHub Pages build (which has a base path) skips it */}
+        {process.env.NODE_ENV === 'production' && !basePath && <Analytics />}
       </body>
     </html>
   )

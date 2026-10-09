@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Play, X } from 'lucide-react'
+import { heroImage } from '@/lib/site-data'
 
 export function StoryVideoButton() {
   const [open, setOpen] = useState(false)
@@ -25,7 +26,7 @@ export function StoryVideoButton() {
       {open && (
         <div className="fixed inset-0 z-[60] flex animate-in items-center justify-center bg-hf-night/90 p-5 backdrop-blur-sm fade-in duration-300" role="dialog" aria-modal="true" aria-label="Our story" onClick={() => setOpen(false)}>
           <div className="relative aspect-video w-full max-w-3xl animate-in overflow-hidden rounded-3xl bg-hf-leaf shadow-2xl zoom-in-95 duration-500" onClick={(event) => event.stopPropagation()}>
-            <img src="/harvest-hero.png" alt="Harvestfield farm story" className="h-full w-full object-cover opacity-70" />
+            <img src={heroImage} alt="Harvestfield farm story" className="h-full w-full object-cover opacity-70" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-hf-lime text-hf-forest"><Play fill="currentColor" /></span>
               <p className="mt-4 text-sm font-bold">Our story is growing</p>

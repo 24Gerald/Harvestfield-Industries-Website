@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
-import { news } from '@/lib/site-data'
+import { heroImage, news } from '@/lib/site-data'
 import { cn, stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function NewsPage() {
       <section className="mx-auto max-w-[1320px] px-5 py-20 lg:px-10 lg:py-24">
         <Link href={featured.href} className="hf-reveal hf-spotlight group grid overflow-hidden rounded-[32px] bg-hf-deep text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.7)] lg:grid-cols-[1.1fr_0.9fr]" data-reveal="zoom">
           <div className="relative min-h-[280px] overflow-hidden">
-            <img src="/harvest-hero.png" alt="" className="absolute inset-0 h-full w-full object-cover object-[65%_40%] transition-transform duration-1000 group-hover:scale-105" />
+            <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover object-[65%_40%] transition-transform duration-1000 group-hover:scale-105" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-deep/80 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-hf-deep" />
             <span className="hf-glass-dark absolute left-5 top-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold"><span className="hf-ping h-2 w-2 rounded-full bg-hf-lime text-hf-lime" /> Latest</span>
           </div>

@@ -6,6 +6,7 @@ import { PageHero } from '@/components/page-hero'
 import { ProductExplorer } from '@/components/product-explorer'
 import { SectionHeading } from '@/components/section-heading'
 import { stagger } from '@/lib/utils'
+import { heroImage } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -57,7 +58,7 @@ export default function ProductsPage() {
             </div>
           </div>
           <div className="relative min-h-[320px] lg:min-h-full">
-            <img src="/harvest-hero.png" alt="Healthy crops in a Nigerian field" className="absolute inset-0 h-full w-full object-cover object-[15%_70%]" />
+            <img src={heroImage} alt="Healthy crops in a Nigerian field" className="absolute inset-0 h-full w-full object-cover object-[15%_70%]" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/30 to-transparent max-lg:bg-gradient-to-t" />
             <div className="hf-glass hf-float absolute bottom-6 right-6 max-w-[240px] rounded-2xl p-5 text-hf-forest">
               <p className="eyebrow">Crops protected</p>

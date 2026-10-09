@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { heroImage } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 type PageHeroProps = {
@@ -18,7 +19,7 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, description, crumb, focus = '70% 35%', children, aside }: PageHeroProps) {
   return (
     <section id="top" className="hf-grain relative overflow-hidden rounded-b-[32px] bg-hf-deep px-5 pb-20 pt-40 text-white sm:pt-44 lg:rounded-b-[56px] lg:px-10 lg:pb-28 lg:pt-52">
-      <img src="/harvest-hero.png" alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-30" style={{ objectPosition: focus }} />
+      <img src={heroImage} alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-30" style={{ objectPosition: focus }} />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/85 to-hf-deep/30" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-deep via-transparent to-transparent" />
       <div aria-hidden className="hf-aurora" />

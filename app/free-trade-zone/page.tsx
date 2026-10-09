@@ -4,7 +4,7 @@ import { ArrowUpRight, Anchor, Phone, Route, ShieldCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, ftzAudiences, ftzBenefits, ftzStats, nepzaQuote } from '@/lib/site-data'
+import { contact, ftzAudiences, ftzBenefits, ftzStats, heroImage, nepzaQuote } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function FreeTradeZonePage() {
           </div>
         </div>
         <div className="hf-reveal relative overflow-hidden rounded-[32px]" data-reveal="zoom">
-          <img src="/harvest-hero.png" alt="Green farmland at golden hour" className="hf-hero-image aspect-[5/4] w-full object-cover object-[20%_40%]" />
+          <img src={heroImage} alt="Green farmland at golden hour" className="hf-hero-image aspect-[5/4] w-full object-cover object-[20%_40%]" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-night/80 via-hf-night/10 to-transparent" />
           <div className="absolute inset-x-5 bottom-5 grid gap-3 sm:grid-cols-2">
             <div className="hf-glass-dark rounded-2xl p-4 text-white"><Route size={18} className="text-hf-lime" /><p className="mt-3 text-sm font-bold">Lagos-Ibadan corridor</p><p className="mt-1 text-xs text-white/60">Road, port and customs connectivity built in</p></div>

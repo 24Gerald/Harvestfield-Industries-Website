@@ -20,6 +20,10 @@ import {
   Warehouse,
 } from 'lucide-react'
 
+/** Prefix for files in /public. Set when building for GitHub Pages, which serves the site from a sub-path. */
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+export const heroImage = `${basePath}/harvest-hero.png`
+
 export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-c5Ajz8p42rFP91uzjSPB9om8JLTye3.png'
 
 export const contact = {

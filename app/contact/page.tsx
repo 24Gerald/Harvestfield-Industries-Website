@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
-import { ContactForm } from '@/components/contact-form'
+import { ContactFormWithQuery } from '@/components/contact-form'
 import { PageHero } from '@/components/page-hero'
 import { contact } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
@@ -17,9 +17,7 @@ const channels = [
   { icon: MapPin, label: 'Visit us', value: '26 offices in 6 zones', href: '/offices' },
 ]
 
-export default async function ContactPage({ searchParams }: { searchParams: Promise<{ topic?: string; item?: string }> }) {
-  const { topic, item } = await searchParams
-
+export default function ContactPage() {
   return (
     <>
       <PageHero
@@ -58,7 +56,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
         <div className="hf-rise hf-glass rounded-[32px] p-6 sm:p-10" style={stagger(4, 90)}>
           <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">Send us a message</h2>
           <p className="mb-8 mt-2 text-hf-sage">Fields marked as optional can be left blank.</p>
-          <ContactForm topic={topic} item={item} />
+          <ContactFormWithQuery />
         </div>
       </section>
     </>

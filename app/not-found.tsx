@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { heroImage } from '@/lib/site-data'
 
 export default function NotFound() {
   return (
     <section className="hf-grain relative flex min-h-[90vh] items-center overflow-hidden rounded-b-[32px] bg-hf-deep px-5 pb-20 pt-40 text-white lg:rounded-b-[56px] lg:px-10">
-      <img src="/harvest-hero.png" alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-25" />
+      <img src={heroImage} alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-25" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/80 to-hf-deep/30" />
       <div aria-hidden className="hf-aurora" />
       <div className="relative mx-auto w-full max-w-[1320px]">

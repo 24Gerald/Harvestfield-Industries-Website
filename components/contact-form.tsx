@@ -1,6 +1,7 @@
 'use client'
 
-import { type FormEvent, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { type FormEvent, Suspense, useState } from 'react'
 import { ArrowUpRight, CircleCheck, Send } from 'lucide-react'
 import { contact, contactTopics } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
@@ -66,5 +67,19 @@ export function ContactForm({ topic, item }: { topic?: string; item?: string }) 
         <button type="submit" className="hf-btn hf-btn-gold px-7 py-4 text-sm"><Send size={15} /> Send message <ArrowUpRight size={15} /></button>
       </div>
     </form>
+  )
+}
+
+function ContactFormFromQuery() {
+  const params = useSearchParams()
+  return <ContactForm topic={params.get('topic') ?? undefined} item={params.get('item') ?? undefined} />
+}
+
+/** Pre-fills the form from links like /contact?topic=products&item=Herbicides, read in the browser so the page can be static. */
+export function ContactFormWithQuery() {
+  return (
+    <Suspense fallback={<ContactForm />}>
+      <ContactFormFromQuery />
+    </Suspense>
   )
 }
