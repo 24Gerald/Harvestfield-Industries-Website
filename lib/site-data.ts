@@ -67,7 +67,7 @@ export const ftzBenefits: { title: string; short: string; text: string; icon: Lu
   { title: 'Zero import and export duties', short: 'Every good moving in and out of the zone is duty-exempt.', text: 'All goods moving in and out of the zone are fully duty-exempt under the NEPZA framework.', icon: BadgePercent },
   { title: 'Tax holidays and incentives', short: 'Start free of corporate income tax for an initial period.', text: 'Operate free from corporate income tax for an initial period, with additional incentives under Nigeria’s free zone regulations.', icon: Landmark },
   { title: 'No foreign exchange restrictions', short: 'Repatriate capital and profits freely.', text: 'Free repatriation of capital and profits. No bureaucratic barriers to moving money in or out.', icon: Banknote },
-  { title: 'Built-in market access', short: 'Anchor production creates demand from day one.', text: 'SNG Health’s anchor production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.', icon: Boxes },
+  { title: 'Built-in market access', short: 'Anchor production creates demand from day one.', text: 'Harvestfield Healthcare FZE’s anchor production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.', icon: Boxes },
   { title: 'Strategic Ogun State location', short: 'On the Lagos-Ibadan corridor, with road, port and customs links.', text: 'Strategic position along the Lagos-Ibadan corridor with road, port and customs connectivity built in.', icon: Route },
   { title: 'West Africa export gateway', short: 'A ready regional and international market.', text: 'Nigeria accounts for 27% of global malaria burden. Products manufactured here have a ready regional and international market.', icon: Globe },
 ]
@@ -94,7 +94,7 @@ export const nepzaQuote = {
 export const distributionPartners = ['BAYER', 'BASF', 'Dow', 'East-West Seeds', 'IITA']
 
 export const strategicPartners: { name: string; role: string; text: string; icon: LucideIcon }[] = [
-  { name: 'Vestergaard', role: 'Joint venture partner', text: 'Together we formed SNG Health, the anchor operation of the Harvestfield Free Trade Zone, producing dual-insecticide nets for Nigeria.', icon: ShieldCheck },
+  { name: 'Vestergaard', role: 'Joint venture partner', text: 'Together we formed Harvestfield Healthcare FZE, the anchor operation of the Harvestfield Free Trade Zone, producing dual-insecticide nets for Nigeria.', icon: ShieldCheck },
   { name: 'NEPZA', role: 'Licensing authority', text: 'The Nigeria Export Processing Zones Authority granted the Declaration of Licence and Operation Licence for the Harvestfield FTZ in February 2026.', icon: Landmark },
   { name: 'Roll Back Malaria', role: 'National programme', text: 'We have distributed malaria vector control products across Nigeria as part of the national programme since we opened.', icon: HeartPulse },
   { name: 'Food Convergence Initiative', role: 'Founding member', text: 'Working with government and development partners on food safety and aflatoxin control.', icon: Building2 },
@@ -110,7 +110,7 @@ export const milestones = [
 
 export const news = [
   { tag: 'Free Trade Zone', date: 'February 2026', title: 'NEPZA licenses the Harvestfield Free Trade Zone', text: 'The Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for a Free Trade Zone focused on medical products in Ogun State, one of the few in Nigeria dedicated entirely to healthcare manufacturing.', href: '/free-trade-zone' },
-  { tag: 'Partnership', date: 'Joint venture', title: 'SNG Health: our joint venture with Vestergaard', text: 'The anchor operation of the zone is designed to produce 10 million dual-insecticide nets annually and supply 30% of Nigeria’s net demand from day one.', href: '/free-trade-zone#sng-health' },
+  { tag: 'Partnership', date: 'Joint venture', title: 'Harvestfield Healthcare FZE: our joint venture with Vestergaard', text: 'The anchor operation of the zone is designed to produce 10 million dual-insecticide nets annually and supply 30% of Nigeria’s net demand from day one.', href: '/free-trade-zone#healthcare-fze' },
   { tag: 'Food safety', date: 'National licence', title: 'Bringing Aflasafe to Nigerian farms', text: 'As national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.', href: '/products#aflasafe' },
   { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#vector-control' },
   { tag: 'Food safety', date: 'Founding member', title: 'A founding member of the Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.', href: '/about' },

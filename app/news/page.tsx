@@ -55,7 +55,7 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <CtaBand eyebrow="Press & media" title={<>Telling the <em className="font-serif font-normal text-hf-lime">Harvestfield story?</em></>} text="For interviews, images or more on the Harvestfield Free Trade Zone and SNG Health, our team is happy to help." href="/contact?topic=press" label="Media enquiries" />
+      <CtaBand eyebrow="Press & media" title={<>Telling the <em className="font-serif font-normal text-hf-lime">Harvestfield story?</em></>} text="For interviews, images or more on the Harvestfield Free Trade Zone and Harvestfield Healthcare FZE, our team is happy to help." href="/contact?topic=press" label="Media enquiries" />
     </>
   )
 }

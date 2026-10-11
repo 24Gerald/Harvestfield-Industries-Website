@@ -50,10 +50,10 @@ export default function FreeTradeZonePage() {
           <h2 className="mt-3 text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">Built to close Nigeria&apos;s <em className="font-serif font-normal text-hf-moss">health product gap.</em></h2>
           <p className="mt-5 text-[15px] leading-7 text-hf-slate sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
         </div>
-        <div id="sng-health" className="hf-reveal hf-grain hf-spotlight relative overflow-hidden rounded-[32px] bg-gradient-to-br from-hf-fern via-hf-forest to-hf-night p-6 text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.7)] sm:p-12" style={stagger(1, 140)}>
+        <div id="healthcare-fze" className="hf-reveal hf-grain hf-spotlight relative overflow-hidden rounded-[32px] bg-gradient-to-br from-hf-fern via-hf-forest to-hf-night p-6 text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.7)] sm:p-12" style={stagger(1, 140)}>
           <div aria-hidden className="hf-aurora opacity-80" />
           <p className="eyebrow relative text-hf-lime">Anchor operation</p>
-          <h3 className="relative mt-3 text-3xl font-semibold tracking-[-0.05em] sm:mt-5 sm:text-4xl">SNG Health</h3>
+          <h3 className="relative mt-3 text-3xl font-semibold tracking-[-0.05em] sm:mt-5 sm:text-4xl">Harvestfield Healthcare FZE</h3>
           <p className="relative mt-3 text-[15px] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">Our joint venture with Vestergaard, the world&apos;s largest insecticide-treated net manufacturer, producing 10 million dual-insecticide nets annually and supplying 30% of Nigeria&apos;s net demand from day one.</p>
           <div className="relative mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4">
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-3xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl" data-count>10M</strong><span className="mt-1 block text-xs text-white/60">Dual-insecticide nets a year</span></div>
@@ -82,7 +82,7 @@ export default function FreeTradeZonePage() {
 
       <section className="mx-auto grid max-w-[1320px] gap-8 px-5 py-14 sm:gap-14 sm:py-24 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-28">
         <div>
-          <SectionHeading eyebrow="Who it is for" title={<>Designed for the whole <em className="font-serif font-normal text-hf-moss">health supply chain.</em></>} text="SNG Health's anchor production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone." />
+          <SectionHeading eyebrow="Who it is for" title={<>Designed for the whole <em className="font-serif font-normal text-hf-moss">health supply chain.</em></>} text="Harvestfield Healthcare FZE's anchor production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone." />
           <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-3">
             {ftzAudiences.map(({ icon: Icon, title }, index) => (
               <div key={title} className="hf-reveal hf-spotlight hf-spotlight-light flex items-center gap-2.5 rounded-2xl border border-hf-line bg-white/60 p-3 transition-colors sm:gap-3 sm:p-4 duration-300 hover:bg-white" style={stagger(index, 70)}>

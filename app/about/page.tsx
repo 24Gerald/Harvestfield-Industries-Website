@@ -59,7 +59,7 @@ export default function AboutPage() {
           <h2 className="mt-3 text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">A simple belief, <em className="font-serif font-normal text-hf-moss">twenty-six years on.</em></h2>
           <p className="mt-5 text-lg leading-7 text-hf-slate sm:mt-8 sm:text-xl sm:leading-8">Harvestfield Industries Limited began as an agrochemical importer with a simple belief: Nigerian farmers deserve world-class inputs at fair prices.</p>
           <p className="mt-4 text-[15px] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
-          <p className="mt-4 text-[15px] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Today we are going further. With the Harvestfield Free Trade Zone in Ogun State, and SNG Health, our joint venture with Vestergaard, we are building the capacity to manufacture the health products Nigeria needs at home.</p>
+          <p className="mt-4 text-[15px] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Today we are going further. With the Harvestfield Free Trade Zone in Ogun State, and Harvestfield Healthcare FZE, our joint venture with Vestergaard, we are building the capacity to manufacture the health products Nigeria needs at home.</p>
           <div className="mt-6 flex flex-wrap gap-2 sm:mt-8">
             {distributionPartners.map((partner) => <span key={partner} className="rounded-full border border-hf-line bg-white/60 px-3 py-1.5 text-xs font-bold tracking-wide sm:px-4 sm:py-2">{partner}</span>)}
           </div>
