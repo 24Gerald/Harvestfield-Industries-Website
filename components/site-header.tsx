@@ -8,7 +8,7 @@ import { contact, heroImage, logoUrl, navLinks, products } from '@/lib/site-data
 import { cn } from '@/lib/utils'
 
 const isActive = (pathname: string, href: string) => pathname === href || pathname.startsWith(`${href}/`)
-const mobileLinks = [{ href: '/', label: 'Home' }, ...navLinks, { href: '/contact', label: 'Contact' }]
+const mobileLinks = [{ href: '/', label: 'Home' }, ...navLinks]
 const easing = 'ease-[cubic-bezier(.22,1,.36,1)]'
 
 export function SiteHeader() {
@@ -258,47 +258,64 @@ export function SiteHeader() {
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-hf-lime">See Aflasafe <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
               </Link>
             </div>
+
+            {/* Mobile menu: a compact panel that drops down under the bar (about half the screen) */}
+            <div
+              id="mobile-menu"
+              inert={!menuOpen}
+              className={cn(
+                'absolute inset-x-0 top-[calc(100%+0.5rem)] origin-top transition-[opacity,translate,scale] duration-500 sm:left-auto sm:w-[26rem] xl:hidden',
+                easing,
+                menuOpen ? 'translate-y-0 scale-100 opacity-100' : 'pointer-events-none -translate-y-3 scale-[.98] opacity-0',
+              )}
+            >
+              <div className="hf-grain relative max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain rounded-3xl bg-hf-deep p-3 text-white shadow-[0_30px_60px_-20px_rgba(0,0,0,.55)] ring-1 ring-white/10">
+                <div aria-hidden className="hf-aurora opacity-70" />
+                <nav aria-label="Mobile" className="relative">
+                  <ul className="grid grid-cols-2 gap-1.5">
+                    {mobileLinks.map((link, index) => {
+                      const active = link.href === '/' ? pathname === '/' : isActive(pathname, link.href)
+                      return (
+                        <li
+                          key={link.href}
+                          className={cn('transition-[opacity,translate] duration-500', easing, menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0')}
+                          style={{ transitionDelay: menuOpen ? `${80 + index * 35}ms` : '0ms' }}
+                        >
+                          <Link
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            aria-current={active ? 'page' : undefined}
+                            className={cn('group flex items-center justify-between gap-2 rounded-2xl px-3.5 py-3 text-[15px] font-semibold transition-colors', active ? 'bg-white/10 text-hf-lime ring-1 ring-white/10' : 'text-white/90 hover:bg-white/[0.06] hover:text-white')}
+                          >
+                            <span className="truncate">{link.label}</span>
+                            <ArrowUpRight size={15} className={cn('shrink-0 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 max-[389px]:hidden', active ? 'text-hf-lime' : 'text-white/35 group-hover:text-hf-lime')} />
+                          </Link>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </nav>
+                <div className={cn('relative mt-3 flex items-center gap-2 border-t border-white/10 pt-3 transition-opacity delay-300 duration-500', menuOpen ? 'opacity-100' : 'opacity-0')}>
+                  <a href={contact.phoneHref} className="flex min-w-0 flex-1 items-center gap-2 rounded-2xl bg-white/[0.06] px-3 py-2.5 text-[13px] font-semibold text-white/85 transition-colors hover:bg-white/10">
+                    <Phone size={14} className="shrink-0 text-hf-lime" /><span className="truncate">{contact.phone}</span>
+                  </a>
+                  <a href={`mailto:${contact.email}`} aria-label={`Email ${contact.email}`} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/[0.06] text-hf-lime transition-colors hover:bg-white/10">
+                    <Mail size={15} />
+                  </a>
+                  <Link href="/contact" onClick={() => setMenuOpen(false)} className="hf-btn hf-btn-gold shrink-0 px-4 py-2.5 text-[13px]">Get in touch <ArrowUpRight size={14} /></Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu: opens as a circle growing out of the menu button */}
+      {/* Dims the page behind the open mobile menu; tap to close */}
       <div
-        id="mobile-menu"
-        inert={!menuOpen}
-        className={cn('fixed inset-0 z-40 transition-[clip-path] duration-700 ease-[cubic-bezier(.76,0,.24,1)] xl:hidden', !menuOpen && 'pointer-events-none')}
-        style={{ clipPath: `circle(${menuOpen ? '150%' : '0%'} at calc(100% - 2.75rem) 2.75rem)` }}
-      >
-        <div className="hf-grain relative flex h-full flex-col overflow-y-auto bg-hf-deep px-6 pb-8 pt-28 text-white">
-          <div aria-hidden className="hf-aurora opacity-80" />
-          <nav aria-label="Mobile" className="relative">
-            <ul>
-              {mobileLinks.map((link, index) => {
-                const active = link.href === '/' ? pathname === '/' : isActive(pathname, link.href)
-                return (
-                  <li
-                    key={link.href}
-                    className={cn('border-b border-white/10 transition-[opacity,translate] duration-700', easing, menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0')}
-                    style={{ transitionDelay: menuOpen ? `${180 + index * 55}ms` : '0ms' }}
-                  >
-                    <Link href={link.href} onClick={() => setMenuOpen(false)} aria-current={active ? 'page' : undefined} className="group flex items-center gap-4 py-3">
-                      <span className="w-6 text-[11px] font-bold tabular-nums text-hf-lime/70">0{index + 1}</span>
-                      <span className={cn('text-[1.625rem] font-semibold tracking-[-0.03em] transition-colors', active ? 'text-hf-lime' : 'text-white group-hover:text-hf-lime')}>{link.label}</span>
-                      <ArrowUpRight size={20} className="ml-auto text-white/40 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-hf-lime" />
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
-          <div className={cn('relative mt-auto pt-10 transition-[opacity,translate] delay-500 duration-700', easing, menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0')}>
-            <p className="eyebrow text-hf-lime">Talk to us</p>
-            <a href={contact.phoneHref} className="mt-4 flex items-center gap-3 text-lg font-semibold"><Phone size={18} className="text-hf-lime" /> {contact.phone}</a>
-            <a href={`mailto:${contact.email}`} className="mt-2 flex items-center gap-3 text-white/75"><Mail size={18} className="text-hf-lime" /> {contact.email}</a>
-            <Link href="/contact" onClick={() => setMenuOpen(false)} className="hf-btn hf-btn-gold mt-7 w-full px-6 py-4 text-[15px]">Get in touch <ArrowUpRight size={16} /></Link>
-          </div>
-        </div>
-      </div>
+        aria-hidden
+        onClick={() => setMenuOpen(false)}
+        className={cn('fixed inset-0 z-40 bg-hf-night/45 backdrop-blur-[2px] transition-opacity duration-500 xl:hidden', menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0')}
+      />
     </>
   )
 }
