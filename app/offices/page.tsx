@@ -51,7 +51,7 @@ export default function OfficesPage() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-hf-forest to-hf-leaf text-hf-lime sm:h-12 sm:w-12"><Icon size={20} /></span>
                   <div>
                     <h3 className="text-xl font-semibold tracking-[-0.03em] sm:mt-7 sm:text-2xl">{title}</h3>
-                    <p className="mt-1 text-[15px] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{text}</p>
+                    <p className="mt-1 text-[1rem] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{text}</p>
                     <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold sm:mt-6">{action} <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
                   </div>
                 </>

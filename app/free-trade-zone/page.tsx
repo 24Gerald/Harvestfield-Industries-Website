@@ -24,7 +24,7 @@ export default function FreeTradeZonePage() {
         aside={
           <div className="hf-glass-dark rounded-3xl p-5 sm:p-6">
             <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-hf-lime"><span className="hf-ping h-2 w-2 rounded-full bg-hf-lime text-hf-lime" /> Licensed · February 2026</div>
-            <p className="mt-3 text-[15px] leading-6 text-white/75 sm:mt-4 sm:text-base sm:leading-7">NEPZA Declaration of Licence and Operation Licence, presented to Harvestfield Industries.</p>
+            <p className="mt-3 text-[1rem] leading-6 text-white/75 sm:mt-4 sm:text-base sm:leading-7">NEPZA Declaration of Licence and Operation Licence, presented to Harvestfield Industries.</p>
             <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-4 text-sm text-white/60 sm:mt-5 sm:pt-5"><ShieldCheck size={16} className="text-hf-lime" /> Nigeria Export Processing Zones Authority</div>
           </div>
         }
@@ -47,14 +47,14 @@ export default function FreeTradeZonePage() {
       <section className="mx-auto grid max-w-[1320px] gap-8 px-5 py-14 sm:gap-14 sm:py-24 lg:grid-cols-2 lg:px-10 lg:py-28">
         <div className="hf-reveal" data-reveal="left">
           <p className="eyebrow">The licence</p>
-          <h2 className="mt-3 text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">Built to close Nigeria&apos;s <em className="font-serif font-normal text-hf-moss">health product gap.</em></h2>
-          <p className="mt-5 text-[15px] leading-7 text-hf-slate sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
+          <h2 className="mt-3 text-[1.875rem] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">Built to close Nigeria&apos;s <em className="font-serif font-normal text-hf-moss">health product gap.</em></h2>
+          <p className="mt-5 text-[1rem] leading-7 text-hf-slate sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
         </div>
         <div id="healthcare-fze" className="hf-reveal hf-grain hf-spotlight relative overflow-hidden rounded-[32px] bg-gradient-to-br from-hf-fern via-hf-forest to-hf-night p-6 text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.7)] sm:p-12" style={stagger(1, 140)}>
           <div aria-hidden className="hf-aurora opacity-80" />
           <p className="eyebrow relative text-hf-lime">Anchor operation</p>
           <h3 className="relative mt-3 text-3xl font-semibold tracking-[-0.05em] sm:mt-5 sm:text-4xl">Harvestfield Healthcare FZE</h3>
-          <p className="relative mt-3 text-[15px] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">The anchor operation of the Harvestfield Free Trade Zone. Its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
+          <p className="relative mt-3 text-[1rem] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">The anchor operation of the Harvestfield Free Trade Zone. Its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
           <div className="relative mt-6 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4">
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Ogun State</strong><span className="mt-1 block text-xs text-white/60">On the Lagos-Ibadan corridor</span></div>
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Feb 2026</strong><span className="mt-1 block text-xs text-white/60">NEPZA licences granted</span></div>
@@ -73,7 +73,7 @@ export default function FreeTradeZonePage() {
                   <span className="font-serif text-2xl italic text-hf-gold/70 sm:text-3xl">0{index + 1}</span>
                 </div>
                 <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em] sm:mt-7 sm:text-xl">{title}</h3>
-                <p className="mt-1.5 text-[15px] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{text}</p>
+                <p className="mt-1.5 text-[1rem] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{text}</p>
               </article>
             ))}
           </div>
@@ -105,8 +105,8 @@ export default function FreeTradeZonePage() {
       <section className="hf-grain relative overflow-hidden bg-hf-deep px-5 py-14 text-white sm:py-24 lg:px-10 lg:py-32">
         <div aria-hidden className="hf-aurora" />
         <figure className="hf-reveal relative mx-auto max-w-4xl text-center">
-          <span aria-hidden className="block font-serif text-[90px] leading-[0.5] text-hf-lime/40 sm:text-[120px]">&ldquo;</span>
-          <blockquote className="mt-4 font-serif text-[23px] leading-[1.3] tracking-[-0.01em] sm:mt-6 sm:text-5xl sm:leading-[1.25]">{nepzaQuote.text}</blockquote>
+          <span aria-hidden className="block font-serif text-[5.625rem] leading-[0.5] text-hf-lime/40 sm:text-[120px]">&ldquo;</span>
+          <blockquote className="mt-4 font-serif text-[1.4375rem] leading-[1.3] tracking-[-0.01em] sm:mt-6 sm:text-5xl sm:leading-[1.25]">{nepzaQuote.text}</blockquote>
           <figcaption className="mt-6 text-sm sm:mt-10">
             <strong className="block text-hf-lime">{nepzaQuote.author}</strong>
             <span className="text-white/60">{nepzaQuote.role}</span>

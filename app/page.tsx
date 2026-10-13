@@ -8,15 +8,15 @@ import { stagger } from '@/lib/utils'
 export default function Page() {
   return (
     <div className="overflow-hidden bg-[#f5f5ed] text-[#173c2b]">
-      <section id="top" className="relative flex min-h-[560px] items-end overflow-hidden bg-[#28583a] px-5 pb-7 pt-32 sm:min-h-[760px] sm:pb-16 sm:pt-44 lg:min-h-[820px] lg:px-10 lg:pb-24">
+      <section id="top" className="relative flex min-h-[35rem] items-end overflow-hidden bg-[#28583a] px-5 pb-7 pt-32 sm:min-h-[760px] sm:pb-16 sm:pt-44 lg:min-h-[820px] lg:px-10 lg:pb-24">
         <img src={heroImage} alt="Farmer standing in a green crop field" className="hf-hero-image absolute inset-0 h-full w-full object-cover object-center opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#102f25]/90 via-[#173c2b]/45 to-transparent" />
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#102f25]/70 to-transparent" />
         <div className="relative mx-auto w-full max-w-[1320px]">
           <div className="max-w-[760px]">
             <p className="hf-rise mb-4 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[#d7e36b] sm:mb-6"><span className="h-px w-10 bg-[#d7e36b]" /> Growing a better tomorrow</p>
-            <h1 className="hf-rise max-w-[760px] text-[40px] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-7xl lg:text-[86px]" style={stagger(1, 110)}>Protecting Nigerian <em className="font-serif font-normal tracking-[-0.02em] text-[#d7e36b]">agriculture.</em></h1>
-            <p className="hf-rise mt-5 max-w-[520px] text-[15px] leading-6 text-white/75 sm:mt-7 sm:text-base sm:leading-7" style={stagger(2, 110)}>We distribute agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria. Now we are building the infrastructure to manufacture the health products Nigeria needs at home.</p>
+            <h1 className="hf-rise max-w-[760px] text-[2.5rem] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-7xl lg:text-[86px]" style={stagger(1, 110)}>Protecting Nigerian <em className="font-serif font-normal tracking-[-0.02em] text-[#d7e36b]">agriculture.</em></h1>
+            <p className="hf-rise mt-5 max-w-[520px] text-[1rem] leading-6 text-white/75 sm:mt-7 sm:text-base sm:leading-7" style={stagger(2, 110)}>We distribute agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria. Now we are building the infrastructure to manufacture the health products Nigeria needs at home.</p>
             <div className="hf-rise mt-6 flex flex-wrap items-center gap-2 sm:mt-9 sm:gap-4" style={stagger(3, 110)}>
               <Link href="/products" className="hf-btn hf-btn-lime px-6 py-4 text-sm">Explore our products <ArrowUpRight size={16} /></Link>
               <StoryVideoButton />
@@ -55,10 +55,10 @@ export default function Page() {
       </section>
 
       <section id="about" className="mx-auto grid max-w-[1320px] gap-5 px-5 py-14 sm:gap-12 sm:py-24 lg:grid-cols-[0.85fr_1.15fr] lg:px-10 lg:py-32">
-        <div className="hf-reveal" data-reveal="left"><p className="eyebrow">Who we are</p><h2 className="mt-3 max-w-md text-[30px] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">From the soil, <em className="font-serif font-normal text-[#839b2f]">with purpose.</em></h2></div>
+        <div className="hf-reveal" data-reveal="left"><p className="eyebrow">Who we are</p><h2 className="mt-3 max-w-md text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">From the soil, <em className="font-serif font-normal text-[#839b2f]">with purpose.</em></h2></div>
         <div className="hf-reveal max-w-2xl" style={stagger(1, 120)}>
           <p className="text-lg leading-7 text-[#466252] sm:text-xl sm:leading-8">Harvestfield Industries Limited began as an agrochemical importer with a simple belief: Nigerian farmers deserve world-class inputs at fair prices.</p>
-          <p className="mt-4 text-[15px] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
+          <p className="mt-4 text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
           <Link href="/about" className="hf-link mt-6 text-sm sm:mt-8">Learn more about us <ArrowUpRight size={16} /></Link>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function Page() {
       <section id="products" className="bg-[#e8eadb] px-5 py-14 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-[1320px]">
           <div className="hf-reveal flex flex-col justify-between gap-3 sm:gap-6 md:flex-row md:items-end">
-            <div><p className="eyebrow">What we do</p><h2 className="mt-3 text-[30px] font-semibold tracking-[-0.05em] sm:mt-5 sm:text-5xl">The right input for every <em className="font-serif font-normal text-[#839b2f]">stage.</em></h2></div>
+            <div><p className="eyebrow">What we do</p><h2 className="mt-3 text-[1.875rem] font-semibold tracking-[-0.05em] sm:mt-5 sm:text-5xl">The right input for every <em className="font-serif font-normal text-[#839b2f]">stage.</em></h2></div>
             <Link href="/products" className="hf-link text-sm">View all products <ArrowUpRight size={16} /></Link>
           </div>
           <div className="mt-7 grid gap-3 sm:mt-12 sm:gap-5 md:grid-cols-3">
@@ -75,7 +75,7 @@ export default function Page() {
               return (
                 <Link key={product.name} href={`/products#${product.slug}`} className="hf-reveal block" style={stagger(index % 3, 110)}>
                   <article className="hf-card hf-spotlight hf-spotlight-light group h-full rounded-[22px] p-2 hover:bg-white/60 max-md:flex max-md:items-center max-md:gap-4 max-md:bg-white/45">
-                    <div className="relative aspect-[1.05] overflow-hidden rounded-2xl bg-gradient-to-br from-[#28583a] to-[#102f25] max-md:aspect-square max-md:w-[104px] max-md:shrink-0 max-md:rounded-xl">
+                    <div className="relative aspect-[1.05] overflow-hidden rounded-2xl bg-gradient-to-br from-[#28583a] to-[#102f25] max-md:aspect-square max-md:w-[6.5rem] max-md:shrink-0 max-md:rounded-xl">
                       <Icon aria-hidden size={56} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white/15" />
                       <SafeImg src={product.image} alt={product.name} loading="lazy" className="relative h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                       <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#102f25]/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -123,8 +123,8 @@ export default function Page() {
         <div className="grid gap-7 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="hf-reveal" data-reveal="left">
             <p className="eyebrow">Our offices</p>
-            <h2 className="mt-3 text-[30px] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">We are already <em className="font-serif font-normal text-[#839b2f]">in your state.</em></h2>
-            <p className="mt-3 max-w-sm text-[15px] leading-6 text-[#6b7d71] sm:mt-5 sm:text-base sm:leading-7">26 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day.</p>
+            <h2 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">We are already <em className="font-serif font-normal text-[#839b2f]">in your state.</em></h2>
+            <p className="mt-3 max-w-sm text-[1rem] leading-6 text-[#6b7d71] sm:mt-5 sm:text-base sm:leading-7">26 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day.</p>
             <Link href="/offices" className="hf-link mt-5 text-sm sm:mt-8">Find your nearest office <ArrowUpRight size={16} /></Link>
           </div>
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
@@ -149,10 +149,10 @@ export default function Page() {
       <section id="news" className="mx-auto grid max-w-[1320px] gap-10 px-5 py-14 sm:gap-12 sm:py-24 lg:grid-cols-2 lg:items-start lg:px-10 lg:py-28">
         <div className="hf-reveal">
           <p className="eyebrow">Free Trade Zone</p>
-          <h2 className="mt-3 max-w-xl text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] sm:mt-5 sm:text-6xl">Nigeria&apos;s newest NEPZA-licensed medical manufacturing zone. And it is <em className="font-serif font-normal text-[#839b2f]">open for business.</em></h2>
+          <h2 className="mt-3 max-w-xl text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.05em] sm:mt-5 sm:text-6xl">Nigeria&apos;s newest NEPZA-licensed medical manufacturing zone. And it is <em className="font-serif font-normal text-[#839b2f]">open for business.</em></h2>
           <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#a9d9bc] bg-[#eef8f0] px-4 py-2.5 text-[10.5px] sm:mt-12 sm:px-5 sm:py-3 sm:text-xs font-bold uppercase tracking-wider text-[#28613d] shadow-[inset_0_1px_0_#fff]"><span className="hf-ping h-2 w-2 rounded-full bg-[#28a35a] text-[#28a35a]" /> NEPZA declaration &amp; operation licence, February 2026</div>
-          <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#557260] sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
-          <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#557260] sm:mt-5 sm:text-lg sm:leading-9">The anchor operation in the zone is Harvestfield Healthcare FZE, and its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
+          <p className="mt-5 max-w-xl text-[1rem] leading-7 text-[#557260] sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
+          <p className="mt-4 max-w-xl text-[1rem] leading-7 text-[#557260] sm:mt-5 sm:text-lg sm:leading-9">The anchor operation in the zone is Harvestfield Healthcare FZE, and its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
           <div className="mt-6 flex flex-wrap items-center gap-4 sm:mt-8 sm:gap-5"><Link href="/free-trade-zone" className="hf-btn hf-btn-forest px-7 py-4">Enquire about the FTZ <ArrowUpRight size={16} /></Link><Link href="/contact?topic=ftz" className="hf-link">Talk to our team <ArrowUpRight size={16} /></Link></div>
           <div className="mt-7 grid grid-cols-2 gap-2 sm:mt-12 sm:gap-4">
             {ftzStats.map(({ value, label }, index) => (
@@ -181,10 +181,10 @@ export default function Page() {
       <section id="impact" className="mx-auto grid max-w-[1320px] gap-10 px-5 pb-14 sm:gap-12 sm:pb-24 sm:pt-8 lg:grid-cols-2 lg:items-center lg:px-10 lg:pb-32">
         <div className="hf-reveal hf-grain hf-spotlight relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#1f5136] via-[#173c2b] to-[#102f25] p-7 text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.8)] sm:p-10 lg:min-h-[440px] lg:p-14" data-reveal="zoom">
           <div aria-hidden className="hf-aurora opacity-80" />
-          <span className="absolute -right-10 -top-16 font-serif text-[160px] sm:text-[220px] leading-none text-white/5">&ldquo;</span>
+          <span className="absolute -right-10 -top-16 font-serif text-[10rem] sm:text-[220px] leading-none text-white/5">&ldquo;</span>
           <p className="eyebrow relative text-[#d7e36b]">Our impact</p>
-          <h2 className="relative mt-5 max-w-md text-[30px] font-semibold leading-tight tracking-[-0.05em] sm:mt-8 sm:text-5xl">Better farms.<br /><em className="font-serif font-normal text-[#d7e36b]">Better futures.</em></h2>
-          <p className="relative mt-4 max-w-sm text-[15px] leading-6 text-white/65 sm:mt-6 sm:text-base sm:leading-7">Our Aflasafe biocontrol product cuts aflatoxin in maize and groundnut by up to 99%. Our vector-control work supports the Roll Back Malaria programme across Nigeria.</p>
+          <h2 className="relative mt-5 max-w-md text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-8 sm:text-5xl">Better farms.<br /><em className="font-serif font-normal text-[#d7e36b]">Better futures.</em></h2>
+          <p className="relative mt-4 max-w-sm text-[1rem] leading-6 text-white/65 sm:mt-6 sm:text-base sm:leading-7">Our Aflasafe biocontrol product cuts aflatoxin in maize and groundnut by up to 99%. Our vector-control work supports the Roll Back Malaria programme across Nigeria.</p>
           <div className="relative mt-7 flex gap-8 sm:mt-12">
             <div><strong className="block text-3xl text-[#d7e36b]" data-count>99%</strong><span className="text-xs text-white/60">Aflatoxin reduction</span></div>
             <div><strong className="block text-3xl text-[#d7e36b]" data-count>26+</strong><span className="text-xs text-white/60">Years supporting Roll Back Malaria</span></div>
@@ -192,8 +192,8 @@ export default function Page() {
         </div>
         <div id="contact" className="hf-reveal" style={stagger(1, 120)}>
           <p className="eyebrow">Get in touch</p>
-          <h2 className="mt-3 text-[30px] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">Ready to grow <em className="font-serif font-normal text-[#839b2f]">with us?</em></h2>
-          <p className="mt-4 max-w-md text-[15px] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season, want to stock our products, or are exploring a place in the Harvestfield Free Trade Zone, our team across 26 offices will get back to you the same day.</p>
+          <h2 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">Ready to grow <em className="font-serif font-normal text-[#839b2f]">with us?</em></h2>
+          <p className="mt-4 max-w-md text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season, want to stock our products, or are exploring a place in the Harvestfield Free Trade Zone, our team across 26 offices will get back to you the same day.</p>
           <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <Link href="/contact" className="hf-btn hf-btn-forest px-6 py-4 text-sm">Start a conversation <ArrowUpRight size={16} /></Link>
             <Link href="/offices" className="hf-btn hf-btn-outline px-6 py-4 text-sm"><MapPin size={15} /> Find an office</Link>

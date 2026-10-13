@@ -50,14 +50,14 @@ export default function ProductsPage() {
           <div aria-hidden className="hf-aurora" />
           <div className="hf-reveal relative p-6 sm:p-12 lg:p-16" data-reveal="left">
             <p className="eyebrow text-hf-lime">Featured · National licence holder</p>
-            <h2 className="mt-4 text-[32px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-6 sm:text-6xl">Aflasafe <em className="font-serif font-normal text-hf-lime">biocontrol.</em></h2>
-            <p className="mt-4 max-w-md text-[15px] leading-6 text-white/70 sm:mt-6 sm:text-base sm:leading-7">Aflatoxin makes maize and groundnut unsafe to eat and hard to sell. As the national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in both crops by up to 99%.</p>
+            <h2 className="mt-4 text-[2rem] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-6 sm:text-6xl">Aflasafe <em className="font-serif font-normal text-hf-lime">biocontrol.</em></h2>
+            <p className="mt-4 max-w-md text-[1rem] leading-6 text-white/70 sm:mt-6 sm:text-base sm:leading-7">Aflatoxin makes maize and groundnut unsafe to eat and hard to sell. As the national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in both crops by up to 99%.</p>
             <div className="mt-6 flex flex-wrap items-end gap-x-10 gap-y-4 sm:mt-10 sm:gap-10">
               <div><strong className="block bg-gradient-to-br from-hf-lime to-[#a9c23a] bg-clip-text text-6xl font-bold tracking-[-0.06em] text-transparent sm:text-8xl" data-count>99%</strong><span className="text-sm text-white/60">Aflatoxin reduction</span></div>
               <Link href="/contact?topic=products&item=Aflasafe" className="hf-btn hf-btn-lime mb-2 px-6 py-4 text-sm">Enquire about Aflasafe <ArrowUpRight size={16} /></Link>
             </div>
           </div>
-          <div className="relative min-h-[200px] sm:min-h-[320px] lg:min-h-full">
+          <div className="relative min-h-[12.5rem] sm:min-h-[320px] lg:min-h-full">
             <img src={heroImage} alt="Healthy crops in a Nigerian field" className="absolute inset-0 h-full w-full object-cover object-[15%_70%]" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/30 to-transparent max-lg:bg-gradient-to-t" />
             <div className="hf-glass hf-float absolute bottom-4 right-4 max-w-[240px] rounded-2xl p-4 text-hf-forest sm:bottom-6 sm:right-6 sm:p-5">
@@ -79,7 +79,7 @@ export default function ProductsPage() {
               <span className="font-serif text-4xl italic leading-none text-hf-gold sm:text-5xl">{step}</span>
               <div>
                 <h3 className="text-lg font-semibold tracking-[-0.02em] sm:mt-4 sm:text-xl">{title}</h3>
-                <p className="mt-1 text-[15px] leading-6 text-hf-sage sm:mt-2 sm:text-base sm:leading-7">{text}</p>
+                <p className="mt-1 text-[1rem] leading-6 text-hf-sage sm:mt-2 sm:text-base sm:leading-7">{text}</p>
               </div>
             </div>
           ))}

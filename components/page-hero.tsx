@@ -32,8 +32,8 @@ export function PageHero({ eyebrow, title, description, crumb, focus = '70% 35%'
             <span aria-current="page" className="text-white/85">{crumb}</span>
           </nav>
           <p className="hf-rise mb-4 flex items-center gap-3 text-[11px] sm:mb-6 font-bold uppercase tracking-[0.24em] text-hf-lime" style={stagger(1)}><span className="h-px w-10 bg-hf-lime" /> {eyebrow}</p>
-          <h1 className="hf-rise max-w-[820px] text-[34px] font-semibold leading-[1.04] sm:leading-[1.02] tracking-[-0.05em] sm:text-6xl lg:text-[76px]" style={stagger(2)}>{title}</h1>
-          {description && <p className="hf-rise mt-4 max-w-[560px] text-[15px] leading-7 text-white/70 sm:mt-7 sm:text-lg sm:leading-8" style={stagger(3)}>{description}</p>}
+          <h1 className="hf-rise max-w-[820px] text-[2.125rem] font-semibold leading-[1.04] sm:leading-[1.02] tracking-[-0.05em] sm:text-6xl lg:text-[76px]" style={stagger(2)}>{title}</h1>
+          {description && <p className="hf-rise mt-4 max-w-[560px] text-[1rem] leading-7 text-white/70 sm:mt-7 sm:text-lg sm:leading-8" style={stagger(3)}>{description}</p>}
           {children && <div className="hf-rise mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4" style={stagger(4)}>{children}</div>}
         </div>
         {aside && <div className="hf-rise" style={stagger(5)}>{aside}</div>}

@@ -49,13 +49,13 @@ export default function ContactPage() {
           <div className="hf-rise hf-grain relative overflow-hidden rounded-3xl bg-hf-deep p-5 text-white sm:p-7" style={stagger(6, 90)}>
             <div aria-hidden className="hf-aurora opacity-70" />
             <p className="eyebrow relative text-hf-lime">Free Trade Zone enquiries</p>
-            <p className="relative mt-2 text-[15px] leading-6 text-white/70 sm:mt-3 sm:text-base sm:leading-7">Manufacturers, packagers, logistics providers and healthcare MSMEs looking at the Harvestfield FTZ: choose &ldquo;Free Trade Zone&rdquo; in the form and we will route you to the right team.</p>
+            <p className="relative mt-2 text-[1rem] leading-6 text-white/70 sm:mt-3 sm:text-base sm:leading-7">Manufacturers, packagers, logistics providers and healthcare MSMEs looking at the Harvestfield FTZ: choose &ldquo;Free Trade Zone&rdquo; in the form and we will route you to the right team.</p>
           </div>
         </div>
 
         <div className="hf-rise hf-glass rounded-[28px] p-5 sm:rounded-[32px] sm:p-10" style={stagger(4, 90)}>
           <h2 className="text-2xl font-semibold tracking-[-0.04em] sm:text-4xl">Send us a message</h2>
-          <p className="mb-6 mt-1 text-[15px] text-hf-sage sm:mb-8 sm:mt-2 sm:text-base">Fields marked as optional can be left blank.</p>
+          <p className="mb-6 mt-1 text-[1rem] text-hf-sage sm:mb-8 sm:mt-2 sm:text-base">Fields marked as optional can be left blank.</p>
           <ContactFormWithQuery />
         </div>
       </section>

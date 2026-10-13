@@ -39,7 +39,7 @@ export function OfficeFinder() {
                 aria-pressed={active}
                 onClick={() => setSelected(region)}
                 className={cn(
-                  'group relative flex min-h-[84px] flex-col justify-between overflow-hidden rounded-2xl border p-3 text-left transition-all duration-500 sm:min-h-[140px] sm:p-5',
+                  'group relative flex min-h-[5.25rem] flex-col justify-between overflow-hidden rounded-2xl border p-3 text-left transition-all duration-500 sm:min-h-[140px] sm:p-5',
                   tilePlacement[region],
                   active
                     ? 'border-hf-lime/60 bg-gradient-to-br from-hf-lime to-[#b9c94a] text-hf-forest shadow-[inset_0_1px_0_rgba(255,255,255,.6),0_20px_40px_-15px_rgba(215,227,107,.55)]'
@@ -60,7 +60,7 @@ export function OfficeFinder() {
       <div key={zone.region} className="hf-pop hf-glass flex flex-col rounded-[28px] p-5 sm:rounded-[32px] sm:p-10" aria-live="polite">
         <p className="eyebrow">Zone 0{zoneNumber} of 06</p>
         <h3 className="mt-2 text-3xl font-semibold tracking-[-0.05em] sm:mt-4 sm:text-5xl">{zone.region}</h3>
-        <p className="mt-3 text-[15px] leading-6 text-hf-sage sm:mt-4 sm:text-base sm:leading-7">Walk in to one of our offices, call ahead to check stock, or send us a message and someone will get back to you the same day.</p>
+        <p className="mt-3 text-[1rem] leading-6 text-hf-sage sm:mt-4 sm:text-base sm:leading-7">Walk in to one of our offices, call ahead to check stock, or send us a message and someone will get back to you the same day.</p>
         <ul className="mt-5 grid gap-2 sm:mt-8 sm:gap-3">
           {zone.cities.map((city, index) => (
             <li key={city} className="hf-pop flex items-center gap-3 rounded-2xl border border-hf-line bg-white/70 px-4 py-2.5 sm:gap-4 sm:px-5 sm:py-4" style={stagger(index, 70, 120)}>

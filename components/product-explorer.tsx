@@ -37,7 +37,7 @@ export function ProductExplorer() {
         {visible.map((product, index) => {
           const Icon = product.icon
           return (
-            <article key={`${filter}-${product.slug}`} id={product.slug} className="hf-pop hf-card hf-spotlight hf-spotlight-light group flex flex-col rounded-[28px] border border-white/80 bg-gradient-to-b from-white to-white/60 p-2.5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] max-sm:grid max-sm:grid-cols-[96px_1fr] max-sm:gap-x-4 max-sm:gap-y-3 max-sm:rounded-3xl" style={stagger(index, 70)}>
+            <article key={`${filter}-${product.slug}`} id={product.slug} className="hf-pop hf-card hf-spotlight hf-spotlight-light group flex flex-col rounded-[28px] border border-white/80 bg-gradient-to-b from-white to-white/60 p-2.5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] max-sm:grid max-sm:grid-cols-[6rem_1fr] max-sm:gap-x-4 max-sm:gap-y-3 max-sm:rounded-3xl" style={stagger(index, 70)}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-gradient-to-br from-hf-leaf to-hf-night max-sm:aspect-square max-sm:rounded-2xl">
                 <Icon aria-hidden size={56} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white/15" />
                 <SafeImg src={product.image} alt={product.name} loading="lazy" className="relative h-full w-full object-cover transition duration-700 group-hover:scale-105" />

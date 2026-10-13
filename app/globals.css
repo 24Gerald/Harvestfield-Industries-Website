@@ -181,6 +181,8 @@
     @apply border-border outline-ring/50;
   }
   html { scroll-behavior: smooth; }
+  /* Phones: everything sized in rem (text, spacing, icons) renders about 12% smaller */
+  @media (max-width: 639px) { html { font-size: 14px; } }
   body {
     @apply bg-hf-cream text-hf-forest;
     font-family: var(--font-sans);

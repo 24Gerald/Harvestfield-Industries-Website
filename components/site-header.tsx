@@ -150,7 +150,7 @@ export function SiteHeader() {
                 <img src={logoUrl} alt="Harvestfield Industries Limited" className={cn('w-auto object-contain transition-[height] duration-500', scrolled ? 'h-9 sm:h-10' : 'h-10 sm:h-12')} />
               </Link>
 
-              <nav aria-label="Main" className="hidden lg:block">
+              <nav aria-label="Main" className="hidden xl:block">
                 <ul ref={navRef} className="relative flex items-center" onPointerLeave={() => setHovered(null)}>
                   <span
                     aria-hidden
@@ -174,7 +174,7 @@ export function SiteHeader() {
                         <Link
                           href={link.href}
                           aria-current={active ? 'page' : undefined}
-                          className={cn('relative block py-2.5 text-[14px] font-semibold transition-colors duration-300 xl:text-[15px]', isProducts ? 'pl-3.5 xl:pl-4' : 'px-3.5 xl:px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
+                          className={cn('relative block whitespace-nowrap py-2.5 text-[15px] font-semibold transition-colors duration-300', isProducts ? 'pl-4' : 'px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
                         >
                           {link.label}
                           {active && <span className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-hf-gold" />}
@@ -186,7 +186,7 @@ export function SiteHeader() {
                             aria-expanded={productsOpen}
                             aria-controls="products-menu"
                             onClick={() => (productsOpen ? setProductsOpen(false) : openProducts())}
-                            className="flex h-9 items-center pl-1 pr-3 text-hf-leaf/70 transition-colors hover:text-hf-forest xl:pr-3.5"
+                            className="flex h-9 items-center pl-1 pr-3.5 text-hf-leaf/70 transition-colors hover:text-hf-forest"
                           >
                             <ChevronDown size={15} className={cn('transition-transform duration-300', productsOpen && 'rotate-180')} />
                           </button>
@@ -207,7 +207,7 @@ export function SiteHeader() {
                   aria-expanded={menuOpen}
                   aria-controls="mobile-menu"
                   aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                  className="relative flex h-11 w-11 items-center justify-center rounded-full bg-hf-forest text-white shadow-[inset_0_1px_0_rgba(255,255,255,.2)] transition-transform active:scale-95 lg:hidden"
+                  className="relative flex h-11 w-11 items-center justify-center rounded-full bg-hf-forest text-white shadow-[inset_0_1px_0_rgba(255,255,255,.2)] transition-transform active:scale-95 xl:hidden"
                 >
                   <span className={cn('absolute h-[2px] w-[18px] rounded-full bg-current transition-transform duration-300', menuOpen ? 'rotate-45' : '-translate-y-[4px]')} />
                   <span className={cn('absolute h-[2px] w-[18px] rounded-full bg-current transition-transform duration-300', menuOpen ? '-rotate-45' : 'translate-y-[4px]')} />
@@ -226,7 +226,7 @@ export function SiteHeader() {
               onPointerEnter={openProducts}
               onPointerLeave={closeProductsSoon}
               className={cn(
-                'hf-glass absolute left-1/2 top-[calc(100%+12px)] hidden w-[min(900px,calc(100vw-48px))] -translate-x-1/2 grid-cols-[1.55fr_1fr] gap-3 rounded-[28px] p-3 transition-[opacity,translate,visibility] duration-300 before:absolute before:inset-x-0 before:-top-4 before:h-4 lg:grid',
+                'hf-glass absolute left-1/2 top-[calc(100%+12px)] hidden w-[min(900px,calc(100vw-48px))] -translate-x-1/2 grid-cols-[1.55fr_1fr] gap-3 rounded-[28px] p-3 transition-[opacity,translate,visibility] duration-300 before:absolute before:inset-x-0 before:-top-4 before:h-4 xl:grid',
                 easing,
                 productsOpen ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-2 opacity-0',
               )}
@@ -266,7 +266,7 @@ export function SiteHeader() {
       <div
         id="mobile-menu"
         inert={!menuOpen}
-        className={cn('fixed inset-0 z-40 transition-[clip-path] duration-700 ease-[cubic-bezier(.76,0,.24,1)] lg:hidden', !menuOpen && 'pointer-events-none')}
+        className={cn('fixed inset-0 z-40 transition-[clip-path] duration-700 ease-[cubic-bezier(.76,0,.24,1)] xl:hidden', !menuOpen && 'pointer-events-none')}
         style={{ clipPath: `circle(${menuOpen ? '150%' : '0%'} at calc(100% - 2.75rem) 2.75rem)` }}
       >
         <div className="hf-grain relative flex h-full flex-col overflow-y-auto bg-hf-deep px-6 pb-8 pt-28 text-white">
@@ -283,7 +283,7 @@ export function SiteHeader() {
                   >
                     <Link href={link.href} onClick={() => setMenuOpen(false)} aria-current={active ? 'page' : undefined} className="group flex items-center gap-4 py-3">
                       <span className="w-6 text-[11px] font-bold tabular-nums text-hf-lime/70">0{index + 1}</span>
-                      <span className={cn('text-[26px] font-semibold tracking-[-0.03em] transition-colors', active ? 'text-hf-lime' : 'text-white group-hover:text-hf-lime')}>{link.label}</span>
+                      <span className={cn('text-[1.625rem] font-semibold tracking-[-0.03em] transition-colors', active ? 'text-hf-lime' : 'text-white group-hover:text-hf-lime')}>{link.label}</span>
                       <ArrowUpRight size={20} className="ml-auto text-white/40 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-hf-lime" />
                     </Link>
                   </li>

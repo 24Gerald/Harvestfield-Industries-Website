@@ -26,7 +26,7 @@ export default function NewsPage() {
 
       <section className="mx-auto max-w-[1320px] px-5 py-12 sm:py-20 lg:px-10 lg:py-24">
         <Link href={featured.href} className="hf-reveal hf-spotlight group grid overflow-hidden rounded-[28px] bg-hf-deep text-white sm:rounded-[32px] shadow-[0_40px_80px_-40px_rgba(16,47,37,.7)] lg:grid-cols-[1.1fr_0.9fr]" data-reveal="zoom">
-          <div className="relative min-h-[190px] overflow-hidden sm:min-h-[280px]">
+          <div className="relative min-h-[11.875rem] overflow-hidden sm:min-h-[280px]">
             <img src={heroImage} alt="" className="absolute inset-0 h-full w-full object-cover object-[65%_40%] transition-transform duration-1000 group-hover:scale-105" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-deep/80 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-hf-deep" />
             <span className="hf-glass-dark absolute left-4 top-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold sm:left-5 sm:top-5 sm:px-4 sm:py-2"><span className="hf-ping h-2 w-2 rounded-full bg-hf-lime text-hf-lime" /> Latest</span>
@@ -35,7 +35,7 @@ export default function NewsPage() {
             <div aria-hidden className="hf-aurora opacity-60" />
             <div className="relative flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] sm:text-xs"><span className="text-hf-lime">{featured.tag}</span><span className="h-1 w-1 rounded-full bg-white/40" /><span className="text-white/60">{featured.date}</span></div>
             <h2 className="relative mt-4 text-2xl font-semibold leading-[1.1] tracking-[-0.04em] sm:mt-6 sm:text-4xl">{featured.title}</h2>
-            <p className="relative mt-3 text-[15px] leading-6 text-white/65 sm:mt-5 sm:text-base sm:leading-7">{featured.text}</p>
+            <p className="relative mt-3 text-[1rem] leading-6 text-white/65 sm:mt-5 sm:text-base sm:leading-7">{featured.text}</p>
             <span className="relative mt-auto inline-flex items-center gap-2 pt-6 text-sm sm:pt-8 font-bold text-hf-lime">Read about the Free Trade Zone <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
           </div>
         </Link>
@@ -48,7 +48,7 @@ export default function NewsPage() {
                 <span className="text-xs font-semibold text-hf-sage">{story.date}</span>
               </div>
               <h3 className="mt-4 text-xl font-semibold leading-[1.15] tracking-[-0.03em] sm:mt-8 sm:text-2xl">{story.title}</h3>
-              <p className="mt-2 flex-1 text-[15px] leading-6 text-hf-sage sm:mt-4 sm:text-base sm:leading-7">{story.text}</p>
+              <p className="mt-2 flex-1 text-[1rem] leading-6 text-hf-sage sm:mt-4 sm:text-base sm:leading-7">{story.text}</p>
               <span className="mt-4 flex h-9 w-9 items-center justify-center self-end rounded-full sm:mt-8 sm:h-11 sm:w-11 border border-hf-line transition-all duration-300 group-hover:rotate-45 group-hover:border-hf-forest group-hover:bg-hf-forest group-hover:text-white"><ArrowUpRight size={16} /></span>
             </Link>
           ))}

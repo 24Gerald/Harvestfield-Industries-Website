@@ -33,6 +33,7 @@ export const contact = {
 
 export const navLinks = [
   { href: '/about', label: 'About' },
+  { href: '/leadership', label: 'Leadership' },
   { href: '/products', label: 'Products' },
   { href: '/partners', label: 'Partners' },
   { href: '/free-trade-zone', label: 'Free Trade Zone' },

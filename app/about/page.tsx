@@ -56,10 +56,10 @@ export default function AboutPage() {
         </div>
         <div className="hf-reveal" style={stagger(1, 140)}>
           <p className="eyebrow">Our story</p>
-          <h2 className="mt-3 text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">A simple belief, <em className="font-serif font-normal text-hf-moss">twenty-six years on.</em></h2>
+          <h2 className="mt-3 text-[1.875rem] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-5xl">A simple belief, <em className="font-serif font-normal text-hf-moss">twenty-six years on.</em></h2>
           <p className="mt-5 text-lg leading-7 text-hf-slate sm:mt-8 sm:text-xl sm:leading-8">Harvestfield Industries Limited began as an agrochemical importer with a simple belief: Nigerian farmers deserve world-class inputs at fair prices.</p>
-          <p className="mt-4 text-[15px] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
-          <p className="mt-4 text-[15px] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Today we are going further. With the Harvestfield Free Trade Zone in Ogun State and Harvestfield Healthcare FZE, its anchor operation, we are building the capacity to manufacture the health products Nigeria needs at home.</p>
+          <p className="mt-4 text-[1rem] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
+          <p className="mt-4 text-[1rem] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Today we are going further. With the Harvestfield Free Trade Zone in Ogun State and Harvestfield Healthcare FZE, its anchor operation, we are building the capacity to manufacture the health products Nigeria needs at home.</p>
           <div className="mt-6 flex flex-wrap gap-2 sm:mt-8">
             {distributionPartners.map((partner) => <span key={partner} className="rounded-full border border-hf-line bg-white/60 px-3 py-1.5 text-xs font-bold tracking-wide sm:px-4 sm:py-2">{partner}</span>)}
           </div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <span className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-hf-cream ring-1 ring-hf-gold/40"><span className="h-2.5 w-2.5 rounded-full bg-hf-gold transition-transform duration-300 group-hover:scale-150" /></span>
                 <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-hf-gold">{milestone.marker}</p>
                 <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] sm:mt-3 sm:text-2xl">{milestone.title}</h3>
-                <p className="mt-2 max-w-xl text-[15px] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{milestone.text}</p>
+                <p className="mt-2 max-w-xl text-[1rem] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{milestone.text}</p>
               </li>
             ))}
           </ol>

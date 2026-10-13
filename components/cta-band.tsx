@@ -27,8 +27,8 @@ export function CtaBand({
         <div className="relative flex flex-col justify-between gap-6 sm:gap-10 lg:flex-row lg:items-end">
           <div>
             <p className="eyebrow text-hf-lime">{eyebrow}</p>
-            <h2 className="mt-3 max-w-2xl text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-6xl">{title}</h2>
-            <p className="mt-3 max-w-lg text-[15px] leading-6 text-white/70 sm:mt-6 sm:text-base sm:leading-7">{text}</p>
+            <h2 className="mt-3 max-w-2xl text-[1.875rem] font-semibold leading-[1.05] tracking-[-0.05em] sm:mt-5 sm:text-6xl">{title}</h2>
+            <p className="mt-3 max-w-lg text-[1rem] leading-6 text-white/70 sm:mt-6 sm:text-base sm:leading-7">{text}</p>
           </div>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <Link href={href} className="hf-btn hf-btn-lime px-7 py-4 text-sm">{label} <ArrowUpRight size={16} /></Link>
