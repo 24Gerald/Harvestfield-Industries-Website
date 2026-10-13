@@ -9,7 +9,7 @@ import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Partners',
-  description: 'Harvestfield is the authorized Nigerian distributor for BAYER, BASF, Dow, East-West Seeds and IITA, and partners with Vestergaard, NEPZA and national programmes.',
+  description: 'Harvestfield is the authorized Nigerian distributor for BAYER, BASF, Dow, East-West Seeds and IITA, and works with NEPZA and national programmes.',
 }
 
 const reasons = [
@@ -36,7 +36,7 @@ export default function PartnersPage() {
           <div className="hf-marquee-track">
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center gap-12 pr-12 sm:gap-20 sm:pr-20">
-                {[...distributionPartners, 'Vestergaard', 'NEPZA', ...distributionPartners, 'Vestergaard', 'NEPZA'].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
+                {[...distributionPartners, 'NEPZA', ...distributionPartners, 'NEPZA'].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
               </div>
             ))}
           </div>
@@ -63,9 +63,9 @@ export default function PartnersPage() {
         <div aria-hidden className="hf-aurora opacity-70" />
         <div className="relative mx-auto max-w-[1320px]">
           <SectionHeading dark eyebrow="Strategic partnerships" title={<>Working together for <em className="font-serif font-normal text-hf-lime">food and health.</em></>} />
-          <div className="mt-7 grid gap-3 sm:mt-12 sm:gap-5 md:grid-cols-2">
+          <div className="mt-7 grid gap-3 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {strategicPartners.map(({ icon: Icon, name, role, text }, index) => (
-              <article key={name} className="hf-reveal hf-glass-dark hf-spotlight group rounded-3xl p-5 transition-transform duration-500 hover:-translate-y-1 sm:p-9" style={stagger(index, 90)}>
+              <article key={name} className="hf-reveal hf-glass-dark hf-spotlight group rounded-3xl p-5 transition-transform duration-500 hover:-translate-y-1 sm:p-9 md:last:col-span-2 lg:last:col-span-1" style={stagger(index, 90)}>
                 <div className="flex items-start justify-between gap-6">
                   <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-hf-lime/15 text-hf-lime ring-1 ring-hf-lime/25 transition-transform duration-500 group-hover:-rotate-6 sm:h-12 sm:w-12"><Icon size={20} /></span>
                   <span className="rounded-full border border-white/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-hf-lime sm:px-3 sm:py-1.5 sm:text-[11px]">{role}</span>

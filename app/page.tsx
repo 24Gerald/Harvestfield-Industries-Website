@@ -152,9 +152,9 @@ export default function Page() {
           <h2 className="mt-3 max-w-xl text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] sm:mt-5 sm:text-6xl">Nigeria&apos;s newest NEPZA-licensed medical manufacturing zone. And it is <em className="font-serif font-normal text-[#839b2f]">open for business.</em></h2>
           <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#a9d9bc] bg-[#eef8f0] px-4 py-2.5 text-[10.5px] sm:mt-12 sm:px-5 sm:py-3 sm:text-xs font-bold uppercase tracking-wider text-[#28613d] shadow-[inset_0_1px_0_#fff]"><span className="hf-ping h-2 w-2 rounded-full bg-[#28a35a] text-[#28a35a]" /> NEPZA declaration &amp; operation licence, February 2026</div>
           <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#557260] sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
-          <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#557260] sm:mt-5 sm:text-lg sm:leading-9">The anchor operation is Harvestfield Healthcare FZE, our joint venture with Vestergaard, the world&apos;s largest insecticide-treated net manufacturer, producing 10 million dual-insecticide nets annually and supplying 30% of Nigeria&apos;s net demand from day one.</p>
+          <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#557260] sm:mt-5 sm:text-lg sm:leading-9">The anchor operation in the zone is Harvestfield Healthcare FZE, and its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
           <div className="mt-6 flex flex-wrap items-center gap-4 sm:mt-8 sm:gap-5"><Link href="/free-trade-zone" className="hf-btn hf-btn-forest px-7 py-4">Enquire about the FTZ <ArrowUpRight size={16} /></Link><Link href="/contact?topic=ftz" className="hf-link">Talk to our team <ArrowUpRight size={16} /></Link></div>
-          <div className="mt-7 grid grid-cols-3 gap-2 sm:mt-12 sm:gap-4">
+          <div className="mt-7 grid grid-cols-2 gap-2 sm:mt-12 sm:gap-4">
             {ftzStats.map(({ value, label }, index) => (
               <div key={value} className="hf-reveal hf-spotlight hf-spotlight-light rounded-2xl border border-[#d8e3d9] bg-gradient-to-b from-white to-[#f2f7f2] p-3 shadow-[inset_0_1px_0_#fff] sm:p-5" style={stagger(index, 100)}>
                 <strong className="block text-2xl font-bold tracking-[-0.04em] sm:text-4xl" data-count>{value}</strong>
@@ -187,7 +187,7 @@ export default function Page() {
           <p className="relative mt-4 max-w-sm text-[15px] leading-6 text-white/65 sm:mt-6 sm:text-base sm:leading-7">Our Aflasafe biocontrol product cuts aflatoxin in maize and groundnut by up to 99%. Our vector-control work supports the Roll Back Malaria programme across Nigeria.</p>
           <div className="relative mt-7 flex gap-8 sm:mt-12">
             <div><strong className="block text-3xl text-[#d7e36b]" data-count>99%</strong><span className="text-xs text-white/60">Aflatoxin reduction</span></div>
-            <div><strong className="block text-3xl text-[#d7e36b]" data-count>10M+</strong><span className="text-xs text-white/60">Annual net capacity</span></div>
+            <div><strong className="block text-3xl text-[#d7e36b]" data-count>26+</strong><span className="text-xs text-white/60">Years supporting Roll Back Malaria</span></div>
           </div>
         </div>
         <div id="contact" className="hf-reveal" style={stagger(1, 120)}>

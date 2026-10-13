@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { heroImage, news } from '@/lib/site-data'
-import { cn, stagger } from '@/lib/utils'
+import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'News',
@@ -40,9 +40,9 @@ export default function NewsPage() {
           </div>
         </Link>
 
-        <div className="mt-4 grid gap-3 sm:mt-6 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:mt-6 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
           {stories.map((story, index) => (
-            <Link key={story.title} href={story.href} className={cn('hf-reveal hf-card hf-spotlight hf-spotlight-light group flex flex-col rounded-[28px] border border-white/80 bg-gradient-to-b from-white to-white/60 p-5 sm:p-7 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)]', index === stories.length - 1 && 'md:col-span-2')} style={stagger(index % 3, 90)}>
+            <Link key={story.title} href={story.href} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group flex flex-col rounded-[28px] border border-white/80 bg-gradient-to-b from-white to-white/60 p-5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] sm:p-7" style={stagger(index % 3, 90)}>
               <div className="flex items-center justify-between gap-3">
                 <span className="rounded-full bg-hf-lime/40 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] sm:px-3 sm:py-1.5 sm:text-[11px]">{story.tag}</span>
                 <span className="text-xs font-semibold text-hf-sage">{story.date}</span>

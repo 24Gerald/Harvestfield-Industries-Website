@@ -34,7 +34,7 @@ export default function FreeTradeZonePage() {
       </PageHero>
 
       <section className="relative z-10 mx-auto -mt-8 max-w-[1320px] px-5 sm:-mt-12 lg:-mt-16 lg:px-10">
-        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4">
           {ftzStats.map(({ value, label }, index) => (
             <div key={value} className="hf-reveal hf-glass hf-spotlight hf-spotlight-light rounded-2xl p-3.5 sm:rounded-3xl sm:p-7" style={stagger(index, 100)}>
               <strong className="block text-2xl font-bold tracking-[-0.05em] sm:text-5xl" data-count>{value}</strong>
@@ -54,10 +54,10 @@ export default function FreeTradeZonePage() {
           <div aria-hidden className="hf-aurora opacity-80" />
           <p className="eyebrow relative text-hf-lime">Anchor operation</p>
           <h3 className="relative mt-3 text-3xl font-semibold tracking-[-0.05em] sm:mt-5 sm:text-4xl">Harvestfield Healthcare FZE</h3>
-          <p className="relative mt-3 text-[15px] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">Our joint venture with Vestergaard, the world&apos;s largest insecticide-treated net manufacturer, producing 10 million dual-insecticide nets annually and supplying 30% of Nigeria&apos;s net demand from day one.</p>
-          <div className="relative mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4">
-            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-3xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl" data-count>10M</strong><span className="mt-1 block text-xs text-white/60">Dual-insecticide nets a year</span></div>
-            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-3xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl" data-count>30%</strong><span className="mt-1 block text-xs text-white/60">Of Nigeria&apos;s net demand</span></div>
+          <p className="relative mt-3 text-[15px] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">The anchor operation of the Harvestfield Free Trade Zone. Its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
+          <div className="relative mt-6 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4">
+            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Ogun State</strong><span className="mt-1 block text-xs text-white/60">On the Lagos-Ibadan corridor</span></div>
+            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Feb 2026</strong><span className="mt-1 block text-xs text-white/60">NEPZA licences granted</span></div>
           </div>
         </div>
       </section>

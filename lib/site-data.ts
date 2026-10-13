@@ -13,7 +13,6 @@ import {
   type LucideIcon,
   Package,
   Route,
-  ShieldCheck,
   SprayCan,
   Sprout,
   Truck,
@@ -74,7 +73,6 @@ export const ftzBenefits: { title: string; short: string; text: string; icon: Lu
 
 export const ftzStats = [
   { value: '$30M+', label: 'In anchor investment capacity' },
-  { value: '10M+', label: 'Units annual production capacity' },
   { value: '600+', label: 'Jobs projected at full operation' },
 ]
 
@@ -94,7 +92,6 @@ export const nepzaQuote = {
 export const distributionPartners = ['BAYER', 'BASF', 'Dow', 'East-West Seeds', 'IITA']
 
 export const strategicPartners: { name: string; role: string; text: string; icon: LucideIcon }[] = [
-  { name: 'Vestergaard', role: 'Joint venture partner', text: 'Together we formed Harvestfield Healthcare FZE, the anchor operation of the Harvestfield Free Trade Zone, producing dual-insecticide nets for Nigeria.', icon: ShieldCheck },
   { name: 'NEPZA', role: 'Licensing authority', text: 'The Nigeria Export Processing Zones Authority granted the Declaration of Licence and Operation Licence for the Harvestfield FTZ in February 2026.', icon: Landmark },
   { name: 'Roll Back Malaria', role: 'National programme', text: 'We have distributed malaria vector control products across Nigeria as part of the national programme since we opened.', icon: HeartPulse },
   { name: 'Food Convergence Initiative', role: 'Founding member', text: 'Working with government and development partners on food safety and aflatoxin control.', icon: Building2 },
@@ -110,7 +107,6 @@ export const milestones = [
 
 export const news = [
   { tag: 'Free Trade Zone', date: 'February 2026', title: 'NEPZA licenses the Harvestfield Free Trade Zone', text: 'The Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for a Free Trade Zone focused on medical products in Ogun State, one of the few in Nigeria dedicated entirely to healthcare manufacturing.', href: '/free-trade-zone' },
-  { tag: 'Partnership', date: 'Joint venture', title: 'Harvestfield Healthcare FZE: our joint venture with Vestergaard', text: 'The anchor operation of the zone is designed to produce 10 million dual-insecticide nets annually and supply 30% of Nigeria’s net demand from day one.', href: '/free-trade-zone#healthcare-fze' },
   { tag: 'Food safety', date: 'National licence', title: 'Bringing Aflasafe to Nigerian farms', text: 'As national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.', href: '/products#aflasafe' },
   { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#vector-control' },
   { tag: 'Food safety', date: 'Founding member', title: 'A founding member of the Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.', href: '/about' },
