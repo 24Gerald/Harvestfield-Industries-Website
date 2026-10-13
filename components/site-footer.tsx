@@ -6,19 +6,12 @@ import { contact, logoUrl, navLinks, products } from '@/lib/site-data'
 const companyLinks = [...navLinks, { href: '/contact', label: 'Contact' }]
 const productLinks = products.map((product) => ({ href: `/products#${product.slug}`, label: product.name }))
 
-/** One swipeable row of links for the phone footer, fading out on the right to hint there is more. */
-function FooterRow({ label, children }: { label: string; children: ReactNode }) {
-  return (
-    <nav aria-label={label} className="-mx-4 mt-2.5 [mask-image:linear-gradient(90deg,#000_82%,transparent)]">
-      <ul className="flex items-center gap-1.5 overflow-x-auto px-4 pr-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <li className="shrink-0 pr-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-hf-lime">{label}</li>
-        {children}
-      </ul>
-    </nav>
-  )
+/** Links spaced out on a line, wrapping onto the next, for the phone footer. */
+function InlineLinks({ children }: { children: ReactNode }) {
+  return <ul className="flex flex-wrap gap-x-3.5 gap-y-0.5">{children}</ul>
 }
-
-const chip = 'flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[12.5px] text-white/75 transition-colors hover:border-hf-lime/50 hover:text-white'
+const inlineLink = 'text-white/75 transition-colors hover:text-white'
+const label = 'pt-px text-[9.5px] font-extrabold uppercase tracking-[0.16em] text-hf-lime'
 
 export function SiteFooter() {
   return (
@@ -26,27 +19,40 @@ export function SiteFooter() {
       <div aria-hidden className="hf-aurora opacity-50" />
       <div aria-hidden className="hf-gridlines" />
 
-      {/* Phones: a compact footer, about a quarter of the screen, with each group on one horizontal row */}
-      <div className="relative px-4 pb-4 pt-5 sm:hidden">
-        <div className="mb-3.5 flex items-center justify-between gap-3">
-          <Link href="/" aria-label="Harvestfield Industries Limited home" className="shrink-0 rounded-xl bg-white px-2 py-1.5">
-            <img src={logoUrl} alt="Harvestfield Industries Limited" className="h-7 w-auto object-contain" />
+      {/* Phones: a compact footer (about a quarter of the screen), links wrapping in a small label/links table */}
+      <div className="relative px-4 pb-3.5 pt-4 sm:hidden">
+        <div className="flex items-center justify-between gap-3">
+          <Link href="/" aria-label="Harvestfield Industries Limited home" className="shrink-0 rounded-lg bg-white px-2 py-1">
+            <img src={logoUrl} alt="Harvestfield Industries Limited" className="h-6 w-auto object-contain" />
           </Link>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10.5px] font-bold text-hf-lime"><ShieldCheck size={12} /> NAFDAC certified</span>
-          <a href="#top" aria-label="Back to top" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-hf-lime/40 text-hf-lime"><ArrowUp size={14} /></a>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10.5px] font-bold text-hf-lime"><ShieldCheck size={12} /> NAFDAC certified products</span>
         </div>
-        <FooterRow label="Company">
-          {companyLinks.map((link) => <li key={link.href} className="shrink-0"><Link href={link.href} className={chip}>{link.label}</Link></li>)}
-        </FooterRow>
-        <FooterRow label="Products">
-          {productLinks.map((link) => <li key={link.href} className="shrink-0"><Link href={link.href} className={chip}>{link.label}</Link></li>)}
-        </FooterRow>
-        <FooterRow label="Contact">
-          <li className="shrink-0"><a href={contact.phoneHref} className={chip}><Phone size={12} className="text-hf-lime" />{contact.phone}</a></li>
-          <li className="shrink-0"><a href={`mailto:${contact.email}`} className={chip}><Mail size={12} className="text-hf-lime" />{contact.email}</a></li>
-          <li className="shrink-0"><Link href="/offices" className={chip}><MapPin size={12} className="text-hf-lime" />26 offices in 6 zones</Link></li>
-        </FooterRow>
-        <p className="mt-3.5 border-t border-white/10 pt-3 text-[11px] text-white/45">© 2026 Harvestfield Industries Limited.<span className="max-[389px]:hidden"> Growing a better tomorrow.</span></p>
+        <dl className="mt-3.5 grid grid-cols-[4.75rem_1fr] gap-x-3 gap-y-2.5 text-[12px] leading-[1.15rem]">
+          <dt className={label}>Company</dt>
+          <dd>
+            <nav aria-label="Company">
+              <InlineLinks>{companyLinks.map((link) => <li key={link.href}><Link href={link.href} className={inlineLink}>{link.label}</Link></li>)}</InlineLinks>
+            </nav>
+          </dd>
+          <dt className={label}>Products</dt>
+          <dd>
+            <nav aria-label="Products">
+              <InlineLinks>{productLinks.map((link) => <li key={link.href}><Link href={link.href} className={inlineLink}>{link.label}</Link></li>)}</InlineLinks>
+            </nav>
+          </dd>
+          <dt className={label}>Contact</dt>
+          <dd>
+            <InlineLinks>
+              <li><a href={contact.phoneHref} className={inlineLink}>{contact.phone}</a></li>
+              <li><a href={`mailto:${contact.email}`} className={inlineLink}>{contact.email}</a></li>
+              <li><Link href="/offices" className={inlineLink}>26 offices in 6 zones</Link></li>
+            </InlineLinks>
+          </dd>
+        </dl>
+        <div className="mt-3.5 flex items-center justify-between gap-3 border-t border-white/10 pt-3 text-[11px] text-white/45">
+          <p>© 2026 Harvestfield Industries Limited</p>
+          <a href="#top" className="inline-flex shrink-0 items-center gap-1 font-bold text-hf-lime">Back to top <ArrowUp size={12} /></a>
+        </div>
       </div>
 
       {/* Tablet and desktop */}
