@@ -169,6 +169,9 @@
   --color-hf-slate: #466252;
   --color-hf-sage: #6b7d71;
   --color-hf-line: #d6dccf;
+
+  /* Full desktop header from here up, including phones in "desktop site" mode (about 980px wide) */
+  --breakpoint-desk: 60rem;
 }
 
 @theme inline {

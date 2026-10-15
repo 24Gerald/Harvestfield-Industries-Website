@@ -51,11 +51,10 @@ export function LeaderCard({ leader, className, style }: { leader: Leader; class
         onClick={(event) => { if (event.target === event.currentTarget) close() }}
         className="m-auto max-h-[min(90vh,52rem)] w-[min(58rem,calc(100vw-2rem))] max-w-none overflow-hidden rounded-[28px] border-0 bg-hf-cream p-0 text-hf-forest shadow-[0_40px_120px_-30px_rgba(0,0,0,.6)] backdrop:bg-hf-night/70 backdrop:backdrop-blur-sm open:animate-in open:fade-in open:zoom-in-95 open:duration-300 max-sm:mb-0 max-sm:max-h-[88dvh] max-sm:w-full max-sm:rounded-b-none max-sm:open:slide-in-from-bottom-10 max-sm:open:zoom-in-100"
       >
-        {/* Photo stretches to the dialog's height; only the text column scrolls */}
+        {/* Portrait sits at the top of a full-height brand column; only the text column scrolls */}
         <div className="flex max-h-[inherit]">
-          <div className="relative hidden w-64 shrink-0 bg-hf-forest sm:block">
-            <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover object-[center_25%]" />
-            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-night/40 to-transparent" />
+          <div className="hidden w-64 shrink-0 bg-gradient-to-b from-hf-forest to-hf-night p-5 sm:block">
+            <img src={photo} alt="" className="aspect-[4/5] w-full rounded-2xl object-cover object-[center_25%] shadow-[0_20px_40px_-20px_rgba(0,0,0,.6)] ring-1 ring-white/15" />
           </div>
           <div className="relative min-w-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-8 sm:px-10 sm:pb-10">
             <div className="sticky top-0 z-10 -mx-5 flex justify-end bg-gradient-to-b from-hf-cream via-hf-cream/95 to-hf-cream/0 px-3 pb-3 pt-3 sm:-mx-10 sm:px-5 sm:pt-5">

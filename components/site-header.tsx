@@ -147,10 +147,10 @@ export function SiteHeader() {
           <div className="relative mx-auto max-w-[1320px]">
             <div className={cn('hf-glass relative flex items-center justify-between gap-3 rounded-2xl pl-4 pr-2 transition-[padding] duration-500 sm:pl-5 lg:rounded-full lg:pl-6', scrolled ? 'py-1.5' : 'py-2 sm:py-2.5')}>
               <Link href="/" aria-label="Harvestfield Industries Limited home" className="shrink-0 transition-transform duration-300 hover:scale-[1.03]">
-                <img src={logoUrl} alt="Harvestfield Industries Limited" className={cn('w-auto object-contain transition-[height] duration-500', scrolled ? 'h-9 sm:h-10' : 'h-10 sm:h-12')} />
+                <img src={logoUrl} alt="Harvestfield Industries Limited" className={cn('w-auto object-contain transition-[height] duration-500', scrolled ? 'h-9 sm:h-10' : 'h-10 sm:h-12 desk:h-10 xl:h-12')} />
               </Link>
 
-              <nav aria-label="Main" className="hidden xl:block">
+              <nav aria-label="Main" className="hidden desk:block">
                 <ul ref={navRef} className="relative flex items-center" onPointerLeave={() => setHovered(null)}>
                   <span
                     aria-hidden
@@ -174,7 +174,7 @@ export function SiteHeader() {
                         <Link
                           href={link.href}
                           aria-current={active ? 'page' : undefined}
-                          className={cn('relative block whitespace-nowrap py-2.5 text-[15px] font-semibold transition-colors duration-300', isProducts ? 'pl-4' : 'px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
+                          className={cn('relative block whitespace-nowrap py-2.5 text-[13px] font-semibold transition-colors duration-300 xl:text-[15px]', isProducts ? 'pl-2.5 xl:pl-4' : 'px-2.5 xl:px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
                         >
                           {link.label}
                           {active && <span className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-hf-gold" />}
@@ -186,7 +186,7 @@ export function SiteHeader() {
                             aria-expanded={productsOpen}
                             aria-controls="products-menu"
                             onClick={() => (productsOpen ? setProductsOpen(false) : openProducts())}
-                            className="flex h-9 items-center pl-1 pr-3.5 text-hf-leaf/70 transition-colors hover:text-hf-forest"
+                            className="flex h-9 items-center pl-0.5 pr-2.5 text-hf-leaf/70 transition-colors hover:text-hf-forest xl:pl-1 xl:pr-3.5"
                           >
                             <ChevronDown size={15} className={cn('transition-transform duration-300', productsOpen && 'rotate-180')} />
                           </button>
@@ -198,7 +198,7 @@ export function SiteHeader() {
               </nav>
 
               <div className="flex items-center gap-2">
-                <Link href="/contact" className="hf-btn hf-btn-gold hidden px-6 py-3 text-[14px] lg:inline-flex">
+                <Link href="/contact" className="hf-btn hf-btn-gold hidden px-4 py-2.5 text-[13px] desk:inline-flex xl:px-6 xl:py-3 xl:text-[14px]">
                   Get in touch <ArrowUpRight size={15} />
                 </Link>
                 <button
@@ -207,7 +207,7 @@ export function SiteHeader() {
                   aria-expanded={menuOpen}
                   aria-controls="mobile-menu"
                   aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                  className="relative flex h-11 w-11 items-center justify-center rounded-full bg-hf-forest text-white shadow-[inset_0_1px_0_rgba(255,255,255,.2)] transition-transform active:scale-95 xl:hidden"
+                  className="relative flex h-11 w-11 items-center justify-center rounded-full bg-hf-forest text-white shadow-[inset_0_1px_0_rgba(255,255,255,.2)] transition-transform active:scale-95 desk:hidden"
                 >
                   <span className={cn('absolute h-[2px] w-[18px] rounded-full bg-current transition-transform duration-300', menuOpen ? 'rotate-45' : '-translate-y-[4px]')} />
                   <span className={cn('absolute h-[2px] w-[18px] rounded-full bg-current transition-transform duration-300', menuOpen ? '-rotate-45' : 'translate-y-[4px]')} />
@@ -226,7 +226,7 @@ export function SiteHeader() {
               onPointerEnter={openProducts}
               onPointerLeave={closeProductsSoon}
               className={cn(
-                'hf-glass absolute left-1/2 top-[calc(100%+12px)] hidden w-[min(900px,calc(100vw-48px))] -translate-x-1/2 grid-cols-[1.55fr_1fr] gap-3 rounded-[28px] p-3 transition-[opacity,translate,visibility] duration-300 before:absolute before:inset-x-0 before:-top-4 before:h-4 xl:grid',
+                'hf-glass absolute left-1/2 top-[calc(100%+12px)] hidden w-[min(900px,calc(100vw-48px))] -translate-x-1/2 grid-cols-[1.55fr_1fr] gap-3 rounded-[28px] p-3 transition-[opacity,translate,visibility] duration-300 before:absolute before:inset-x-0 before:-top-4 before:h-4 desk:grid',
                 easing,
                 productsOpen ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-2 opacity-0',
               )}
@@ -264,7 +264,7 @@ export function SiteHeader() {
               id="mobile-menu"
               inert={!menuOpen}
               className={cn(
-                'absolute inset-x-0 top-[calc(100%+0.5rem)] origin-top transition-[opacity,translate,scale] duration-500 sm:left-auto sm:w-[26rem] xl:hidden',
+                'absolute inset-x-0 top-[calc(100%+0.5rem)] origin-top transition-[opacity,translate,scale] duration-500 sm:left-auto sm:w-[26rem] desk:hidden',
                 easing,
                 menuOpen ? 'translate-y-0 scale-100 opacity-100' : 'pointer-events-none -translate-y-3 scale-[.98] opacity-0',
               )}
@@ -314,7 +314,7 @@ export function SiteHeader() {
       <div
         aria-hidden
         onClick={() => setMenuOpen(false)}
-        className={cn('fixed inset-0 z-40 bg-hf-night/45 backdrop-blur-[2px] transition-opacity duration-500 xl:hidden', menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0')}
+        className={cn('fixed inset-0 z-40 bg-hf-night/45 backdrop-blur-[2px] transition-opacity duration-500 desk:hidden', menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0')}
       />
     </>
   )
