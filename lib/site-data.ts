@@ -52,8 +52,6 @@ export const products: Product[] = [
   { slug: 'spraying-equipment', name: 'Spraying equipment', type: 'Field-ready tools', icon: SprayCan, image: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0a1e7f?auto=format&fit=crop&w=900&q=85', text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
 ]
 
-export const productTypes = ['Crop protection', 'Post-harvest', 'Public health', 'Field-ready tools']
-
 export const offices = [
   { region: 'North West', cities: ['Kano', 'Kaduna', 'Sokoto'] },
   { region: 'North East', cities: ['Maiduguri', 'Bauchi', 'Gombe'] },
