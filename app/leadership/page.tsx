@@ -4,18 +4,20 @@ import { LeaderCard } from '@/components/leader-card'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { board, type Leader, management } from '@/lib/leadership'
-import { stagger } from '@/lib/utils'
+import { cn, stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Leadership',
   description: 'Meet the board of directors and executive management of Harvestfield Industries Limited.',
 }
 
+/** Three across on laptops; a group of four sits four across on wide screens rather than leaving one card on its own row. */
 function LeaderGrid({ leaders }: { leaders: Leader[] }) {
+  const four = leaders.length === 4
   return (
     <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-12 sm:gap-5">
       {leaders.map((leader, index) => (
-        <LeaderCard key={leader.slug} leader={leader} className="sm:w-[calc(50%-0.625rem)] lg:w-[calc((100%-2.5rem)/3)]" style={stagger(index % 3, 90)} />
+        <LeaderCard key={leader.slug} leader={leader} className={cn('sm:w-[calc(50%-0.625rem)] lg:w-[calc((100%-2.5rem)/3)]', four && 'xl:w-[calc((100%-3.75rem)/4)]')} style={stagger(index % (four ? 4 : 3), 90)} />
       ))}
     </div>
   )

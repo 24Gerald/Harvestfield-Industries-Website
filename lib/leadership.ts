@@ -54,6 +54,20 @@ export const board: Leader[] = [
       'He is widely travelled and has represented Nigerian business interests internationally across Europe, Asia, the Americas, Japan, the United Kingdom and Africa, and is a strong believer in team building, results and due process.',
     ],
   },
+  {
+    slug: 'mosunmola-awofisayo',
+    name: 'Mosunmola Awofisayo',
+    role: 'Director',
+    intro: 'Banking professional and entrepreneur who retired as a Branch Business Development Manager at Wema Bank Plc after 14 years.',
+    bio: [
+      'Mrs. Mosunmola Awofisayo is an accomplished banking professional, entrepreneur and member of the Board of Directors of Harvestfield Industries Limited.',
+      'She holds a 1986 Masters of Business Administration (MBA) degree from The University of Wales, Cardiff, United Kingdom, graduating with Distinction.',
+      'Mrs. Awofisayo enjoyed a distinguished career in the Nigerian banking sector for years with Wema Bank Plc, where she rose through the ranks to the position of Branch Business Development Manager before retiring after 14 years of dedicated service. Her banking career provided her with extensive experience in financial management, customer relations, business development and corporate administration.',
+      'Following her retirement from banking, she ventured into entrepreneurship and currently owns and manages a business specialising in the sales and distribution of PZ Haier Thermocool products.',
+      'As a Board Member of Harvestfield Industries Limited, Mrs. Awofisayo brings valuable experience in financial services, commercial operations and business management, contributing to the company’s strategic direction and corporate governance.',
+      'Outside her professional commitments, she enjoys travelling and exploring new destinations.',
+    ],
+  },
 ]
 
 export const management: Leader[] = [
