@@ -31,6 +31,8 @@ jobs:
         env:
           # e.g. /Harvestfield-Industries-Website; switches next.config.mjs to a static export
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # The static copy has no server, so its Media page reads posts from the live Vercel site
+          NEXT_PUBLIC_MEDIA_API: https://harvestfield-industries-website.vercel.app
       - uses: actions/upload-pages-artifact@v4
         with:
           path: out
