@@ -74,12 +74,13 @@ export const management: Leader[] = [
   {
     slug: 'martins-awofisayo',
     name: 'Martins A. Awofisayo',
-    role: 'Managing Director / Chief Executive Officer',
-    intro: 'Founded Harvestfield Industries in 2000 to market agrochemicals and public health products in Nigeria.',
+    role: 'Chairman',
+    intro: 'Founded Harvestfield Industries in 2000; President of CropLife Nigeria and Ernst & Young West African Emerging Entrepreneur of the Year (2013).',
     bio: [
-      'Martins A. Awofisayo holds a 1984 Master’s degree in Business Analysis from the University of Lancaster, United Kingdom. He worked with the London office of the Nigerian Universities Office as Recruitment Manager from 1984 to 1987, during which he served as Secretary to the Recruitment Committee of the Committee of Vice-Chancellors of Nigerian Universities, responsible for recruiting foreign nationals as lecturers for Nigerian universities.',
-      'He returned to Nigeria in 1987 and joined Continental Pharmaceuticals Limited, Lagos, as Operations Manager, rising to Deputy General Manager between 1997 and 2000. In the year 2000, he established Harvestfield Industries Limited to market agrochemicals and public health products in Nigeria.',
-      'He currently serves as a Council Member of CropLife Nigeria and General Secretary of the Insecticide Treated Nets Association of Nigeria. He was Vice Chairman of the World Malaria Day Celebrations (2005–2015) of the Federal Ministry of Health, and is a member of the Development Partners Committee, comprising representatives of the WHO, UNICEF and DFID on the Roll Back Malaria Programme in Nigeria, an advisory body to the Federal Ministry of Health on malaria control.',
+      'Martins A. Awofisayo established Harvestfield Industries Limited in 2000 to market agrochemicals and public health products in Nigeria, building it into the distribution and manufacturing business from which Harvestfield Healthcare has evolved. He previously worked with Continental Pharmaceuticals Limited, Lagos, joining the company in 1987 as Operations Manager and subsequently rising to Deputy General Manager.',
+      'He currently serves as President of CropLife Nigeria and Chairman of the Ogun State branch of the Manufacturers Association of Nigeria. His longstanding involvement in malaria control and public health includes serving as Vice Chairman of the Federal Ministry of Health’s World Malaria Day Celebrations from 2005 to 2015. He was also a member of the Development Partners Committee of the Roll Back Malaria Programme in Nigeria, an advisory body to the Federal Ministry of Health comprising representatives of organisations including the World Health Organization (WHO), UNICEF and DFID.',
+      'In 2013, he was named West African Emerging Entrepreneur of the Year by Ernst & Young, recognising his achievements in entrepreneurship and business development in the region.',
+      'He holds a Master’s degree in Business Analysis from the University of Lancaster, United Kingdom, awarded in 1984. From 1984 to 1987, he worked with the London office of the Nigerian Universities Office as Recruitment Manager and served as Secretary to the Recruitment Committee of the Committee of Vice-Chancellors of Nigerian Universities, supporting the recruitment of international academic staff for Nigerian universities.',
     ],
   },
   {

@@ -38,7 +38,7 @@ export const navLinks = [
   { href: '/partners', label: 'Partners' },
   { href: '/free-trade-zone', label: 'Free Trade Zone' },
   { href: '/offices', label: 'Our Offices' },
-  { href: '/news', label: 'News' },
+  { href: '/media', label: 'Media' },
 ]
 
 export type Product = { slug: string; name: string; type: string; image: string; text: string; icon: LucideIcon }

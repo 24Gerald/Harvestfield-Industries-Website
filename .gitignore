@@ -17,3 +17,6 @@ node_modules
 next-env.d.ts
 *.tsbuildinfo
 out/
+
+# Local Media posts and images saved when no Blob store is connected
+.media-dev/

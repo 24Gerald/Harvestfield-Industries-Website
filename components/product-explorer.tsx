@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowUpRight, Search, X } from 'lucide-react'
+import { ArrowUpRight, Expand, Search, X } from 'lucide-react'
+import { ProductDialog } from '@/components/product-dialog'
 import { SafeImg } from '@/components/safe-img'
 import { catalogue, catalogueGroups, type CatalogueItem, packshot } from '@/lib/catalogue'
 import { cn, stagger } from '@/lib/utils'
@@ -15,10 +16,11 @@ function matches(item: CatalogueItem, query: string) {
   return !query || `${item.name} ${item.composition} ${item.use}`.toLowerCase().includes(query)
 }
 
-/** The product range, grouped by category, with a category filter and a search box. */
+/** The product range, grouped by category, with a category filter and a search box. A card opens the product in a large view. */
 export function ProductExplorer() {
   const [group, setGroup] = useState('all')
   const [query, setQuery] = useState('')
+  const [openSlug, setOpenSlug] = useState<string | null>(null)
   const q = query.trim().toLowerCase()
 
   const found = catalogue.filter((item) => matches(item, q))
@@ -26,6 +28,7 @@ export function ProductExplorer() {
     .filter((g) => group === 'all' || g.slug === group)
     .map((g) => ({ ...g, items: found.filter((item) => item.group === g.slug) }))
     .filter((g) => g.items.length > 0)
+  const visible = groups.flatMap((g) => g.items)
 
   return (
     <div>
@@ -82,18 +85,21 @@ export function ProductExplorer() {
               <article
                 key={`${group}-${q}-${item.slug}`}
                 id={item.slug}
-                className="hf-pop hf-card group flex flex-col rounded-[22px] border border-white/80 bg-white p-1.5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] sm:rounded-[26px] sm:p-2"
+                className="hf-pop hf-card group relative flex flex-col rounded-[22px] border border-white/80 bg-white p-1.5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] sm:rounded-[26px] sm:p-2"
                 style={stagger(index % 8, 45)}
               >
+                {/* The whole card opens the large view; the Enquire link sits above this layer */}
+                <button type="button" onClick={() => setOpenSlug(item.slug)} aria-label={`View ${item.name} details`} className="absolute inset-0 z-[1] cursor-zoom-in rounded-[inherit]" />
                 <div className="relative aspect-[6/5] overflow-hidden rounded-[18px] sm:aspect-square bg-gradient-to-b from-white to-hf-cream sm:rounded-[20px]">
                   <SafeImg src={packshot(item.slug)} alt={`${item.name} pack`} loading="lazy" className="h-full w-full object-contain mix-blend-multiply transition duration-700 group-hover:scale-[1.04]" />
+                  <span aria-hidden className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-hf-forest shadow-sm ring-1 ring-hf-forest/10 transition duration-300 sm:bottom-3 sm:right-3 sm:h-9 sm:w-9 sm:scale-90 sm:opacity-0 sm:group-hover:scale-100 sm:group-hover:opacity-100"><Expand size={15} /></span>
                   {item.pack && <span className="absolute left-2 top-2 rounded-full bg-hf-forest/[0.07] px-2 py-0.5 text-[10px] font-bold text-hf-leaf sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[11px]">{item.pack}</span>}
                 </div>
                 <div className="flex flex-1 flex-col px-1.5 pb-1.5 pt-3 sm:px-2.5 sm:pb-2 sm:pt-4">
                   <h4 className="text-[15px] font-semibold leading-tight tracking-[-0.02em] sm:text-lg">{item.name}</h4>
                   <p className="mt-1 text-[11px] font-semibold leading-4 text-hf-moss sm:text-xs sm:leading-5">{item.composition}</p>
                   <p className="mt-2 flex-1 text-[12px] leading-[1.125rem] text-hf-sage sm:text-[13px] sm:leading-5">{item.use}</p>
-                  <Link href={`/contact?topic=products&item=${encodeURIComponent(item.name)}`} className="mt-3 inline-flex w-fit items-center gap-1.5 text-[12px] font-bold text-hf-forest underline decoration-hf-line decoration-2 underline-offset-4 transition-colors hover:decoration-hf-gold sm:mt-4 sm:text-[13px]">
+                  <Link href={`/contact?topic=products&item=${encodeURIComponent(item.name)}`} className="relative z-[2] mt-3 inline-flex w-fit items-center gap-1.5 text-[12px] font-bold text-hf-forest underline decoration-hf-line decoration-2 underline-offset-4 transition-colors hover:decoration-hf-gold sm:mt-4 sm:text-[13px]">
                     Enquire <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:rotate-45" />
                   </Link>
                 </div>
@@ -103,6 +109,8 @@ export function ProductExplorer() {
         </section>
       ))}
       </div>
+
+      <ProductDialog items={visible} slug={openSlug} onChange={setOpenSlug} />
 
       {groups.length === 0 && (
         <div className="mt-10 rounded-3xl border border-dashed border-hf-line bg-white/50 px-6 py-10 text-center sm:mt-14">
