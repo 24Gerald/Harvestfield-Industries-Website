@@ -2,8 +2,9 @@
  * Server-only storage for Media posts and images.
  *
  * On Vercel, everything lives in Vercel Blob (BLOB_READ_WRITE_TOKEN is set when a Blob store is connected).
- * The post list is one JSON file, always read straight from storage (never a CDN copy), plus a few dated
- * backups. The public read is cached by Next.js and cleared on every save, so new posts show up straight away.
+ * Each post is its own JSON file (media/posts/<id>.json), so saving or deleting one post only ever touches
+ * that post's file and can never overwrite another post, however quickly saves follow each other.
+ * The public read is cached by Next.js and cleared on every save, so new posts show up straight away.
  * Without a token (local development) it falls back to the .media-dev folder.
  */
 import { randomUUID } from 'node:crypto'
@@ -14,50 +15,61 @@ import { revalidateTag, unstable_cache } from 'next/cache'
 import { type MediaPost, slugify, sortPosts } from '@/lib/media'
 
 const TAG = 'media-posts'
-const POSTS_FILE = 'media/posts.json'
-const BACKUPS = 'media/backups/'
-const KEEP_BACKUPS = 5
+const POSTS = 'media/posts/'
+const LEGACY_FILE = 'media/posts.json' // the earlier single-file format, moved into per-post files on first read
 const useBlob = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN)
 const devDir = path.join(process.cwd(), '.media-dev')
+const devPosts = path.join(devDir, 'posts')
+const json = { access: 'public', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: true, cacheControlMaxAge: 60 } as const
+
+async function readBlobJson(pathname: string) {
+  const result = await get(pathname, { access: 'public', useCache: false })
+  if (!result) return null
+  if (result.statusCode !== 200) throw new Error(`Could not read ${pathname} (${result.statusCode})`)
+  return JSON.parse(await new Response(result.stream).text())
+}
+
+async function migrateLegacy() {
+  const legacy = await readBlobJson(LEGACY_FILE).catch(() => null)
+  if (!Array.isArray(legacy)) return
+  await Promise.all(legacy.map((post: MediaPost) => put(`${POSTS}${post.id}.json`, JSON.stringify(post), json)))
+  await del(LEGACY_FILE)
+  const { blobs } = await list({ prefix: 'media/backups/', limit: 1000 })
+  if (blobs.length) await del(blobs.map((blob) => blob.url))
+}
 
 async function readAll(): Promise<MediaPost[]> {
   if (!useBlob()) {
-    try {
-      return JSON.parse(await fs.readFile(path.join(devDir, 'posts.json'), 'utf8'))
-    } catch {
-      return []
-    }
+    const names = await fs.readdir(devPosts).catch(() => [] as string[])
+    return Promise.all(names.filter((n) => n.endsWith('.json')).map(async (n) => JSON.parse(await fs.readFile(path.join(devPosts, n), 'utf8'))))
   }
-  const result = await get(POSTS_FILE, { access: 'public', useCache: false })
-  if (!result) return [] // nothing published yet
-  // Anything other than a full read is an error, so a save can never overwrite the list with an empty one
-  if (result.statusCode !== 200) throw new Error(`Could not read posts (${result.statusCode})`)
-  const posts = JSON.parse(await new Response(result.stream).text())
-  if (!Array.isArray(posts)) throw new Error('The saved post list is not valid.')
-  return posts
+  await migrateLegacy()
+  const blobs = []
+  let cursor: string | undefined
+  do {
+    const page = await list({ prefix: POSTS, limit: 1000, cursor })
+    blobs.push(...page.blobs)
+    cursor = page.hasMore ? page.cursor : undefined
+  } while (cursor)
+  const posts = await Promise.all(blobs.map((blob) => readBlobJson(blob.pathname)))
+  return posts.filter((post): post is MediaPost => Boolean(post && typeof post === 'object' && post.id))
 }
 
-async function writeAll(posts: MediaPost[]) {
+async function writePost(post: MediaPost) {
   if (!useBlob()) {
-    await fs.mkdir(devDir, { recursive: true })
-    await fs.writeFile(path.join(devDir, 'posts.json'), JSON.stringify(posts, null, 2))
+    await fs.mkdir(devPosts, { recursive: true })
+    await fs.writeFile(path.join(devPosts, `${post.id}.json`), JSON.stringify(post, null, 2))
   } else {
-    const body = JSON.stringify(posts)
-    await put(POSTS_FILE, body, { access: 'public', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: true, cacheControlMaxAge: 60 })
-    // Keep a few dated copies as a safety net and remove older ones
-    await put(`${BACKUPS}${Date.now()}.json`, body, { access: 'public', contentType: 'application/json', addRandomSuffix: false })
-    const { blobs } = await list({ prefix: BACKUPS, limit: 100 })
-    const old = blobs.sort((a, b) => b.pathname.localeCompare(a.pathname)).slice(KEEP_BACKUPS)
-    if (old.length) await del(old.map((blob) => blob.url))
+    await put(`${POSTS}${post.id}.json`, JSON.stringify(post), json)
   }
   revalidateTag(TAG, { expire: 0 })
 }
 
-/** Published posts, newest first. Cached until the next save. */
+/** Published posts, newest first. Cached until the next save (and refreshed at least every minute). */
 export const getPublishedPosts = unstable_cache(
   async () => sortPosts((await readAll()).filter((post) => post.published)),
   ['media-published-posts'],
-  { tags: [TAG], revalidate: 3600 },
+  { tags: [TAG], revalidate: 60 },
 )
 
 /** Every post including drafts, for the admin panel (never cached). */
@@ -76,14 +88,22 @@ export async function savePost(input: Omit<MediaPost, 'slug' | 'updatedAt'> & { 
     for (let n = 2; taken.has(slug); n++) slug = `${slugify(input.title)}-${n}`
   }
   const post: MediaPost = { ...input, id, slug, updatedAt: new Date().toISOString() }
-  await writeAll(existing ? posts.map((p) => (p.id === id ? post : p)) : [post, ...posts])
+  await writePost(post)
   return post
 }
 
 export async function deletePost(id: string) {
-  const posts = await readAll()
-  if (!posts.some((post) => post.id === id)) return false
-  await writeAll(posts.filter((post) => post.id !== id))
+  if (!/^[\w-]{1,60}$/.test(id)) return false
+  if (!useBlob()) {
+    const ok = await fs.rm(path.join(devPosts, `${id}.json`)).then(() => true, () => false)
+    if (ok) revalidateTag(TAG, { expire: 0 })
+    return ok
+  }
+  const pathname = `${POSTS}${id}.json`
+  const { blobs } = await list({ prefix: pathname, limit: 1 })
+  if (!blobs.some((blob) => blob.pathname === pathname)) return false
+  await del(pathname)
+  revalidateTag(TAG, { expire: 0 })
   return true
 }
 
