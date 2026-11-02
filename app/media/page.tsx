@@ -2,15 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
-import { MediaFeed } from '@/components/media-feed'
+import { MediaSections } from '@/components/media-feed'
 import { PageHero } from '@/components/page-hero'
-import { SectionHeading } from '@/components/section-heading'
 import { news } from '@/lib/site-data'
-import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Media',
-  description: 'News, press releases and stories from Harvestfield Industries, from the Harvestfield Free Trade Zone to Aflasafe and Roll Back Malaria.',
+  description: 'News, events and press releases from Harvestfield Industries, from the Harvestfield Free Trade Zone to Aflasafe and Roll Back Malaria.',
 }
 
 export default function MediaPage() {
@@ -24,27 +22,29 @@ export default function MediaPage() {
         focus="40% 25%"
       />
 
-      <section className="mx-auto max-w-[1320px] px-5 py-12 sm:py-20 lg:px-10 lg:py-24">
-        <SectionHeading eyebrow="Latest" title={<>From the <em className="font-serif font-normal text-hf-moss">newsroom.</em></>} className="mb-6 sm:mb-10" />
-        <MediaFeed />
-      </section>
+      <MediaSections />
 
-      <section className="bg-hf-sand px-5 py-12 sm:py-20 lg:px-10 lg:py-24">
+      <section aria-labelledby="highlights-title" className="border-t border-hf-line px-5 py-10 sm:py-14 lg:px-10">
         <div className="mx-auto max-w-[1320px]">
-          <SectionHeading eyebrow="Highlights" title={<>Milestones along <em className="font-serif font-normal text-hf-moss">the way.</em></>} className="mb-6 sm:mb-10" />
-          <div className="grid gap-3 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {news.map((story, index) => (
-              <Link key={story.title} href={story.href} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group flex flex-col rounded-[28px] border border-white/80 bg-gradient-to-b from-white to-white/60 p-5 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] sm:p-7" style={stagger(index % 3, 90)}>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-hf-lime/40 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] sm:px-3 sm:py-1.5 sm:text-[11px]">{story.tag}</span>
-                  <span className="text-xs font-semibold text-hf-sage">{story.date}</span>
-                </div>
-                <h3 className="mt-4 text-xl font-semibold leading-[1.15] tracking-[-0.03em] sm:mt-6 sm:text-2xl">{story.title}</h3>
-                <p className="mt-2 flex-1 text-[1rem] leading-6 text-hf-sage sm:mt-4 sm:text-base sm:leading-7">{story.text}</p>
-                <span className="mt-4 flex h-9 w-9 items-center justify-center self-end rounded-full border border-hf-line transition-all duration-300 group-hover:rotate-45 group-hover:border-hf-forest group-hover:bg-hf-forest group-hover:text-white sm:mt-6 sm:h-11 sm:w-11"><ArrowUpRight size={16} /></span>
-              </Link>
-            ))}
+          <div className="flex flex-wrap items-end justify-between gap-2">
+            <div>
+              <p className="eyebrow">Highlights</p>
+              <h2 id="highlights-title" className="mt-2 text-2xl font-semibold tracking-[-0.04em] sm:mt-3 sm:text-3xl">Milestones along <em className="font-serif font-normal text-hf-moss">the way.</em></h2>
+            </div>
           </div>
+          <ul className="mt-5 grid gap-x-10 sm:mt-7 md:grid-cols-2">
+            {news.map((story) => (
+              <li key={story.title} className="border-t border-hf-line">
+                <Link href={story.href} className="group flex items-center gap-4 py-3.5 sm:py-4">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-hf-moss sm:text-[11px]">{story.tag} <span className="text-hf-sage">· {story.date}</span></p>
+                    <p className="mt-1 font-semibold leading-snug tracking-[-0.02em] transition-colors group-hover:text-hf-leaf">{story.title}</p>
+                  </div>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-hf-line transition-all duration-300 group-hover:rotate-45 group-hover:border-hf-forest group-hover:bg-hf-forest group-hover:text-white"><ArrowUpRight size={14} /></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

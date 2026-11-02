@@ -7,7 +7,7 @@ import { ArrowLeft, Check, Link2 } from 'lucide-react'
 import { PostCard, useMediaPosts } from '@/components/media-feed'
 import { PageHero } from '@/components/page-hero'
 import { PostBody } from '@/components/post-body'
-import { excerptOf, formatDate } from '@/lib/media'
+import { excerptOf, shownDate } from '@/lib/media'
 
 /** One Media post, chosen by ?slug= so the page also works on the static GitHub Pages copy. */
 export function MediaArticle() {
@@ -55,7 +55,7 @@ export function MediaArticle() {
     <>
       <PageHero
         crumb="Media"
-        eyebrow={`${post.tag} · ${formatDate(post.date)}`}
+        eyebrow={`${post.tag} · ${shownDate(post)}`}
         title={post.title}
         description={excerptOf(post, 220)}
         image={post.cover}

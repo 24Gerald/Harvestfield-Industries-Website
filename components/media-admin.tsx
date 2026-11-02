@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowUp, ArrowUpRight, Check, Eye, Heading2, ImagePlus, Loader2, LogOut, Pencil, Plus, Table2, Trash2, Type, X } from 'lucide-react'
 import { PostBody } from '@/components/post-body'
-import { formatDate, mediaApi, type MediaBlock, type MediaPost, mediaTags, parseTable, postHref, tableToText } from '@/lib/media'
+import { mediaApi, type MediaBlock, type MediaPost, mediaTags, parseTable, postHref, shownDate, tableToText } from '@/lib/media'
 import { cn } from '@/lib/utils'
 
 type Draft = Omit<MediaPost, 'slug' | 'updatedAt'> & { slug?: string; updatedAt?: string }
@@ -200,7 +200,7 @@ function Editor({ initial, onDone, onNotice }: { initial: Draft; onDone: (saved?
 
       {preview ? (
         <div className={card}>
-          <p className="eyebrow">{draft.tag} · {formatDate(draft.date)}</p>
+          <p className="eyebrow">{draft.tag} · {shownDate(draft)}</p>
           <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">{draft.title || 'Untitled'}</h1>
           {draft.cover && <img src={draft.cover} alt="" className="mt-6 w-full rounded-3xl object-cover" />}
           <div className="mt-8 max-w-3xl"><PostBody blocks={draft.blocks} /></div>
@@ -223,6 +223,10 @@ function Editor({ initial, onDone, onNotice }: { initial: Draft; onDone: (saved?
                 <label htmlFor="post-date" className={label}>Date</label>
                 <input id="post-date" type="date" value={draft.date} onChange={(event) => set({ date: event.target.value })} className={field} />
               </div>
+            </div>
+            <div>
+              <label htmlFor="post-date-label" className={label}>Date shown <span className="font-semibold normal-case tracking-normal text-hf-sage">(optional, e.g. “4–5 November 2019” for an event over several days)</span></label>
+              <input id="post-date-label" value={draft.dateLabel ?? ''} onChange={(event) => set({ dateLabel: event.target.value })} placeholder="Leave blank to show the date above" className={field} />
             </div>
             <div>
               <span className={label}>Cover image</span>
@@ -401,7 +405,7 @@ export function MediaAdmin() {
                   <div className="min-w-0 flex-1">
                     <p className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-[0.12em] text-hf-sage">
                       <span className={cn('rounded-full px-2 py-0.5', post.published ? 'bg-hf-lime/50 text-hf-forest' : 'bg-hf-forest/[0.07]')}>{post.published ? 'Live' : 'Draft'}</span>
-                      {post.tag} · {formatDate(post.date)}
+                      {post.tag} · {shownDate(post)}
                     </p>
                     <p className="mt-1 truncate text-base font-semibold tracking-[-0.02em] sm:text-lg">{post.title}</p>
                   </div>

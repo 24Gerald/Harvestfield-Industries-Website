@@ -11,8 +11,10 @@ export type MediaPost = {
   slug: string
   title: string
   tag: string
-  /** yyyy-mm-dd */
+  /** yyyy-mm-dd, used for ordering */
   date: string
+  /** Shown instead of the date when set, e.g. "4–5 November 2019" */
+  dateLabel?: string
   cover?: string
   excerpt?: string
   blocks: MediaBlock[]
@@ -35,6 +37,11 @@ export function formatDate(date: string) {
   if (Number.isNaN(parsed.getTime())) return date
   return parsed.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 }
+
+/** The date as shown on the site: the custom label if there is one, otherwise the formatted date */
+export const shownDate = (post: Pick<MediaPost, 'date' | 'dateLabel'>) => post.dateLabel?.trim() || formatDate(post.date)
+
+export const isEvent = (post: Pick<MediaPost, 'tag'>) => post.tag === 'Event'
 
 export function excerptOf(post: Pick<MediaPost, 'excerpt' | 'blocks'>, length = 180) {
   if (post.excerpt?.trim()) return post.excerpt.trim()
@@ -102,6 +109,7 @@ export function cleanPost(input: unknown): { post: Omit<MediaPost, 'slug' | 'upd
       title,
       tag: mediaTags.includes(String(raw.tag)) ? String(raw.tag) : mediaTags[0],
       date,
+      dateLabel: str(raw.dateLabel, 80).trim() || undefined,
       cover: isSafeImage(raw.cover) ? raw.cover : undefined,
       excerpt: str(raw.excerpt, 600).trim() || undefined,
       blocks,
