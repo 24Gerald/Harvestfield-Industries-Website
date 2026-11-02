@@ -118,7 +118,7 @@ export const news = [
   { tag: 'Food safety', date: 'National licence', title: 'Bringing Aflasafe to Nigerian farms', text: 'As national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.', href: '/products#aflasafe' },
   { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#vector-control' },
   { tag: 'Food safety', date: 'Founding member', title: 'A founding member of the Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.', href: '/about' },
-  { tag: 'Network', date: 'Nationwide', title: '26 offices across all six geopolitical zones', text: 'Walk in, call ahead, or send us a message and someone will get back to you the same day.', href: '/offices' },
+  { tag: 'Network', date: 'Nationwide', title: '33 offices across all six geopolitical zones', text: 'Walk in, call ahead, or send us a message and someone will get back to you the same day.', href: '/offices' },
 ]
 
 export const contactTopics = [

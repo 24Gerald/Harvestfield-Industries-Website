@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const channels = [
   { icon: Phone, label: 'Call us', value: contact.phone, href: contact.phoneHref },
   { icon: Mail, label: 'Email us', value: contact.email, href: `mailto:${contact.email}` },
-  { icon: MapPin, label: 'Visit us', value: '26 offices in 6 zones', href: '/offices' },
+  { icon: MapPin, label: 'Visit us', value: '33 offices in 6 zones', href: '/offices' },
 ]
 
 export default function ContactPage() {

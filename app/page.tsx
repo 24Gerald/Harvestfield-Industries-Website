@@ -23,7 +23,7 @@ export default function Page() {
             </div>
           </div>
           <div className="hf-rise mt-8 flex items-start gap-6 border-t border-white/20 pt-4 text-white/80 sm:mt-16 sm:gap-8 sm:pt-5 lg:absolute lg:items-center lg:bottom-0 lg:right-0 lg:mt-0 lg:gap-0 lg:divide-x lg:divide-white/15 lg:rounded-2xl lg:border lg:border-white/20 lg:bg-white/10 lg:px-2 lg:py-4 lg:shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_20px_50px_-20px_rgba(0,0,0,.5)] lg:backdrop-blur-md" style={stagger(5, 110)}>
-            <div className="lg:px-6"><strong className="block text-xl text-white sm:text-2xl">26</strong><span className="block text-[10px] uppercase leading-4 tracking-wider sm:text-[11px] sm:leading-6">Offices & warehouses</span></div>
+            <div className="lg:px-6"><strong className="block text-xl text-white sm:text-2xl">33</strong><span className="block text-[10px] uppercase leading-4 tracking-wider sm:text-[11px] sm:leading-6">Offices & warehouses</span></div>
             <div className="lg:px-6"><strong className="block text-xl text-white sm:text-2xl">6</strong><span className="block text-[10px] uppercase leading-4 tracking-wider sm:text-[11px] sm:leading-6">Geopolitical zones</span></div>
             <div className="lg:px-6"><strong className="block text-xl text-white sm:text-2xl">2000</strong><span className="block text-[10px] uppercase leading-4 tracking-wider sm:text-[11px] sm:leading-6">Established</span></div>
           </div>
@@ -32,7 +32,7 @@ export default function Page() {
 
       <section className="hf-reveal bg-[#0d2f20] text-white" aria-label="Company facts and certifications">
         <div className="mx-auto grid max-w-[1320px] grid-cols-2 lg:grid-cols-4">
-          <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>26</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Offices and warehouses</span></div>
+          <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>33</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Offices and warehouses</span></div>
           <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>6</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Geopolitical zones covered</span></div>
           <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>26+</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Years in the field</span></div>
           <div className="hf-gloss px-5 py-5 sm:px-6 sm:py-8 lg:px-10">
@@ -105,7 +105,7 @@ export default function Page() {
           <div className="hf-reveal" data-reveal="left">
             <p className="eyebrow">Our offices</p>
             <h2 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">We are already <em className="font-serif font-normal text-[#839b2f]">in your state.</em></h2>
-            <p className="mt-3 max-w-sm text-[1rem] leading-6 text-[#6b7d71] sm:mt-5 sm:text-base sm:leading-7">26 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day.</p>
+            <p className="mt-3 max-w-sm text-[1rem] leading-6 text-[#6b7d71] sm:mt-5 sm:text-base sm:leading-7">33 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day.</p>
             <Link href="/offices" className="hf-link mt-5 text-sm sm:mt-8">Find your nearest office <ArrowUpRight size={16} /></Link>
           </div>
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
@@ -142,7 +142,7 @@ export default function Page() {
         <div id="contact" className="hf-reveal" style={stagger(1, 120)}>
           <p className="eyebrow">Get in touch</p>
           <h2 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">Ready to grow <em className="font-serif font-normal text-[#839b2f]">with us?</em></h2>
-          <p className="mt-4 max-w-md text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season or want to stock our products, our team across 26 offices will get back to you the same day.</p>
+          <p className="mt-4 max-w-md text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season or want to stock our products, our team across 33 offices will get back to you the same day.</p>
           <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <Link href="/contact" className="hf-btn hf-btn-forest px-6 py-4 text-sm">Start a conversation <ArrowUpRight size={16} /></Link>
             <Link href="/offices" className="hf-btn hf-btn-outline px-6 py-4 text-sm"><MapPin size={15} /> Find an office</Link>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const reasons = [
-  { value: '26', label: 'Offices and warehouses to reach farmers in every state' },
+  { value: '33', label: 'Offices and warehouses to reach farmers in every state' },
   { value: '6', label: 'Geopolitical zones covered by one distribution network' },
   { value: '26+', label: 'Years of trusted relationships in Nigerian agriculture' },
 ]

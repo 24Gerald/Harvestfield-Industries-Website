@@ -10,11 +10,11 @@ import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Our offices',
-  description: '26 Harvestfield offices and warehouses across all six geopolitical zones of Nigeria.',
+  description: '33 Harvestfield offices and warehouses across all six geopolitical zones of Nigeria.',
 }
 
 const ways = [
-  { icon: MapPin, title: 'Walk in', text: 'Visit any of our 26 offices and warehouses across Nigeria.', action: 'Choose your zone', href: '#finder' },
+  { icon: MapPin, title: 'Walk in', text: 'Visit any of our 33 offices and warehouses across Nigeria.', action: 'Choose your zone', href: '#finder' },
   { icon: Phone, title: 'Call ahead', text: 'Check stock and pricing before you travel.', action: contact.phone, href: contact.phoneHref },
   { icon: MessageSquare, title: 'Send a message', text: 'Someone will get back to you the same day.', action: 'Write to us', href: '/contact?topic=offices' },
 ]
@@ -26,11 +26,11 @@ export default function OfficesPage() {
         crumb="Our offices"
         eyebrow="Our offices"
         title={<>We are already <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">in your state.</em></>}
-        description="26 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day."
+        description="33 offices across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day."
         focus="60% 70%"
         aside={
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            <div className="hf-glass-dark rounded-2xl p-4 sm:rounded-3xl sm:p-6"><strong className="block text-4xl font-bold tracking-[-0.05em] sm:text-5xl" data-count>26</strong><span className="mt-1 block text-[13px] text-white/60 sm:text-sm">Offices & warehouses</span></div>
+            <div className="hf-glass-dark rounded-2xl p-4 sm:rounded-3xl sm:p-6"><strong className="block text-4xl font-bold tracking-[-0.05em] sm:text-5xl" data-count>33</strong><span className="mt-1 block text-[13px] text-white/60 sm:text-sm">Offices & warehouses</span></div>
             <div className="hf-glass-dark rounded-2xl p-4 sm:rounded-3xl sm:p-6"><strong className="block text-4xl font-bold tracking-[-0.05em] sm:text-5xl" data-count>6</strong><span className="mt-1 block text-[13px] text-white/60 sm:text-sm">Geopolitical zones</span></div>
           </div>
         }

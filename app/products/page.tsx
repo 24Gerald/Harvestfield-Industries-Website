@@ -21,7 +21,7 @@ const alsoAvailable = products.filter((product) => product.slug === 'store-fumig
 const assurances = [
   { icon: ShieldCheck, title: 'NAFDAC certified', text: 'Certified products only, across every category we carry.' },
   { icon: Handshake, title: 'Authorized distributor', text: 'Genuine products from BAYER, BASF, Dow, East-West Seeds and IITA.' },
-  { icon: MapPin, title: 'Stock near you', text: '26 offices and warehouses in all six geopolitical zones.' },
+  { icon: MapPin, title: 'Stock near you', text: '33 offices and warehouses in all six geopolitical zones.' },
 ]
 
 export default function ProductsPage() {
@@ -110,7 +110,7 @@ export default function ProductsPage() {
           {[
             ['01', 'Tell us what you grow', 'Crop, acreage and the problem you are seeing in the field.'],
             ['02', 'Get the right recommendation', 'Our team matches you with certified products for your stage of the season.'],
-            ['03', 'Collect near you', 'Pick up from one of 26 offices and warehouses across Nigeria.'],
+            ['03', 'Collect near you', 'Pick up from one of 33 offices and warehouses across Nigeria.'],
           ].map(([step, title, text], index) => (
             <div key={step} className="hf-reveal border-t border-hf-line pt-4 max-sm:flex max-sm:gap-4 sm:pt-6" style={stagger(index, 100)}>
               <span className="font-serif text-4xl italic leading-none text-hf-gold sm:text-5xl">{step}</span>
