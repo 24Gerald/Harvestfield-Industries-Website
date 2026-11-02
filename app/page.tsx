@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react'
 import { SafeImg } from '@/components/safe-img'
 import { StoryVideoButton } from '@/components/story-video'
-import { contact, distributionPartners, ftzBenefits, ftzStats, heroImage, nepzaQuote, offices, products } from '@/lib/site-data'
+import { contact, distributionPartners, heroImage, isoLogo, offices, products } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export default function Page() {
@@ -35,7 +35,13 @@ export default function Page() {
           <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>26</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Offices and warehouses</span></div>
           <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>6</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Geopolitical zones covered</span></div>
           <div className="hf-gloss border-r border-white/10 px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block text-4xl font-bold tracking-[-0.04em] sm:text-5xl" data-count>26+</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Years in the field</span></div>
-          <div className="hf-gloss px-5 py-5 sm:px-6 sm:py-8 lg:px-10"><strong className="block bg-gradient-to-r from-[#e6b04a] to-[#d39522] bg-clip-text text-2xl sm:text-3xl font-bold text-transparent">NAFDAC</strong><span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Certified products only</span></div>
+          <div className="hf-gloss px-5 py-5 sm:px-6 sm:py-8 lg:px-10">
+            <div className="flex items-center gap-3">
+              <strong className="block bg-gradient-to-r from-[#e6b04a] to-[#d39522] bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">NAFDAC</strong>
+              <span className="flex h-9 items-center rounded-lg bg-white px-1.5 shadow-[inset_0_-2px_0_rgba(23,60,43,.08)] sm:h-11 sm:px-2"><img src={isoLogo} alt="ISO certified" className="h-6 w-auto sm:h-8" /></span>
+            </div>
+            <span className="mt-1 block text-[13px] text-white/55 sm:mt-2 sm:text-sm">Certified products · ISO certified</span>
+          </div>
         </div>
       </section>
 
@@ -94,31 +100,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="hf-grain relative overflow-hidden bg-[#173c2b] px-5 py-14 text-white sm:py-20 lg:px-10 lg:py-24">
-        <div aria-hidden className="hf-aurora opacity-70" />
-        <div className="relative mx-auto max-w-[1320px]">
-          <div className="hf-reveal flex flex-col justify-between gap-3 sm:gap-4 md:flex-row md:items-end">
-            <p className="eyebrow text-[#d7e36b]">Why locate in the Harvestfield FTZ</p>
-            <Link href="/free-trade-zone" className="hf-link text-sm text-[#d7e36b]">Explore the Free Trade Zone <ArrowUpRight size={16} /></Link>
-          </div>
-          <div className="mt-6 grid gap-2.5 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-            {ftzBenefits.map((benefit, index) => {
-              const Icon = benefit.icon
-              return (
-                <div key={benefit.title} className="hf-reveal hf-glass-dark hf-spotlight flex gap-4 rounded-2xl p-4 transition-transform duration-500 hover:-translate-y-1 sm:block sm:p-6" style={stagger(index, 70)}>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#d7e36b]/15 text-[#d7e36b] ring-1 ring-[#d7e36b]/25"><Icon size={18} /></span>
-                  <div>
-                    <h3 className="font-semibold sm:mt-5">{benefit.title}</h3>
-                    <p className="mt-1 text-[13px] leading-5 text-white/60 sm:mt-2 sm:text-sm sm:leading-6">{benefit.short}</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-          <blockquote className="hf-reveal mt-8 max-w-3xl border-l-2 border-[#d7e36b] pl-4 text-base leading-7 text-white/80 sm:mt-12 sm:pl-5 sm:text-xl sm:leading-8">&ldquo;{nepzaQuote.text}&rdquo;<cite className="mt-3 block text-sm not-italic text-[#d7e36b]">{nepzaQuote.author}, {nepzaQuote.role}</cite></blockquote>
-        </div>
-      </section>
-
       <section id="offices" className="mx-auto max-w-[1320px] px-5 py-14 sm:py-24 lg:px-10 lg:py-28">
         <div className="grid gap-7 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="hf-reveal" data-reveal="left">
@@ -146,38 +127,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="news" className="mx-auto grid max-w-[1320px] gap-10 px-5 py-14 sm:gap-12 sm:py-24 lg:grid-cols-2 lg:items-start lg:px-10 lg:py-28">
-        <div className="hf-reveal">
-          <p className="eyebrow">Free Trade Zone</p>
-          <h2 className="mt-3 max-w-xl text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.05em] sm:mt-5 sm:text-6xl">Nigeria&apos;s newest NEPZA-licensed medical manufacturing zone. And it is <em className="font-serif font-normal text-[#839b2f]">open for business.</em></h2>
-          <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#a9d9bc] bg-[#eef8f0] px-4 py-2.5 text-[10.5px] sm:mt-12 sm:px-5 sm:py-3 sm:text-xs font-bold uppercase tracking-wider text-[#28613d] shadow-[inset_0_1px_0_#fff]"><span className="hf-ping h-2 w-2 rounded-full bg-[#28a35a] text-[#28a35a]" /> NEPZA declaration &amp; operation licence, February 2026</div>
-          <p className="mt-5 max-w-xl text-[1rem] leading-7 text-[#557260] sm:mt-8 sm:text-lg sm:leading-9">In February 2026, the Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for the Harvestfield Free Trade Zone focused on medical products in Ogun State, and one of the few in Nigeria dedicated entirely to healthcare manufacturing.</p>
-          <p className="mt-4 max-w-xl text-[1rem] leading-7 text-[#557260] sm:mt-5 sm:text-lg sm:leading-9">The anchor operation in the zone is Harvestfield Healthcare FZE, and its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
-          <div className="mt-6 flex flex-wrap items-center gap-4 sm:mt-8 sm:gap-5"><Link href="/free-trade-zone" className="hf-btn hf-btn-forest px-7 py-4">Enquire about the FTZ <ArrowUpRight size={16} /></Link><Link href="/contact?topic=ftz" className="hf-link">Talk to our team <ArrowUpRight size={16} /></Link></div>
-          <div className="mt-7 grid grid-cols-2 gap-2 sm:mt-12 sm:gap-4">
-            {ftzStats.map(({ value, label }, index) => (
-              <div key={value} className="hf-reveal hf-spotlight hf-spotlight-light rounded-2xl border border-[#d8e3d9] bg-gradient-to-b from-white to-[#f2f7f2] p-3 shadow-[inset_0_1px_0_#fff] sm:p-5" style={stagger(index, 100)}>
-                <strong className="block text-2xl font-bold tracking-[-0.04em] sm:text-4xl" data-count>{value}</strong>
-                <span className="mt-1 block text-[11.5px] leading-4 text-[#65806e] sm:mt-2 sm:text-sm sm:leading-5">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="pt-2">
-          <h3 className="hf-reveal text-lg font-bold uppercase tracking-wide sm:text-xl">Why locate in the Harvestfield FTZ</h3>
-          <ul className="mt-5 space-y-4 sm:mt-8 sm:space-y-7">
-            {ftzBenefits.map(({ title, text }, index) => (
-              <li key={title} className="hf-reveal group relative pl-7 sm:pl-8" style={stagger(index, 70)}>
-                <span className="absolute left-0 top-1.5 h-3 w-3 rounded-full sm:top-2 bg-[#d39522] ring-4 ring-[#d39522]/15 transition-transform duration-300 group-hover:scale-125" />
-                <strong className="block text-base sm:text-lg">{title}</strong>
-                <span className="mt-1 block text-sm leading-6 text-[#5d7866] sm:mt-2 sm:text-base sm:leading-7">{text}</span>
-              </li>
-            ))}
-          </ul>
-          <blockquote className="hf-reveal mt-7 rounded-r-2xl border-l-2 border-[#d39522] bg-[#f1f5ef] p-5 text-sm italic leading-6 text-[#557260] sm:mt-10 sm:p-6 sm:text-base sm:leading-7">&ldquo;{nepzaQuote.text}&rdquo;<cite className="mt-3 block font-semibold not-italic">— {nepzaQuote.author}, {nepzaQuote.role}</cite></blockquote>
-        </div>
-      </section>
-
       <section id="impact" className="mx-auto grid max-w-[1320px] gap-10 px-5 pb-14 sm:gap-12 sm:pb-24 sm:pt-8 lg:grid-cols-2 lg:items-center lg:px-10 lg:pb-32">
         <div className="hf-reveal hf-grain hf-spotlight relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#1f5136] via-[#173c2b] to-[#102f25] p-7 text-white shadow-[0_40px_80px_-40px_rgba(16,47,37,.8)] sm:p-10 lg:min-h-[440px] lg:p-14" data-reveal="zoom">
           <div aria-hidden className="hf-aurora opacity-80" />
@@ -193,7 +142,7 @@ export default function Page() {
         <div id="contact" className="hf-reveal" style={stagger(1, 120)}>
           <p className="eyebrow">Get in touch</p>
           <h2 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.05em] sm:mt-5 sm:text-5xl">Ready to grow <em className="font-serif font-normal text-[#839b2f]">with us?</em></h2>
-          <p className="mt-4 max-w-md text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season, want to stock our products, or are exploring a place in the Harvestfield Free Trade Zone, our team across 26 offices will get back to you the same day.</p>
+          <p className="mt-4 max-w-md text-[1rem] leading-6 text-[#6b7d71] sm:mt-6 sm:text-base sm:leading-7">Whether you need inputs for this season or want to stock our products, our team across 26 offices will get back to you the same day.</p>
           <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
             <Link href="/contact" className="hf-btn hf-btn-forest px-6 py-4 text-sm">Start a conversation <ArrowUpRight size={16} /></Link>
             <Link href="/offices" className="hf-btn hf-btn-outline px-6 py-4 text-sm"><MapPin size={15} /> Find an office</Link>

@@ -21,7 +21,7 @@ const stats = [
 
 const values = [
   { icon: Sprout, title: 'World-class inputs, fair prices', text: 'The belief we started with in 2000, and the one we still hold every Nigerian farmer to.' },
-  { icon: ShieldCheck, title: 'Certified products only', text: 'Everything we distribute is NAFDAC certified, from crop protection to vector control.' },
+  { icon: ShieldCheck, title: 'NAFDAC and ISO certified', text: 'Everything we distribute is NAFDAC certified, from crop protection to vector control, and Harvestfield Industries is ISO certified.' },
   { icon: MapPin, title: 'Close to every farm', text: '26 offices and warehouses across all six geopolitical zones keep stock near the people who need it.' },
   { icon: Factory, title: 'Made in Nigeria, next', text: 'We are building the infrastructure to manufacture the health products Nigeria needs at home.' },
 ]

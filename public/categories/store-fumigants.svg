@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="Stacked grain sacks and a store fumigant tin">
+  <!-- Placeholder illustration for the Store fumigants category; replace with a product photo when available -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0" stop-color="#fbfaf3"/>
+      <stop offset="1" stop-color="#e9e7d6"/>
+    </radialGradient>
+    <linearGradient id="sack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3c58f"/>
+      <stop offset="1" stop-color="#c79c5d"/>
+    </linearGradient>
+    <linearGradient id="sackDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6b67d"/>
+      <stop offset="1" stop-color="#b48749"/>
+    </linearGradient>
+    <linearGradient id="tin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10301f"/>
+      <stop offset=".45" stop-color="#2b6a45"/>
+      <stop offset="1" stop-color="#143a27"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9aa39a"/>
+      <stop offset=".5" stop-color="#e9ece6"/>
+      <stop offset="1" stop-color="#8f988f"/>
+    </linearGradient>
+    <pattern id="weave" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M0 7h14M7 0v14" stroke="#8a6232" stroke-opacity=".12" stroke-width="2"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <g id="sprout">
+      <path d="M0 16V-2" stroke="#d7e36b" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M0 4C-11 4-19-3-21-14-10-14-2-7 0 4z" fill="#d7e36b"/>
+      <path d="M0-2C11-2 19-9 21-20 10-20 2-13 0-2z" fill="#e8f09a"/>
+    </g>
+    <g id="bag">
+      <path d="M8 34C8 14 22 4 44 4h232c22 0 36 10 36 30v76c0 20-14 30-36 30H44C22 140 8 130 8 110z" fill="url(#sack)"/>
+      <path d="M8 34C8 14 22 4 44 4h232c22 0 36 10 36 30v76c0 20-14 30-36 30H44C22 140 8 130 8 110z" fill="url(#weave)"/>
+      <path d="M44 4c-10 18-10 118 0 136M276 4c10 18 10 118 0 136" stroke="#a87c43" stroke-width="3" fill="none" stroke-dasharray="6 7" stroke-linecap="round"/>
+      <rect x="116" y="46" width="88" height="52" rx="10" fill="#24603f" fill-opacity=".9"/>
+      <use href="#sprout" transform="translate(160 72)"/>
+      <path d="M8 34c40-10 260-10 304 0" stroke="#fff" stroke-opacity=".25" stroke-width="4" fill="none"/>
+    </g>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <ellipse cx="500" cy="712" rx="440" ry="46" fill="#173c2b" fill-opacity=".18" filter="url(#soft)"/>
+
+  <!-- Stacked sacks: three, two, one -->
+  <g transform="translate(34 296) scale(.95)">
+    <g transform="translate(0 280)"><use href="#bag"/></g>
+    <g transform="translate(286 286)"><use href="#bag"/></g>
+    <g transform="translate(572 280)"><use href="#bag"/></g>
+    <g transform="translate(143 150)"><use href="#bag"/></g>
+    <g transform="translate(429 150)"><use href="#bag"/></g>
+    <g transform="translate(286 20)"><use href="#bag"/></g>
+  </g>
+
+  <!-- Fumigant tin -->
+  <g transform="translate(786 424)">
+    <ellipse cx="90" cy="292" rx="96" ry="18" fill="#173c2b" fill-opacity=".25" filter="url(#soft)"/>
+    <path d="M0 40v230c0 16 40 28 90 28s90-12 90-28V40z" fill="url(#tin)"/>
+    <ellipse cx="90" cy="40" rx="90" ry="24" fill="url(#lid)"/>
+    <ellipse cx="90" cy="34" rx="70" ry="15" fill="#cfd5cc"/>
+    <rect x="12" y="100" width="156" height="120" rx="10" fill="#f5f5ed"/>
+    <rect x="12" y="100" width="156" height="26" rx="10" fill="#d39522"/>
+    <rect x="12" y="116" width="156" height="10" fill="#d39522"/>
+    <g transform="translate(90 160) scale(1.25)"><path d="M0 16V-2" stroke="#24603f" stroke-width="3.5" stroke-linecap="round"/><path d="M0 4C-11 4-19-3-21-14-10-14-2-7 0 4z" fill="#24603f"/><path d="M0-2C11-2 19-9 21-20 10-20 2-13 0-2z" fill="#3f8a5c"/></g>
+    <rect x="36" y="186" width="108" height="8" rx="4" fill="#173c2b" fill-opacity=".55"/>
+    <rect x="52" y="202" width="76" height="6" rx="3" fill="#173c2b" fill-opacity=".3"/>
+  </g>
+
+  <!-- Spilled grain -->
+  <g fill="#d39522">
+    <ellipse cx="160" cy="720" rx="9" ry="6" transform="rotate(-20 160 720)"/>
+    <ellipse cx="184" cy="732" rx="8" ry="5" transform="rotate(30 184 732)"/>
+    <ellipse cx="212" cy="716" rx="9" ry="6" transform="rotate(10 212 716)"/>
+    <ellipse cx="140" cy="738" rx="8" ry="5" transform="rotate(60 140 738)"/>
+    <ellipse cx="236" cy="734" rx="7" ry="5" transform="rotate(-40 236 734)"/>
+    <ellipse cx="660" cy="736" rx="8" ry="5" transform="rotate(25 660 736)"/>
+    <ellipse cx="684" cy="724" rx="7" ry="5" transform="rotate(-15 684 724)"/>
+  </g>
+</svg>

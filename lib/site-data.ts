@@ -22,6 +22,7 @@ import {
 /** Prefix for files in /public. Set when building for GitHub Pages, which serves the site from a sub-path. */
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 export const heroImage = `${basePath}/harvest-hero.png`
+export const isoLogo = `${basePath}/iso-logo.png`
 
 export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-c5Ajz8p42rFP91uzjSPB9om8JLTye3.png'
 
@@ -29,6 +30,14 @@ export const contact = {
   phone: '0807 356 9437',
   phoneHref: 'tel:+2348073569437',
   email: 'info@harvestfield-ng.com',
+  /** Lagos head office */
+  address: [
+    '1, Isheri Road, Olowora Junction B/Stop',
+    '(Beside Sweet Sensation)',
+    'Omole Phase II, Ikeja,',
+    'P.O.Box 3979, Oshodi, Lagos, Nigeria.',
+  ],
+  mapHref: 'https://www.google.com/maps/search/?api=1&query=1+Isheri+Road+Olowora+Junction+Omole+Phase+II+Ikeja+Lagos',
 }
 
 export const navLinks = [
@@ -47,9 +56,9 @@ export const products: Product[] = [
   { slug: 'herbicides', name: 'Herbicides', type: 'Crop protection', icon: Leaf, image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85', text: 'Broad and selective options for weed control in all major Nigerian crop types.' },
   { slug: 'insecticides', name: 'Insecticides', type: 'Crop protection', icon: Bug, image: 'https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=900&q=85', text: 'Field-proven pest management that Nigerian farmers have relied on for over two decades.' },
   { slug: 'fungicides', name: 'Fungicides', type: 'Crop protection', icon: Sprout, image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=900&q=85', text: 'Disease management across the full growing cycle, from germination to harvest.' },
-  { slug: 'store-fumigants', name: 'Store fumigants', type: 'Post-harvest', icon: Warehouse, image: 'https://images.unsplash.com/photo-1586528116493-da8b0b6e4a9b?auto=format&fit=crop&w=900&q=85', text: 'Keep post-harvest grain safe and saleable while it waits for market.' },
-  { slug: 'vector-control', name: 'Vector control', type: 'Public health', icon: HeartPulse, image: 'https://images.unsplash.com/photo-1584467735871-2e2c0f2b7c9a?auto=format&fit=crop&w=900&q=85', text: 'Malaria control products supplied under the Roll Back Malaria programme across Nigeria.' },
-  { slug: 'spraying-equipment', name: 'Spraying equipment', type: 'Field-ready tools', icon: SprayCan, image: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0a1e7f?auto=format&fit=crop&w=900&q=85', text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
+  { slug: 'store-fumigants', name: 'Store fumigants', type: 'Post-harvest', icon: Warehouse, image: `${basePath}/categories/store-fumigants.svg`, text: 'Keep post-harvest grain safe and saleable while it waits for market.' },
+  { slug: 'vector-control', name: 'Vector control', type: 'Public health', icon: HeartPulse, image: `${basePath}/categories/vector-control.jpg`, text: 'Malaria control products supplied under the Roll Back Malaria programme across Nigeria.' },
+  { slug: 'spraying-equipment', name: 'Spraying equipment', type: 'Field-ready tools', icon: SprayCan, image: `${basePath}/categories/spraying-equipment.jpg`, text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
 ]
 
 export const offices = [

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react'
-import { contact, logoUrl, navLinks, products } from '@/lib/site-data'
+import { contact, isoLogo, logoUrl, navLinks, products } from '@/lib/site-data'
 
 export function SiteFooter() {
   return (
@@ -14,7 +14,13 @@ export function SiteFooter() {
               <img src={logoUrl} alt="Harvestfield Industries Limited" className="h-11 w-auto object-contain" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-white/60 sm:mt-6 sm:leading-7">Agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria, since 2000.</p>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-full sm:mt-6 border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-hf-lime"><ShieldCheck size={14} /> NAFDAC certified products only</p>
+            <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-hf-lime"><ShieldCheck size={14} /> NAFDAC certified products only</p>
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-1 pl-1 pr-4 text-xs font-bold text-hf-lime">
+                <span className="flex h-7 items-center rounded-full bg-white px-2"><img src={isoLogo} alt="" className="h-5 w-auto" /></span>
+                ISO certified
+              </p>
+            </div>
           </div>
           <nav aria-label="Company">
             <p className="eyebrow text-hf-lime">Company</p>
@@ -34,7 +40,15 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-3 text-sm sm:mt-5 sm:space-y-4">
               <li><a href={contact.phoneHref} className="group flex items-center gap-3 text-white/80 hover:text-white"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-hf-lime/60"><Phone size={14} /></span>{contact.phone}</a></li>
               <li><a href={`mailto:${contact.email}`} className="group flex items-center gap-3 text-white/80 hover:text-white"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-hf-lime/60"><Mail size={14} /></span>{contact.email}</a></li>
-              <li><Link href="/offices" className="group flex items-center gap-3 text-white/80 hover:text-white"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-hf-lime/60"><MapPin size={14} /></span>26 offices in 6 zones</Link></li>
+              <li>
+                <a href={contact.mapHref} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-3 text-white/80 hover:text-white">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-hf-lime/60"><MapPin size={14} /></span>
+                  <address className="not-italic leading-6">
+                    <span className="block text-[11px] font-bold uppercase tracking-[0.14em] text-hf-lime">Head office, Lagos</span>
+                    {contact.address.map((line) => <span key={line} className="block">{line}</span>)}
+                  </address>
+                </a>
+              </li>
             </ul>
             <Link href="/contact" className="hf-btn hf-btn-lime mt-6 px-6 py-3.5 text-sm sm:mt-7">Start a conversation <ArrowUpRight size={15} /></Link>
           </div>
