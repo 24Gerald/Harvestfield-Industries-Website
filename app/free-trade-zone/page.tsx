@@ -70,7 +70,7 @@ export default function FreeTradeZonePage() {
               <article key={title} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group rounded-3xl border border-white/80 bg-gradient-to-b from-white/95 to-white/55 p-5 shadow-[inset_0_1px_0_#fff] sm:p-7" style={stagger(index, 80)}>
                 <div className="flex items-center justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-hf-forest to-hf-leaf text-hf-lime shadow-[inset_0_1px_0_rgba(255,255,255,.2)] transition-transform duration-500 group-hover:-rotate-6 sm:h-12 sm:w-12"><Icon size={20} /></span>
-                  <span className="font-serif text-2xl italic text-hf-gold/70 sm:text-3xl">0{index + 1}</span>
+                  <span className="font-serif text-2xl text-hf-gold/70 sm:text-3xl">0{index + 1}</span>
                 </div>
                 <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em] sm:mt-7 sm:text-xl">{title}</h3>
                 <p className="mt-1.5 text-[1rem] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{text}</p>

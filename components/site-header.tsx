@@ -174,7 +174,7 @@ export function SiteHeader() {
                         <Link
                           href={link.href}
                           aria-current={active ? 'page' : undefined}
-                          className={cn('relative block whitespace-nowrap py-2.5 text-[13px] font-semibold transition-colors duration-300 xl:text-[15px]', isProducts ? 'pl-2.5 xl:pl-4' : 'px-2.5 xl:px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
+                          className={cn('relative block whitespace-nowrap py-2.5 text-[12.5px] font-semibold transition-colors duration-300 lg:text-[13px] xl:text-[15px]', isProducts ? 'pl-2 lg:pl-2.5 xl:pl-4' : 'px-2 lg:px-2.5 xl:px-4', active ? 'text-hf-forest' : 'text-hf-leaf/75 hover:text-hf-forest')}
                         >
                           {link.label}
                           {active && <span className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-hf-gold" />}
@@ -186,7 +186,7 @@ export function SiteHeader() {
                             aria-expanded={productsOpen}
                             aria-controls="products-menu"
                             onClick={() => (productsOpen ? setProductsOpen(false) : openProducts())}
-                            className="flex h-9 items-center pl-0.5 pr-2.5 text-hf-leaf/70 transition-colors hover:text-hf-forest xl:pl-1 xl:pr-3.5"
+                            className="flex h-9 items-center pl-0.5 pr-2 text-hf-leaf/70 transition-colors hover:text-hf-forest lg:pr-2.5 xl:pl-1 xl:pr-3.5"
                           >
                             <ChevronDown size={15} className={cn('transition-transform duration-300', productsOpen && 'rotate-180')} />
                           </button>
@@ -198,7 +198,7 @@ export function SiteHeader() {
               </nav>
 
               <div className="flex items-center gap-2">
-                <Link href="/contact" className="hf-btn hf-btn-gold hidden px-4 py-2.5 text-[13px] desk:inline-flex xl:px-6 xl:py-3 xl:text-[14px]">
+                <Link href="/contact" className="hf-btn hf-btn-gold hidden px-3.5 py-2.5 text-[12.5px] desk:inline-flex lg:px-4 lg:text-[13px] xl:px-6 xl:py-3 xl:text-[14px]">
                   Get in touch <ArrowUpRight size={15} />
                 </Link>
                 <button

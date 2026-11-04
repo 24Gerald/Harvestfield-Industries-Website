@@ -86,7 +86,7 @@ export default function AboutPage() {
             {milestones.map((milestone, index) => (
               <li key={milestone.title} className="hf-reveal group relative pb-7 pl-10 last:pb-0 sm:pb-12 sm:pl-14" style={stagger(index, 90)}>
                 <span className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-hf-cream ring-1 ring-hf-gold/40"><span className="h-2.5 w-2.5 rounded-full bg-hf-gold transition-transform duration-300 group-hover:scale-150" /></span>
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-hf-gold">{milestone.marker}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-hf-gold">{milestone.marker}</p>
                 <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] sm:mt-3 sm:text-2xl">{milestone.title}</h3>
                 <p className="mt-2 max-w-xl text-[1rem] leading-6 text-hf-sage sm:mt-3 sm:text-base sm:leading-7">{milestone.text}</p>
               </li>

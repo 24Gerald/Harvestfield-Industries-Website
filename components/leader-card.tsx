@@ -5,7 +5,7 @@ import { ArrowUpRight, X } from 'lucide-react'
 import { type Leader, leaderPhoto } from '@/lib/leadership'
 import { cn } from '@/lib/utils'
 
-const roleClass = 'text-[10px] font-extrabold uppercase tracking-[0.14em] text-hf-moss sm:text-[11px]'
+const roleClass = 'text-[10px] font-bold uppercase tracking-[0.14em] text-hf-moss sm:text-[11px]'
 
 /** A short card (photo, role, name, one-line intro); "Read more" opens the full profile in a dialog. */
 export function LeaderCard({ leader, className, style }: { leader: Leader; className?: string; style?: CSSProperties }) {
@@ -33,7 +33,7 @@ export function LeaderCard({ leader, className, style }: { leader: Leader; class
       style={style}
     >
       <button type="button" onClick={open} aria-label={`Read ${leader.name}’s profile`} className="relative aspect-square overflow-hidden rounded-[22px] bg-hf-forest max-sm:aspect-[4/5] max-sm:w-[5.5rem] max-sm:shrink-0 max-sm:rounded-2xl">
-        <img src={photo} alt={leader.name} loading="lazy" className="h-full w-full object-cover object-[center_25%] transition duration-700 group-hover:scale-105" />
+        <img src={photo} alt={leader.name} loading="lazy" className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
       </button>
       <div className="flex flex-1 flex-col px-3 pb-3 pt-5 max-sm:min-w-0 max-sm:p-0 max-sm:pr-1">
         <p className={roleClass}>{leader.role}</p>
@@ -54,7 +54,7 @@ export function LeaderCard({ leader, className, style }: { leader: Leader; class
         {/* Portrait sits at the top of a full-height brand column; only the text column scrolls */}
         <div className="flex max-h-[inherit]">
           <div className="hidden w-64 shrink-0 bg-gradient-to-b from-hf-forest to-hf-night p-5 sm:block">
-            <img src={photo} alt="" className="aspect-[4/5] w-full rounded-2xl object-cover object-[center_25%] shadow-[0_20px_40px_-20px_rgba(0,0,0,.6)] ring-1 ring-white/15" />
+            <img src={photo} alt="" className="aspect-[4/5] w-full rounded-2xl object-cover object-top shadow-[0_20px_40px_-20px_rgba(0,0,0,.6)] ring-1 ring-white/15" />
           </div>
           <div className="relative min-w-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-8 sm:px-10 sm:pb-10">
             <div className="sticky top-0 z-10 -mx-5 flex justify-end bg-gradient-to-b from-hf-cream via-hf-cream/95 to-hf-cream/0 px-3 pb-3 pt-3 sm:-mx-10 sm:px-5 sm:pt-5">
@@ -63,7 +63,7 @@ export function LeaderCard({ leader, className, style }: { leader: Leader; class
               </button>
             </div>
             <div className="flex items-center gap-4 sm:block">
-              <img src={photo} alt="" className="h-16 w-16 shrink-0 rounded-2xl object-cover object-[center_25%] sm:hidden" />
+              <img src={photo} alt="" className="h-16 w-16 shrink-0 rounded-2xl object-cover object-top sm:hidden" />
               <div>
                 <p className={roleClass}>{leader.role}</p>
                 <h3 id={nameId} className="mt-1.5 text-2xl font-semibold leading-tight tracking-[-0.03em] sm:mt-3 sm:text-4xl">{leader.name}</h3>

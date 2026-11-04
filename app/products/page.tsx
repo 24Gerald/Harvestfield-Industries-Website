@@ -113,7 +113,7 @@ export default function ProductsPage() {
             ['03', 'Collect near you', 'Pick up from one of 33 offices and warehouses across Nigeria.'],
           ].map(([step, title, text], index) => (
             <div key={step} className="hf-reveal border-t border-hf-line pt-4 max-sm:flex max-sm:gap-4 sm:pt-6" style={stagger(index, 100)}>
-              <span className="font-serif text-4xl italic leading-none text-hf-gold sm:text-5xl">{step}</span>
+              <span className="font-serif text-4xl leading-none text-hf-gold sm:text-5xl">{step}</span>
               <div>
                 <h3 className="text-lg font-semibold tracking-[-0.02em] sm:mt-4 sm:text-xl">{title}</h3>
                 <p className="mt-1 text-[1rem] leading-6 text-hf-sage sm:mt-2 sm:text-base sm:leading-7">{text}</p>

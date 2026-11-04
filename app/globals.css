@@ -174,9 +174,11 @@
   --breakpoint-desk: 60rem;
 }
 
+/* Montserrat everywhere (headings, body, nav, buttons, labels). The fallbacks are only used if it fails to load. */
 @theme inline {
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument), Georgia, 'Times New Roman', serif;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* The accent words in headings used to be a serif; they are Montserrat too now, set apart by colour and weight */
+  --font-serif: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 @layer base {
@@ -191,6 +193,8 @@
     font-family: var(--font-sans);
   }
   [id] { scroll-margin-top: 7rem; }
+  /* Only upright weights are loaded, so accent words stay upright rather than using a faked italic */
+  .font-serif { font-style: normal; }
   ::selection { background: #d7e36b; color: #173c2b; }
   :focus-visible { outline: 2px solid #d39522; outline-offset: 3px; }
 }
@@ -200,7 +204,7 @@
   .eyebrow {
     color: #839b2f;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
   }

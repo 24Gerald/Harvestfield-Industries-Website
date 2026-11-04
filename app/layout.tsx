@@ -1,14 +1,16 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Instrument_Serif, Manrope } from 'next/font/google'
+// Montserrat, self-hosted: bundled from the @fontsource package, so pages make no request to Google for fonts
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/500.css'
+import '@fontsource/montserrat/600.css'
+import '@fontsource/montserrat/700.css'
 import { MotionProvider } from '@/components/motion-provider'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { basePath } from '@/lib/site-data'
 import './globals.css'
 
-const sans = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
-const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-instrument', display: 'swap' })
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="antialiased">
         <SiteHeader />
         <main id="main" className="min-h-screen overflow-x-clip">{children}</main>

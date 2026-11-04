@@ -48,7 +48,7 @@ export default function PartnersPage() {
         <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-5">
           {distributionPartners.map((name, index) => (
             <div key={name} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-gradient-to-br from-white to-hf-sand/60 p-4 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.45)] sm:p-6 lg:aspect-[5/4] max-sm:aspect-auto max-sm:min-h-[7.375rem] max-sm:last:col-span-2" style={stagger(index, 80)}>
-              <span aria-hidden className="pointer-events-none absolute -right-3 -top-10 font-serif text-[6.875rem] italic leading-none sm:text-[150px] text-hf-forest/[0.05] transition-transform duration-700 group-hover:-translate-x-2 group-hover:scale-110">{name[0]}</span>
+              <span aria-hidden className="pointer-events-none absolute -right-3 -top-10 font-serif text-[6.875rem] leading-none sm:text-[150px] text-hf-forest/[0.05] transition-transform duration-700 group-hover:-translate-x-2 group-hover:scale-110">{name[0]}</span>
               <BadgeCheck size={20} className="relative text-hf-moss transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" />
               <div className="relative">
                 <p className="text-2xl font-bold tracking-[-0.04em] sm:text-3xl">{name}</p>
