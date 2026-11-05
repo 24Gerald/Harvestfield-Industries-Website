@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { ArrowUpRight, ChevronDown, Mail, Phone } from 'lucide-react'
+import { HeroBackdrop } from '@/components/hero-backdrop'
 import { contact, heroImage, logoUrl, navLinks, products } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
 
@@ -250,7 +251,7 @@ export function SiteHeader() {
                 })}
               </ul>
               <Link href="/products#aflasafe" onClick={() => setProductsOpen(false)} className="group relative isolate flex min-h-[240px] flex-col justify-end overflow-hidden rounded-[22px] bg-hf-forest p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.15)]">
-                <img src={heroImage} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_30%] opacity-60 transition-transform duration-700 group-hover:scale-105" />
+                <HeroBackdrop active={productsOpen} image={heroImage} layerClassName="-z-10" className="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-60 transition-transform duration-700 group-hover:scale-105" />
                 <span aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-hf-deep via-hf-deep/75 to-hf-deep/10" />
                 <span className="eyebrow text-hf-lime">Featured</span>
                 <strong className="mt-3 block text-2xl font-semibold tracking-[-0.03em]">Aflasafe biocontrol</strong>

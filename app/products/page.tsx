@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight, MapPin, ShieldCheck, Handshake } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
+import { HeroBackdrop } from '@/components/hero-backdrop'
 import { PageHero } from '@/components/page-hero'
 import { ProductExplorer } from '@/components/product-explorer'
 import { SafeImg } from '@/components/safe-img'
@@ -94,8 +95,9 @@ export default function ProductsPage() {
               <Link href="/contact?topic=products&item=Aflasafe" className="hf-btn hf-btn-lime mb-2 px-6 py-4 text-sm">Enquire about Aflasafe <ArrowUpRight size={16} /></Link>
             </div>
           </div>
-          <div className="relative min-h-[12.5rem] sm:min-h-[320px] lg:min-h-full">
-            <img src={heroImage} alt="Healthy crops in a Nigerian field" className="absolute inset-0 h-full w-full object-cover object-[15%_70%]" />
+          {/* The media fades into the panel (top edge on phones, left edge beside the text), so there is no hard seam */}
+          <div className="relative min-h-[12.5rem] [mask-image:linear-gradient(to_bottom,transparent,#000_35%)] sm:min-h-[320px] lg:min-h-full lg:[mask-image:linear-gradient(to_right,transparent,#000_30%)]">
+            <HeroBackdrop lazy image={heroImage} alt="Aerial view of a green crop field" className="absolute inset-0 h-full w-full object-cover object-center" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/30 to-transparent max-lg:bg-gradient-to-t" />
             <div className="hf-glass hf-float absolute bottom-4 right-4 max-w-[240px] rounded-2xl p-4 text-hf-forest sm:bottom-6 sm:right-6 sm:p-5">
               <p className="eyebrow">Crops protected</p>

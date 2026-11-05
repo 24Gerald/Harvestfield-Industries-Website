@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react'
-import { contact, isoLogo, logoUrl, navLinks, products } from '@/lib/site-data'
+import { basePath, contact, isoLogo, logoUrl, navLinks, products } from '@/lib/site-data'
 
 export function SiteFooter() {
   return (
@@ -54,7 +54,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p aria-hidden className="pointer-events-none mt-10 select-none sm:mt-16 bg-gradient-to-b from-white/[0.13] to-white/0 bg-clip-text text-center text-[17vw] font-bold leading-[0.8] tracking-[-0.07em] text-transparent lg:text-[200px]">Harvestfield</p>
+        {/* "HarvestField" lettered like the logo (flourished script H, heavy serif), as a faint watermark */}
+        <img src={`${basePath}/harvestfield-wordmark.svg`} alt="" aria-hidden width={650} height={247} className="pointer-events-none mx-auto mt-8 block h-auto w-full max-w-[860px] select-none sm:mt-12" />
 
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 py-5 text-xs sm:gap-4 sm:py-7 text-white/50 sm:flex-row sm:items-center">
           <p>© 2026 Harvestfield Industries Limited. Growing a better tomorrow.</p>
