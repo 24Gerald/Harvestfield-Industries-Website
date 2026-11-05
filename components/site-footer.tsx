@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div className="grid gap-12 max-sm:grid-cols-2 max-sm:gap-x-6 max-sm:gap-y-8 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div className="max-sm:col-span-2">
             <Link href="/" aria-label="Harvestfield Industries Limited home" className="inline-block rounded-2xl bg-white px-3 py-2 shadow-[inset_0_-2px_0_rgba(23,60,43,.08)] transition-transform duration-300 hover:-translate-y-0.5">
-              <img src={logoUrl} alt="Harvestfield Industries Limited" className="h-11 w-auto object-contain" />
+              <img src={logoUrl} alt="Harvestfield Industries Limited" className="h-16 w-auto object-contain sm:h-20" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-white/60 sm:mt-6 sm:leading-7">Agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria, since 2000.</p>
             <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6">
@@ -54,8 +54,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* "HarvestField" lettered like the logo (flourished script H, heavy serif), as a faint watermark */}
-        <img src={`${basePath}/harvestfield-wordmark.svg`} alt="" aria-hidden width={650} height={247} className="pointer-events-none mx-auto mt-8 block h-auto w-full max-w-[860px] select-none sm:mt-12" />
+        <img src={`${basePath}/harvestfield-wordmark.png`} alt="" aria-hidden width={1024} height={404} className="pointer-events-none mx-auto mt-8 block h-auto w-full max-w-[860px] select-none sm:mt-12" />
 
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 py-5 text-xs sm:gap-4 sm:py-7 text-white/50 sm:flex-row sm:items-center">
           <p>© 2026 Harvestfield Industries Limited. Growing a better tomorrow.</p>

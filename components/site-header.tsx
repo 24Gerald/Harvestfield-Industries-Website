@@ -132,7 +132,7 @@ export function SiteHeader() {
               <div className="relative mx-auto flex max-w-[1320px] items-center justify-between gap-4 px-5 py-2 text-[12px] lg:px-10">
                 <Link href="/free-trade-zone" className="group flex min-w-0 items-center gap-2.5 font-semibold hover:text-white">
                   <span className="hf-ping h-2 w-2 shrink-0 rounded-full bg-hf-lime text-hf-lime" />
-                  <span className="truncate"><span className="hidden sm:inline">NEPZA licence granted: </span>the Harvestfield Free Trade Zone is open for business</span>
+                  <span className="truncate">The Harvestfield Free Trade Zone is open for business</span>
                   <ArrowUpRight size={13} className="shrink-0 text-hf-lime transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
                 <div className="hidden shrink-0 items-center gap-6 md:flex">
@@ -148,7 +148,7 @@ export function SiteHeader() {
           <div className="relative mx-auto max-w-[1320px]">
             <div className={cn('hf-glass relative flex items-center justify-between gap-3 rounded-2xl pl-4 pr-2 transition-[padding] duration-500 sm:pl-5 lg:rounded-full lg:pl-6', scrolled ? 'py-1.5' : 'py-2 sm:py-2.5')}>
               <Link href="/" aria-label="Harvestfield Industries Limited home" className="shrink-0 transition-transform duration-300 hover:scale-[1.03]">
-                <img src={logoUrl} alt="Harvestfield Industries Limited" className={cn('w-auto object-contain transition-[height] duration-500', scrolled ? 'h-9 sm:h-10' : 'h-10 sm:h-12 desk:h-10 xl:h-12')} />
+                <img src={logoUrl} alt="Harvestfield Industries Limited" className={cn('w-auto object-contain transition-[height] duration-500', scrolled ? 'h-12 sm:h-14' : 'h-14 sm:h-16 desk:h-14 xl:h-16')} />
               </Link>
 
               <nav aria-label="Main" className="hidden desk:block">

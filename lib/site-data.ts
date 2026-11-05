@@ -42,7 +42,7 @@ export const heroVideo: { desktop: string; mobile: string; poster: string; poste
   posterMobile: `${basePath}/video/hero-poster-mobile.jpg`,
 }
 
-export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-c5Ajz8p42rFP91uzjSPB9om8JLTye3.png'
+export const logoUrl = `${basePath}/logo.png`
 
 export const contact = {
   phone: '0807 356 9437',
@@ -89,7 +89,7 @@ export const offices = [
 ]
 
 export const ftzBenefits: { title: string; short: string; text: string; icon: LucideIcon }[] = [
-  { title: 'Zero import and export duties', short: 'Every good moving in and out of the zone is duty-exempt.', text: 'All goods moving in and out of the zone are fully duty-exempt under the NEPZA framework.', icon: BadgePercent },
+  { title: 'Zero import and export duties', short: 'Every good moving in and out of the zone is duty-exempt.', text: 'All goods moving in and out of the zone are fully duty-exempt.', icon: BadgePercent },
   { title: 'Tax holidays and incentives', short: 'Start free of corporate income tax for an initial period.', text: 'Operate free from corporate income tax for an initial period, with additional incentives under Nigeria’s free zone regulations.', icon: Landmark },
   { title: 'No foreign exchange restrictions', short: 'Repatriate capital and profits freely.', text: 'Free repatriation of capital and profits. No bureaucratic barriers to moving money in or out.', icon: Banknote },
   { title: 'Built-in market access', short: 'Anchor production creates demand from day one.', text: 'Harvestfield Healthcare FZE’s anchor production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.', icon: Boxes },
@@ -109,16 +109,9 @@ export const ftzAudiences: { title: string; icon: LucideIcon }[] = [
   { title: 'Healthcare MSMEs', icon: FlaskConical },
 ]
 
-export const nepzaQuote = {
-  text: 'Harvestfield FTZ is strategic and focused on addressing key deficits in the health sector. This opens up a new opportunity for the country to become an exporter of health products.',
-  author: 'Dr. Olufemi Ogunyemi',
-  role: 'MD/CEO, NEPZA',
-}
-
 export const distributionPartners = ['BAYER', 'BASF', 'Dow', 'East-West Seeds', 'IITA']
 
 export const strategicPartners: { name: string; role: string; text: string; icon: LucideIcon }[] = [
-  { name: 'NEPZA', role: 'Licensing authority', text: 'The Nigeria Export Processing Zones Authority granted the Declaration of Licence and Operation Licence for the Harvestfield FTZ in February 2026.', icon: Landmark },
   { name: 'Roll Back Malaria', role: 'National programme', text: 'We have distributed malaria vector control products across Nigeria as part of the national programme since we opened.', icon: HeartPulse },
   { name: 'Food Convergence Initiative', role: 'Founding member', text: 'Working with government and development partners on food safety and aflatoxin control.', icon: Building2 },
 ]
@@ -128,11 +121,11 @@ export const milestones = [
   { marker: 'Since day one', title: 'Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme.' },
   { marker: 'Licence', title: 'National Aflasafe licence', text: 'We hold the national licence for Aflasafe, the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.' },
   { marker: 'Founding member', title: 'Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.' },
-  { marker: 'Feb 2026', title: 'Harvestfield Free Trade Zone', text: 'NEPZA presents the Declaration of Licence and Operation Licence for our medical manufacturing zone in Ogun State.' },
+  { marker: 'Feb 2026', title: 'Harvestfield Free Trade Zone', text: 'Declaration of Licence and Operation Licence presented for our medical manufacturing zone in Ogun State.' },
 ]
 
 export const news = [
-  { tag: 'Free Trade Zone', date: 'February 2026', title: 'NEPZA licenses the Harvestfield Free Trade Zone', text: 'The Nigeria Export Processing Zones Authority formally presented Harvestfield Industries with both the Declaration of Licence and the Operation Licence for a Free Trade Zone focused on medical products in Ogun State, one of the few in Nigeria dedicated entirely to healthcare manufacturing.', href: '/free-trade-zone' },
+  { tag: 'Free Trade Zone', date: 'February 2026', title: 'Harvestfield Free Trade Zone licensed', text: 'Harvestfield Industries received both the Declaration of Licence and the Operation Licence for a Free Trade Zone focused on medical products in Ogun State, one of the few in Nigeria dedicated entirely to healthcare manufacturing.', href: '/free-trade-zone' },
   { tag: 'Food safety', date: 'National licence', title: 'Bringing Aflasafe to Nigerian farms', text: 'As national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.', href: '/products#aflasafe' },
   { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#vector-control' },
   { tag: 'Food safety', date: 'Founding member', title: 'A founding member of the Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.', href: '/about' },
