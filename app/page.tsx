@@ -10,8 +10,10 @@ export default function Page() {
   return (
     <div className="overflow-hidden bg-[#f5f5ed] text-[#173c2b]">
       <section id="top" className="relative flex min-h-[35rem] items-end overflow-hidden bg-[#28583a] px-5 pb-7 pt-32 sm:min-h-[760px] sm:pb-16 sm:pt-44 lg:min-h-[820px] lg:px-10 lg:pb-24">
-        <HeroBackdrop image={heroImage} alt="Farmer standing in a green crop field" className="absolute inset-0 h-full w-full object-cover object-center opacity-90" />
+        <HeroBackdrop image={heroImage} alt="Aerial view of farmworkers tending a green crop field" className="absolute inset-0 h-full w-full object-cover object-center opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#102f25]/90 via-[#173c2b]/45 to-transparent" />
+        {/* Below desktop the text runs the full width, over bright sky and leaves: an even wash keeps it readable */}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#102f25]/70 via-[#102f25]/45 to-[#102f25]/45 lg:hidden" />
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#102f25]/70 to-transparent" />
         <div className="relative mx-auto w-full max-w-[1320px]">
           <div className="max-w-[760px]">

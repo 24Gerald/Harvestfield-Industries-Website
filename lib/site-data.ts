@@ -24,8 +24,16 @@ export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 export const heroImage = `${basePath}/harvest-hero.png`
 export const isoLogo = `${basePath}/iso-logo.png`
 
-/** Looping background video for the page heroes (files in public/video). Null keeps the still hero image. */
-export const heroVideo: { desktop: string; mobile: string; poster: string; posterMobile: string } | null = null
+/**
+ * Looping background video for the page heroes (files in public/video): drone footage of a Harvestfield field.
+ * Desktop is 1920x1080, phones get a 540x960 portrait cut; the posters are each file's first frame. Null keeps the still hero image.
+ */
+export const heroVideo: { desktop: string; mobile: string; poster: string; posterMobile: string } | null = {
+  desktop: `${basePath}/video/hero-desktop.mp4`,
+  mobile: `${basePath}/video/hero-mobile.mp4`,
+  poster: `${basePath}/video/hero-poster.jpg`,
+  posterMobile: `${basePath}/video/hero-poster-mobile.jpg`,
+}
 
 export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-c5Ajz8p42rFP91uzjSPB9om8JLTye3.png'
 
