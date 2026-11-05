@@ -21,7 +21,14 @@ import {
 
 /** Prefix for files in /public. Set when building for GitHub Pages, which serves the site from a sub-path. */
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
-export const heroImage = `${basePath}/harvest-hero.png`
+/** Photos of Harvestfield fields supplied by the company (public/photos) */
+export const photos = {
+  fieldTeam: `${basePath}/photos/field-team.jpg`,
+  farmlandAerialRoad: `${basePath}/photos/farmland-aerial-road.jpg`,
+  farmlandAerial: `${basePath}/photos/farmland-aerial.jpg`,
+}
+/** Fallback still wherever there is no video or post cover */
+export const heroImage = photos.fieldTeam
 export const isoLogo = `${basePath}/iso-logo.png`
 
 /**

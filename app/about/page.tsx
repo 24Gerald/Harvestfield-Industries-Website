@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin, ShieldCheck, Sprout, Factory } from 'lucide-react
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { distributionPartners, heroImage, milestones } from '@/lib/site-data'
+import { distributionPartners, milestones, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <section className="mx-auto grid max-w-[1320px] items-center gap-12 px-5 py-14 sm:gap-14 sm:py-24 lg:grid-cols-2 lg:px-10 lg:py-32">
         <div className="hf-reveal relative" data-reveal="left">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] sm:aspect-[5/4] sm:rounded-[32px] shadow-[0_40px_80px_-40px_rgba(16,47,37,.6)] sm:aspect-[5/4] lg:aspect-[4/5]">
-            <img src={heroImage} alt="A Nigerian farmer in his crop field at golden hour" className="hf-hero-image h-full w-full object-cover object-[68%_50%]" />
+            <img src={photos.fieldTeam} alt="Harvestfield field team checking a green crop field" className="hf-hero-image h-full w-full object-cover object-[45%_50%]" />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-night/50 via-transparent to-white/10" />
           </div>
           <div className="hf-glass hf-float absolute -bottom-6 left-5 rounded-2xl px-5 py-3.5 sm:-left-6 sm:px-6 sm:py-5">

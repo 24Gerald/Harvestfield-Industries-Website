@@ -4,7 +4,7 @@ import { ArrowUpRight, Anchor, Phone, Route, ShieldCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, ftzAudiences, ftzBenefits, ftzStats, heroImage, nepzaQuote } from '@/lib/site-data'
+import { contact, ftzAudiences, ftzBenefits, ftzStats, nepzaQuote, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function FreeTradeZonePage() {
           </div>
         </div>
         <div className="hf-reveal relative overflow-hidden rounded-[28px] sm:rounded-[32px]" data-reveal="zoom">
-          <img src={heroImage} alt="Green farmland at golden hour" className="hf-hero-image aspect-[5/4] w-full object-cover object-[20%_40%]" />
+          <img src={photos.farmlandAerialRoad} alt="Aerial view of farmland beside a road" className="hf-hero-image aspect-[5/4] w-full object-cover object-center" />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-night/80 via-hf-night/10 to-transparent" />
           <div className="absolute inset-x-3 bottom-3 grid grid-cols-2 gap-2 sm:inset-x-5 sm:bottom-5 sm:gap-3">
             <div className="hf-glass-dark rounded-2xl p-3 text-white sm:p-4"><Route size={18} className="text-hf-lime" /><p className="mt-2 text-[13px] font-bold leading-5 sm:mt-3 sm:text-sm">Lagos-Ibadan corridor</p><p className="mt-1 text-xs text-white/60">Road, port and customs connectivity built in</p></div>
