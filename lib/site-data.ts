@@ -24,6 +24,9 @@ export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 export const heroImage = `${basePath}/harvest-hero.png`
 export const isoLogo = `${basePath}/iso-logo.png`
 
+/** Looping background video for the page heroes (files in public/video). Null keeps the still hero image. */
+export const heroVideo: { desktop: string; mobile: string; poster: string; posterMobile: string } | null = null
+
 export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-c5Ajz8p42rFP91uzjSPB9om8JLTye3.png'
 
 export const contact = {
