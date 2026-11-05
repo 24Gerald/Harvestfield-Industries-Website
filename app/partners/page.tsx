@@ -9,7 +9,7 @@ import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Partners',
-  description: 'Harvestfield is the authorized Nigerian distributor for BAYER, BASF, Dow, East-West Seeds and IITA, and works with NEPZA and national programmes.',
+  description: 'Harvestfield is the authorized Nigerian distributor for BAYER, BASF, Dow, East-West Seeds and IITA, and works with national programmes.',
 }
 
 const reasons = [
@@ -36,7 +36,7 @@ export default function PartnersPage() {
           <div className="hf-marquee-track">
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center gap-12 pr-12 sm:gap-20 sm:pr-20">
-                {[...distributionPartners, 'NEPZA', ...distributionPartners, 'NEPZA'].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
+                {[...distributionPartners, ...distributionPartners].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
               </div>
             ))}
           </div>

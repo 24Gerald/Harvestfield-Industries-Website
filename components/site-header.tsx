@@ -132,7 +132,7 @@ export function SiteHeader() {
               <div className="relative mx-auto flex max-w-[1320px] items-center justify-between gap-4 px-5 py-2 text-[12px] lg:px-10">
                 <Link href="/free-trade-zone" className="group flex min-w-0 items-center gap-2.5 font-semibold hover:text-white">
                   <span className="hf-ping h-2 w-2 shrink-0 rounded-full bg-hf-lime text-hf-lime" />
-                  <span className="truncate"><span className="hidden sm:inline">NEPZA licence granted: </span>the Harvestfield Free Trade Zone is open for business</span>
+                  <span className="truncate"><span className="hidden sm:inline">Free Trade Zone open: </span>the Harvestfield Free Trade Zone is ready for business</span>
                   <ArrowUpRight size={13} className="shrink-0 text-hf-lime transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </Link>
                 <div className="hidden shrink-0 items-center gap-6 md:flex">

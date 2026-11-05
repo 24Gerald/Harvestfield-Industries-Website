@@ -4,12 +4,12 @@ import { ArrowUpRight, Anchor, Phone, Route, ShieldCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, ftzAudiences, ftzBenefits, ftzStats, nepzaQuote, photos } from '@/lib/site-data'
+import { contact, ftzAudiences, ftzBenefits, ftzStats, ftzQuote, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Free Trade Zone',
-  description: 'The Harvestfield Free Trade Zone in Ogun State: Nigeria’s newest NEPZA-licensed medical manufacturing zone, open for business.',
+  description: 'The Harvestfield Free Trade Zone in Ogun State: a new medical manufacturing zone, open for business.'
 }
 
 export default function FreeTradeZonePage() {
@@ -18,13 +18,13 @@ export default function FreeTradeZonePage() {
       <PageHero
         crumb="Free Trade Zone"
         eyebrow="Harvestfield FTZ · Ogun State"
-        title={<>Nigeria&apos;s newest NEPZA-licensed <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">medical manufacturing zone.</em></>}
+        title={<>Nigeria&apos;s newest <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">medical manufacturing zone.</em></>}
         description="One of the few free zones in Nigeria dedicated entirely to healthcare manufacturing. And it is open for business."
         focus="85% 20%"
         aside={
           <div className="hf-glass-dark rounded-3xl p-5 sm:p-6">
             <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-hf-lime"><span className="hf-ping h-2 w-2 rounded-full bg-hf-lime text-hf-lime" /> Licensed · February 2026</div>
-            <p className="mt-3 text-[1rem] leading-6 text-white/75 sm:mt-4 sm:text-base sm:leading-7">NEPZA Declaration of Licence and Operation Licence, presented to Harvestfield Industries.</p>
+            <p className="mt-3 text-[1rem] leading-6 text-white/75 sm:mt-4 sm:text-base sm:leading-7">Declaration of Licence and Operation Licence, presented to Harvestfield Industries.</p>
             <div className="mt-4 flex items-center gap-3 border-t border-white/10 pt-4 text-sm text-white/60 sm:mt-5 sm:pt-5"><ShieldCheck size={16} className="text-hf-lime" /> Nigeria Export Processing Zones Authority</div>
           </div>
         }
@@ -57,7 +57,7 @@ export default function FreeTradeZonePage() {
           <p className="relative mt-3 text-[1rem] leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7">The anchor operation of the Harvestfield Free Trade Zone. Its production creates immediate demand for packaging, logistics, raw materials and ancillary services within the zone.</p>
           <div className="relative mt-6 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4">
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Ogun State</strong><span className="mt-1 block text-xs text-white/60">On the Lagos-Ibadan corridor</span></div>
-            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Feb 2026</strong><span className="mt-1 block text-xs text-white/60">NEPZA licences granted</span></div>
+            <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Feb 2026</strong><span className="mt-1 block text-xs text-white/60">Operating licences granted</span></div>
           </div>
         </div>
       </section>
@@ -106,10 +106,10 @@ export default function FreeTradeZonePage() {
         <div aria-hidden className="hf-aurora" />
         <figure className="hf-reveal relative mx-auto max-w-4xl text-center">
           <span aria-hidden className="block font-serif text-[5.625rem] leading-[0.5] text-hf-lime/40 sm:text-[120px]">&ldquo;</span>
-          <blockquote className="mt-4 font-serif text-[1.4375rem] leading-[1.3] tracking-[-0.01em] sm:mt-6 sm:text-5xl sm:leading-[1.25]">{nepzaQuote.text}</blockquote>
+          <blockquote className="mt-4 font-serif text-[1.4375rem] leading-[1.3] tracking-[-0.01em] sm:mt-6 sm:text-5xl sm:leading-[1.25]">{ftzQuote.text}</blockquote>
           <figcaption className="mt-6 text-sm sm:mt-10">
-            <strong className="block text-hf-lime">{nepzaQuote.author}</strong>
-            <span className="text-white/60">{nepzaQuote.role}</span>
+            <strong className="block text-hf-lime">{ftzQuote.author}</strong>
+            <span className="text-white/60">{ftzQuote.role}</span>
           </figcaption>
         </figure>
       </section>
