@@ -162,7 +162,7 @@
   --color-hf-leaf: #28583a;
   --color-hf-moss: #839b2f;
   --color-hf-lime: #d7e36b;
-  --color-hf-gold: #d39522;
+  --color-hf-gold: #FF7A10;
   --color-hf-cream: #f5f5ed;
   --color-hf-sand: #e8eadb;
   --color-hf-mist: #f7faf7;
@@ -297,8 +297,8 @@
   .hf-btn:hover::after { left: 130%; }
   .hf-btn svg { transition: transform .35s cubic-bezier(.22,1,.36,1); }
   .hf-btn:hover svg { transform: translate(2px, -2px); }
-  .hf-btn-gold { color: #fff; background: linear-gradient(135deg, #e6b04a, #d39522 48%, #b97b14); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 12px 28px -12px rgba(211,149,34,.9); }
-  .hf-btn-gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 18px 36px -12px rgba(211,149,34,.95); }
+.hf-btn-gold { color: #fff; background: #FF7A10; box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 12px 28px -12px rgba(255,122,16,.9); }
+ .hf-btn-gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 18px 36px -12px rgba(255,122,16,.95); }
   .hf-btn-lime { color: #173c2b; background: linear-gradient(135deg, #e4ee8a, #d7e36b 50%, #c3d250); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 12px 30px -12px rgba(215,227,107,.75); }
   .hf-btn-forest { color: #fff; background: linear-gradient(135deg, #24603f, #173c2b 55%, #102f25); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 12px 28px -14px rgba(16,47,37,.9); }
   .hf-btn-glass { color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.28); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
