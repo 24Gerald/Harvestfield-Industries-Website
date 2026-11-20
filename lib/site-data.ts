@@ -117,20 +117,14 @@ export const ftzQuote = {
   role: 'Managing Director, public-sector partner',
 }
 
-export type Partner = {
-  name: string
-  role: string
-  text: string
-  /** Logo in /public/partners; until it is set, the card shows the name */
-  logo?: string
-}
+export type Partner = { name: string; role: string }
 
 export const distributionPartners: Partner[] = [
-  { name: 'BASF', role: 'Authorized distributor', text: 'Crop protection products from one of the world’s leading chemical companies.' },
-  { name: 'Corteva Agriscience', role: 'Authorized distributor', text: 'Crop protection and seed technology from a global agriculture company.' },
-  { name: 'Lion Seeds', role: 'Authorized distributor', text: 'Quality seed for Nigerian farmers.' },
-  { name: 'IITA', role: 'Partner', text: 'The International Institute of Tropical Agriculture, developer of the Aflasafe biocontrol product.' },
-  { name: 'Sumitomo', role: 'Authorized partner · Public health / LSM', text: 'Public health and larval source management (LSM) products for malaria vector control.' },
+  { name: 'BASF', role: 'Authorized distributor' },
+  { name: 'Corteva Agriscience', role: 'Authorized distributor' },
+  { name: 'Lion Seeds', role: 'Authorized distributor' },
+  { name: 'IITA', role: 'Authorized distributor' },
+  { name: 'Sumitomo', role: 'Public health / LSM partner' },
 ]
 
 export const partnerNames = distributionPartners.map((partner) => partner.name)
