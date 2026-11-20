@@ -1,12 +1,12 @@
 import { BedDouble, Bug, Droplet, Droplets, HeartPulse, Leaf, type LucideIcon, ShieldCheck, SprayCan, Sprout, Warehouse, Wheat } from 'lucide-react'
-import { basePath } from '@/lib/site-data'
+import { basePath, healthcareUrl } from '@/lib/site-data'
 
 /** The four product divisions. Slugs are the anchors used across the site (/products#agro-inputs). */
-export type CatalogueDivision = { slug: string; name: string; text: string }
+export type CatalogueDivision = { slug: string; name: string; text: string; link?: { href: string; label: string } }
 
 export const catalogueDivisions: CatalogueDivision[] = [
   { slug: 'agro-inputs', name: 'Agro inputs', text: 'Pesticides, fertilisers, seeds and biological control for every stage of the season.' },
-  { slug: 'public-health', name: 'Public health', text: 'Vector control for malaria prevention: mosquito nets, larvicides and larval source management (LSM) products.' },
+  { slug: 'public-health', name: 'Public health', text: 'Vector control for malaria prevention: mosquito nets, larvicides and larval source management (LSM) products.', link: { href: healthcareUrl, label: 'Visit Harvestfield Healthcare FZE' } },
   { slug: 'spraying-equipment', name: 'Spraying equipment', text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
   { slug: 'post-harvest', name: 'Post-harvest', text: 'Store fumigants that keep harvested grain safe and saleable while it waits for market.' },
 ]
@@ -115,6 +115,7 @@ export const catalogue: CatalogueItem[] = [
   // Sprayers
   { slug: 'reliable-sprayer', name: 'Reliable Sprayer', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
   { slug: 'kingpower', name: 'Kingpower', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
+  { slug: 'mistari', name: 'Mistari', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
   { slug: 'cp15', name: 'CP15', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },
   { slug: 'cp3', name: 'CP3', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },
   { slug: 'cp-standard', name: 'CP Standard', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },

@@ -77,6 +77,11 @@ export function ProductExplorer() {
         <div className="rounded-3xl bg-hf-forest px-5 py-4 text-white sm:px-7 sm:py-5">
           <h2 id={`${d.slug}-title`} className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{d.name}</h2>
           <p className="mt-1 text-[13px] leading-5 text-white/65 sm:text-sm">{d.text}</p>
+          {d.link && (
+            <a href={d.link.href} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-hf-lime underline decoration-hf-lime/40 decoration-2 underline-offset-4 transition-colors hover:decoration-hf-lime sm:text-sm">
+              {d.link.label} <ArrowUpRight size={14} />
+            </a>
+          )}
         </div>
       <div className="grid lg:grid-cols-4 lg:gap-x-5 xl:grid-cols-5">
       {d.groups.map(({ slug, name, family, text, icon: Icon, items, emptyNote }) => (

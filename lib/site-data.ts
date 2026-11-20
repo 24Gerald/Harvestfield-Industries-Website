@@ -62,6 +62,9 @@ export const contact = {
   mapHref: 'https://www.google.com/maps/search/?api=1&query=1+Isheri+Road+Olowora+Junction+Omole+Phase+II+Ikeja+Lagos',
 }
 
+/** Sister company's website (anchor operation of the Harvestfield Free Trade Zone) */
+export const healthcareUrl = 'https://www.harvestfieldhealthcare.com'
+
 export const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/leadership', label: 'Leadership' },
@@ -87,9 +90,9 @@ export const offices = [
   { region: 'North West', cities: ['Kano', 'Kaduna', 'Zuru (Kebbi)', 'Sokoto'] },
   { region: 'North East', cities: ['Bauchi', 'Mubi', 'Gombe', 'Yola', 'Jalingo'] },
   { region: 'North Central', cities: ['Abuja', 'Ilorin', 'Makurdi', 'Lafia', 'Minna', 'Kontagora', 'Anyigba'] },
-  { region: 'South West', cities: ['Lagos', 'Ibadan', 'Ile-Ife', 'Ogun State'] },
+  { region: 'South West', cities: ['Lagos', 'Ibadan', 'Ile-Ife', 'Ogun State', 'Akure (Ekiti)'] },
   { region: 'South East', cities: ['Onitsha', 'Abakaliki', 'Aba'] },
-  { region: 'South South', cities: ['Ikom'] },
+  { region: 'South South', cities: ['Ikom (Cross River)'] },
 ]
 
 /** Number of locations in the directory above, used wherever the site quotes the size of the network */

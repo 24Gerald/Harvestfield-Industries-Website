@@ -4,7 +4,7 @@ import { ArrowUpRight, Anchor, Phone, Route, ShieldCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, ftzAudiences, ftzBenefits, ftzStats, ftzQuote, photos } from '@/lib/site-data'
+import { contact, ftzAudiences, ftzBenefits, ftzStats, ftzQuote, healthcareUrl, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -59,6 +59,7 @@ export default function FreeTradeZonePage() {
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Ogun State</strong><span className="mt-1 block text-xs text-white/60">On the Lagos-Ibadan corridor</span></div>
             <div className="hf-glass-dark rounded-2xl p-4 sm:p-5"><strong className="block text-2xl font-bold tracking-[-0.04em] text-hf-lime sm:text-4xl">Feb 2026</strong><span className="mt-1 block text-xs text-white/60">Operating licences granted</span></div>
           </div>
+          <a href={healthcareUrl} target="_blank" rel="noopener noreferrer" className="hf-btn hf-btn-lime relative mt-6 px-6 py-4 text-sm sm:mt-8">Visit Harvestfield Healthcare FZE <ArrowUpRight size={16} /></a>
         </div>
       </section>
 

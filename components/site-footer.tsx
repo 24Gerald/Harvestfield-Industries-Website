@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react'
-import { basePath, contact, isoLogo, logoUrl, navLinks, products, wordmarkUrl } from '@/lib/site-data'
+import { basePath, contact, healthcareUrl, isoLogo, logoUrl, navLinks, products, wordmarkUrl } from '@/lib/site-data'
 
 export function SiteFooter() {
   return (
@@ -27,6 +27,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm sm:mt-5 sm:space-y-3">
               {navLinks.map((link) => <li key={link.href}><Link href={link.href} className="text-white/70 transition-colors hover:text-white">{link.label}</Link></li>)}
               <li><Link href="/contact" className="text-white/70 transition-colors hover:text-white">Contact</Link></li>
+              <li><a href={healthcareUrl} target="_blank" rel="noopener noreferrer" className="text-white/70 transition-colors hover:text-white">Harvestfield Healthcare FZE</a></li>
             </ul>
           </nav>
           <nav aria-label="Products">
