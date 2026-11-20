@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { HeroBackdrop } from '@/components/hero-backdrop'
 import { heroImage } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
@@ -11,17 +12,19 @@ type PageHeroProps = {
   crumb: string
   /** Where to focus the background photo, e.g. "70% 30%". */
   focus?: string
-  /** Background photo; defaults to the field team still. Inner pages never play the video: that is kept for the homepage. */
+  /** Background photo; defaults to the site hero video (or image) */
   image?: string
   children?: ReactNode
   aside?: ReactNode
 }
 
-/** Dark, glossy hero shared by every inner page: about half a screen tall over a still photo, so it reads differently from the homepage's full-screen video. */
+/** Dark, glossy hero shared by every inner page: about half a screen tall, so it reads differently from the homepage's full-screen banner. */
 export function PageHero({ eyebrow, title, description, crumb, focus = '70% 35%', image, children, aside }: PageHeroProps) {
   return (
     <section id="top" className="hf-grain relative flex min-h-[50svh] items-end overflow-hidden rounded-b-[32px] bg-hf-deep px-5 pb-10 pt-32 text-white sm:pb-14 sm:pt-36 lg:rounded-b-[48px] lg:px-10 lg:pb-16 lg:pt-40">
-      <img src={image ?? heroImage} alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-50" style={{ objectPosition: focus }} />
+      {image
+        ? <img src={image} alt="" className="hf-hero-image absolute inset-0 h-full w-full object-cover opacity-50" style={{ objectPosition: focus }} />
+        : <HeroBackdrop image={heroImage} className="absolute inset-0 h-full w-full object-cover opacity-30" style={{ objectPosition: focus }} />}
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-hf-deep via-hf-deep/80 to-hf-deep/10" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-hf-deep via-transparent to-transparent" />
       <div aria-hidden className="hf-aurora" />

@@ -5,7 +5,7 @@ import { CtaBand } from '@/components/cta-band'
 import { OfficeFinder } from '@/components/office-finder'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, officeCount, pageHeroImages } from '@/lib/site-data'
+import { contact, officeCount } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -27,8 +27,7 @@ export default function OfficesPage() {
         eyebrow="Our offices"
         title={<>We are already <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">in your state.</em></>}
         description={`${officeCount} offices and warehouses across all six geopolitical zones. Walk in, call ahead, or send us a message and someone will get back to you the same day.`}
-        image={pageHeroImages.offices}
-        focus="50% 50%"
+        focus="60% 70%"
         aside={
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <div className="hf-glass-dark rounded-2xl p-4 sm:rounded-3xl sm:p-6"><strong className="block text-4xl font-bold tracking-[-0.05em] sm:text-5xl" data-count>{officeCount}</strong><span className="mt-1 block text-[13px] text-white/60 sm:text-sm">Offices & warehouses</span></div>

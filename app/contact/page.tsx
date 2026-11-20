@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { ContactFormWithQuery } from '@/components/contact-form'
 import { PageHero } from '@/components/page-hero'
-import { contact, officeCount, pageHeroImages } from '@/lib/site-data'
+import { contact, officeCount } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -25,8 +25,7 @@ export default function ContactPage() {
         eyebrow="Get in touch"
         title={<>Let&apos;s grow <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">together.</em></>}
         description="Walk in, call ahead, or send us a message and someone will get back to you the same day."
-        image={pageHeroImages.contact}
-        focus="50% 50%"
+        focus="75% 30%"
       />
 
       <section className="relative z-10 mx-auto -mt-8 grid max-w-[1320px] gap-4 px-5 pb-14 sm:-mt-14 sm:gap-6 sm:pb-24 lg:-mt-20 lg:grid-cols-[0.75fr_1.25fr] lg:px-10 lg:pb-32">

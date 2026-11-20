@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { MediaSections } from '@/components/media-feed'
 import { PageHero } from '@/components/page-hero'
-import { news, pageHeroImages } from '@/lib/site-data'
+import { news } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Media',
@@ -19,8 +19,7 @@ export default function MediaPage() {
         eyebrow="Media"
         title={<>News, stories &amp; <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">updates.</em></>}
         description="The latest from Harvestfield Industries: announcements, press releases, events and the programmes we are proud to be part of."
-        image={pageHeroImages.media}
-        focus="50% 50%"
+        focus="40% 25%"
       />
 
       <MediaSections />
