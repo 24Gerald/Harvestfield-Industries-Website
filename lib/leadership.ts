@@ -74,7 +74,7 @@ export const management: Leader[] = [
   {
     slug: 'martins-awofisayo',
     name: 'Martins A. Awofisayo',
-    role: 'Chairman',
+    role: 'President of the Board & CEO',
     intro: 'Founded Harvestfield Industries in 2000; President of CropLife Nigeria and Ernst & Young West African Emerging Entrepreneur of the Year (2013).',
     bio: [
       'Martins A. Awofisayo established Harvestfield Industries Limited in 2000 to market agrochemicals and public health products in Nigeria, building it into the distribution and manufacturing business from which Harvestfield Healthcare has evolved. He previously worked with Continental Pharmaceuticals Limited, Lagos, joining the company in 1987 as Operations Manager and subsequently rising to Deputy General Manager.',

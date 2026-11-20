@@ -5,24 +5,20 @@ import { CtaBand } from '@/components/cta-band'
 import { HeroBackdrop } from '@/components/hero-backdrop'
 import { PageHero } from '@/components/page-hero'
 import { ProductExplorer } from '@/components/product-explorer'
-import { SafeImg } from '@/components/safe-img'
 import { SectionHeading } from '@/components/section-heading'
 import { catalogue } from '@/lib/catalogue'
 import { stagger } from '@/lib/utils'
-import { heroImage, products } from '@/lib/site-data'
+import { heroImage, officeCount, partnerNames } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Products',
-  description: 'Herbicides, insecticides, fungicides, vector control and fertilisers, plus store fumigants and spraying equipment, distributed across Nigeria.',
+  description: 'Agro inputs, public health and vector control products, spraying equipment and post-harvest solutions, distributed across Nigeria.',
 }
-
-/** Lines we supply that don't have individual products listed yet */
-const alsoAvailable = products.filter((product) => product.slug === 'store-fumigants' || product.slug === 'spraying-equipment')
 
 const assurances = [
   { icon: ShieldCheck, title: 'NAFDAC certified', text: 'Certified products only, across every category we carry.' },
-  { icon: Handshake, title: 'Authorized distributor', text: 'Genuine products from BAYER, BASF, Dow, East-West Seeds and IITA.' },
-  { icon: MapPin, title: 'Stock near you', text: '33 offices and warehouses in all six geopolitical zones.' },
+  { icon: Handshake, title: 'Authorized distributor', text: `Genuine products from ${partnerNames.join(', ').replace(/, ([^,]*)$/, ' and $1')}.` },
+  { icon: MapPin, title: 'Stock near you', text: `${officeCount} offices and warehouses in all six geopolitical zones.` },
 ]
 
 export default function ProductsPage() {
@@ -49,38 +45,12 @@ export default function ProductsPage() {
       <section className="mx-auto max-w-[1320px] px-5 py-12 sm:py-20 lg:px-10 lg:py-24">
         <SectionHeading
           eyebrow="Our range"
-          title={<>{catalogue.length} products, <em className="font-serif font-normal text-hf-moss">by category.</em></>}
-          text="Filter by category or search by product name, active ingredient or crop. Every product is NAFDAC certified."
+          title={<>{catalogue.length} products, <em className="font-serif font-normal text-hf-moss">four divisions.</em></>}
+          text="Filter by division or search by product name, active ingredient or crop. Every product is NAFDAC certified."
           className="mb-6 sm:mb-10"
         />
         <ProductExplorer />
 
-        <div className="mt-12 sm:mt-20">
-          <div className="flex items-end justify-between gap-4 border-b border-hf-line pb-3 sm:pb-4">
-            <div>
-              <p className="eyebrow">Also available</p>
-              <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] sm:text-2xl">Store fumigants and spraying equipment</h3>
-            </div>
-          </div>
-          <div className="mt-4 grid gap-2.5 sm:mt-6 sm:gap-5 md:grid-cols-2">
-            {alsoAvailable.map(({ slug, name, type, text, image, icon: Icon }, index) => (
-              <article key={slug} id={slug} className="hf-reveal hf-card group flex items-center gap-4 rounded-[22px] border border-white/80 bg-white/70 p-2 pr-4 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.4)] sm:gap-5 sm:rounded-[26px] sm:p-2.5 sm:pr-6" style={stagger(index, 100)}>
-                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[18px] bg-gradient-to-br from-hf-leaf to-hf-night sm:h-32 sm:w-32 sm:rounded-[20px]">
-                  <Icon aria-hidden size={36} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white/15" />
-                  <SafeImg src={image} alt={name} loading="lazy" className="relative h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                </div>
-                <div className="min-w-0 py-1">
-                  <p className="eyebrow text-[10px]">{type}</p>
-                  <h4 className="mt-1 text-lg font-semibold tracking-[-0.02em] sm:text-xl">{name}</h4>
-                  <p className="mt-1 text-[13px] leading-5 text-hf-sage sm:text-sm sm:leading-6">{text}</p>
-                  <Link href={`/contact?topic=products&item=${encodeURIComponent(name)}`} className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-bold text-hf-forest underline decoration-hf-line decoration-2 underline-offset-4 transition-colors hover:decoration-hf-gold sm:mt-3 sm:text-[13px]">
-                    Ask about {name.toLowerCase()} <ArrowUpRight size={14} />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section id="aflasafe" className="px-5 lg:px-10">
@@ -112,7 +82,7 @@ export default function ProductsPage() {
           {[
             ['01', 'Tell us what you grow', 'Crop, acreage and the problem you are seeing in the field.'],
             ['02', 'Get the right recommendation', 'Our team matches you with certified products for your stage of the season.'],
-            ['03', 'Collect near you', 'Pick up from one of 33 offices and warehouses across Nigeria.'],
+            ['03', 'Collect near you', `Pick up from one of ${officeCount} offices and warehouses across Nigeria.`],
           ].map(([step, title, text], index) => (
             <div key={step} className="hf-reveal border-t border-hf-line pt-4 max-sm:flex max-sm:gap-4 sm:pt-6" style={stagger(index, 100)}>
               <span className="font-serif text-4xl leading-none text-hf-gold sm:text-5xl">{step}</span>

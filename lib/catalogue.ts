@@ -1,29 +1,59 @@
-import { Bug, Droplets, HeartPulse, Leaf, type LucideIcon, Sprout } from 'lucide-react'
+import { BedDouble, Bug, Droplet, Droplets, HeartPulse, Leaf, type LucideIcon, ShieldCheck, SprayCan, Sprout, Warehouse, Wheat } from 'lucide-react'
 import { basePath } from '@/lib/site-data'
 
-/** Product groups on the Products page. Slugs match the category anchors used across the site (/products#herbicides). */
-export type CatalogueGroup = { slug: string; name: string; text: string; icon: LucideIcon }
+/** The four product divisions. Slugs are the anchors used across the site (/products#agro-inputs). */
+export type CatalogueDivision = { slug: string; name: string; text: string }
+
+export const catalogueDivisions: CatalogueDivision[] = [
+  { slug: 'agro-inputs', name: 'Agro inputs', text: 'Pesticides, fertilisers, seeds and biological control for every stage of the season.' },
+  { slug: 'public-health', name: 'Public health', text: 'Vector control for malaria prevention: mosquito nets, larvicides and larval source management (LSM) products.' },
+  { slug: 'spraying-equipment', name: 'Spraying equipment', text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
+  { slug: 'post-harvest', name: 'Post-harvest', text: 'Store fumigants that keep harvested grain safe and saleable while it waits for market.' },
+]
+
+/** Product groups within a division. Slugs are also anchors (/products#herbicides). */
+export type CatalogueGroup = {
+  slug: string
+  name: string
+  division: string
+  /** Wider family shown above the group name, e.g. herbicides are pesticides */
+  family?: string
+  text: string
+  icon: LucideIcon
+  /** Shown in place of product cards while a group has no products listed yet */
+  emptyNote?: string
+}
 
 export const catalogueGroups: CatalogueGroup[] = [
-  { slug: 'herbicides', name: 'Herbicides', icon: Leaf, text: 'Selective and total weed control for every major Nigerian crop, from pre-plant clearing to post-emergence.' },
-  { slug: 'insecticides', name: 'Insecticides', icon: Bug, text: 'Field-proven pest control for cocoa, cotton, vegetables and grain crops.' },
-  { slug: 'fungicides', name: 'Fungicides', icon: Sprout, text: 'Protection against black pod, blight, downy mildew and other crop diseases.' },
-  { slug: 'vector-control', name: 'Vector control', icon: HeartPulse, text: 'For treating mosquito nets and indoor residual spraying.' },
-  { slug: 'fertilisers', name: 'Fertilisers', icon: Droplets, text: 'Foliar nutrition to support healthy growth and yield.' },
+  { slug: 'herbicides', name: 'Herbicides', division: 'agro-inputs', family: 'Pesticides', icon: Leaf, text: 'Selective and total weed control for every major Nigerian crop, from pre-plant clearing to post-emergence.' },
+  { slug: 'insecticides', name: 'Insecticides', division: 'agro-inputs', family: 'Pesticides', icon: Bug, text: 'Field-proven pest control for cocoa, cotton, vegetables and grain crops.' },
+  { slug: 'fungicides', name: 'Fungicides', division: 'agro-inputs', family: 'Pesticides', icon: Sprout, text: 'Protection against black pod, blight, downy mildew and other crop diseases.' },
+  { slug: 'fertilisers', name: 'Fertilisers', division: 'agro-inputs', icon: Droplets, text: 'Nutrition to support healthy growth and yield.' },
+  { slug: 'seeds', name: 'Seeds', division: 'agro-inputs', icon: Wheat, text: 'Quality seed from our partners.', emptyNote: 'Our seed range is being added. Ask our team what is available for your crop this season.' },
+  { slug: 'biologicals', name: 'Biological control', division: 'agro-inputs', icon: ShieldCheck, text: 'Natural, biological alternatives to chemical control.' },
+  { slug: 'mosquito-nets', name: 'Mosquito nets', division: 'public-health', icon: BedDouble, text: 'Insecticide-treated nets for malaria prevention.', emptyNote: 'Our net range is being added. Ask our team about supply for programmes and distributors.' },
+  { slug: 'larvicides', name: 'Larvicides and LSM', division: 'public-health', icon: Droplet, text: 'Larval source management: stopping mosquitoes before they can fly.', emptyNote: 'Our larvicide and LSM range is being added. Ask our team about supply.' },
+  { slug: 'vector-control', name: 'Net treatment and indoor spraying', division: 'public-health', icon: HeartPulse, text: 'For treating mosquito nets and indoor residual spraying.' },
+  { slug: 'sprayers', name: 'Sprayers', division: 'spraying-equipment', icon: SprayCan, text: 'Field-ready sprayers from trusted makers.' },
+  { slug: 'store-fumigants', name: 'Store fumigants', division: 'post-harvest', icon: Warehouse, text: 'Protect stored grain and produce from insect pests.' },
 ]
+
+export const divisionOf = (group: CatalogueGroup) => catalogueDivisions.find((division) => division.slug === group.division)
 
 export type CatalogueItem = {
   slug: string
   name: string
   group: string
-  /** Active ingredients and formulation, as printed on the label */
-  composition: string
+  /** Active ingredients and formulation, as printed on the label (chemical products only) */
+  composition?: string
   use: string
   pack?: string
   /** Application rate, only where Harvestfield has published one (old product profile); otherwise the label applies */
   dose?: string
   /** Overrides the formulation read from the composition code */
   formulation?: string
+  /** No pack shot in /public/packshots yet: show the group icon instead */
+  noImage?: true
 }
 
 const formulationNames: Record<string, string> = {
@@ -36,7 +66,7 @@ const formulationNames: Record<string, string> = {
 
 export function formulationOf(item: CatalogueItem) {
   if (item.formulation) return item.formulation
-  const code = item.composition.match(/\b(EC|SL|SC|WP|WDG)\b/)?.[1]
+  const code = item.composition?.match(/\b(EC|SL|SC|WP|WDG)\b/)?.[1]
   return code ? `${formulationNames[code]} (${code})` : undefined
 }
 
@@ -78,4 +108,18 @@ export const catalogue: CatalogueItem[] = [
 
   // Fertilisers
   { slug: 'fertisol', name: 'Fertisol', group: 'fertilisers', composition: 'Free amino acids 12.2%, iron 2.1%, zinc 0.32%', pack: '1 L', formulation: 'Liquid foliar fertiliser', use: 'Liquid foliar fertiliser for vegetables, cotton, maize and other crops.' },
+
+  // Biological control
+  { slug: 'aflasafe-biocontrol', name: 'Aflasafe', group: 'biologicals', composition: 'Atoxigenic Aspergillus flavus strains native to Nigeria', formulation: 'Biocontrol on a sorghum grain carrier', noImage: true, use: 'Biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%. Harvestfield holds the national Aflasafe licence.' },
+
+  // Sprayers
+  { slug: 'reliable-sprayer', name: 'Reliable Sprayer', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
+  { slug: 'kingpower', name: 'Kingpower', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
+  { slug: 'cp15', name: 'CP15', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },
+  { slug: 'cp3', name: 'CP3', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },
+  { slug: 'cp-standard', name: 'CP Standard', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for specifications and availability.' },
+  { slug: 'spraywell', name: 'Spraywell', group: 'sprayers', noImage: true, use: 'Agricultural sprayer. Ask our team for models, specifications and availability.' },
+
+  // Store fumigants
+  { slug: 'fostovest', name: 'Fostovest', group: 'store-fumigants', noImage: true, use: 'Storage fumigant that protects stored grain and produce from insect pests. Ask our team for application guidance.' },
 ]

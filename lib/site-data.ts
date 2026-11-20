@@ -2,7 +2,6 @@ import {
   Banknote,
   BadgePercent,
   Boxes,
-  Bug,
   Building2,
   Factory,
   FlaskConical,
@@ -14,7 +13,6 @@ import {
   Package,
   Route,
   SprayCan,
-  Sprout,
   Truck,
   Warehouse,
 } from 'lucide-react'
@@ -71,23 +69,26 @@ export const navLinks = [
 
 export type Product = { slug: string; name: string; type: string; image: string; text: string; icon: LucideIcon }
 
+/** The four product divisions, as cards on the homepage and in the menus. Slugs match the division anchors on /products. */
 export const products: Product[] = [
-  { slug: 'herbicides', name: 'Herbicides', type: 'Crop protection', icon: Leaf, image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85', text: 'Broad and selective options for weed control in all major Nigerian crop types.' },
-  { slug: 'insecticides', name: 'Insecticides', type: 'Crop protection', icon: Bug, image: 'https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=900&q=85', text: 'Field-proven pest management that Nigerian farmers have relied on for over two decades.' },
-  { slug: 'fungicides', name: 'Fungicides', type: 'Crop protection', icon: Sprout, image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=900&q=85', text: 'Disease management across the full growing cycle, from germination to harvest.' },
-  { slug: 'store-fumigants', name: 'Store fumigants', type: 'Post-harvest', icon: Warehouse, image: `${basePath}/categories/store-fumigants.svg`, text: 'Keep post-harvest grain safe and saleable while it waits for market.' },
-  { slug: 'vector-control', name: 'Vector control', type: 'Public health', icon: HeartPulse, image: `${basePath}/categories/vector-control.jpg`, text: 'Malaria control products supplied under the Roll Back Malaria programme across Nigeria.' },
+  { slug: 'agro-inputs', name: 'Agro inputs', type: 'Crop production', icon: Leaf, image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85', text: 'Pesticides, fertilisers, seeds and biological control products, including Aflasafe.' },
+  { slug: 'public-health', name: 'Public health', type: 'Vector control', icon: HeartPulse, image: `${basePath}/categories/vector-control.jpg`, text: 'Mosquito nets, larvicides and LSM products for malaria prevention across Nigeria.' },
   { slug: 'spraying-equipment', name: 'Spraying equipment', type: 'Field-ready tools', icon: SprayCan, image: `${basePath}/categories/spraying-equipment.jpg`, text: 'Agricultural sprayers for every scale of operation, from smallholder to commercial farm.' },
+  { slug: 'post-harvest', name: 'Post-harvest', type: 'Storage', icon: Warehouse, image: `${basePath}/categories/store-fumigants.svg`, text: 'Store fumigants that keep harvested grain safe and saleable while it waits for market.' },
 ]
 
+/** Regional offices and warehouses (provisional list from the 2026 website review). */
 export const offices = [
-  { region: 'North West', cities: ['Kano', 'Kaduna', 'Sokoto'] },
-  { region: 'North East', cities: ['Maiduguri', 'Bauchi', 'Gombe'] },
-  { region: 'North Central', cities: ['Abuja', 'Jos', 'Ilorin'] },
-  { region: 'South West', cities: ['Lagos', 'Ibadan', 'Abeokuta'] },
-  { region: 'South East', cities: ['Enugu', 'Onitsha', 'Owerri'] },
-  { region: 'South South', cities: ['Port Harcourt', 'Warri', 'Benin'] },
+  { region: 'North West', cities: ['Kano', 'Kaduna', 'Zuru (Kebbi)', 'Sokoto'] },
+  { region: 'North East', cities: ['Bauchi', 'Mubi', 'Gombe', 'Yola', 'Jalingo'] },
+  { region: 'North Central', cities: ['Abuja', 'Ilorin', 'Makurdi', 'Lafia', 'Minna', 'Kontagora', 'Anyigba'] },
+  { region: 'South West', cities: ['Lagos', 'Ibadan', 'Ile-Ife', 'Ogun State'] },
+  { region: 'South East', cities: ['Onitsha', 'Abakaliki', 'Aba'] },
+  { region: 'South South', cities: ['Ikom'] },
 ]
+
+/** Number of locations in the directory above, used wherever the site quotes the size of the network */
+export const officeCount = offices.reduce((total, office) => total + office.cities.length, 0)
 
 export const ftzBenefits: { title: string; short: string; text: string; icon: LucideIcon }[] = [
   { title: 'Zero import and export duties', short: 'Every good moving in and out of the zone is duty-exempt.', text: 'All goods moving in and out of the zone are fully duty-exempt under the free zone framework.', icon: BadgePercent },
@@ -116,7 +117,23 @@ export const ftzQuote = {
   role: 'Managing Director, public-sector partner',
 }
 
-export const distributionPartners = ['BAYER', 'BASF', 'Dow', 'East-West Seeds', 'IITA']
+export type Partner = {
+  name: string
+  role: string
+  text: string
+  /** Logo in /public/partners; until it is set, the card shows the name */
+  logo?: string
+}
+
+export const distributionPartners: Partner[] = [
+  { name: 'BASF', role: 'Authorized distributor', text: 'Crop protection products from one of the world’s leading chemical companies.' },
+  { name: 'Corteva Agriscience', role: 'Authorized distributor', text: 'Crop protection and seed technology from a global agriculture company.' },
+  { name: 'Lion Seeds', role: 'Authorized distributor', text: 'Quality seed for Nigerian farmers.' },
+  { name: 'IITA', role: 'Partner', text: 'The International Institute of Tropical Agriculture, developer of the Aflasafe biocontrol product.' },
+  { name: 'Sumitomo', role: 'Authorized partner · Public health / LSM', text: 'Public health and larval source management (LSM) products for malaria vector control.' },
+]
+
+export const partnerNames = distributionPartners.map((partner) => partner.name)
 
 export const strategicPartners: { name: string; role: string; text: string; icon: LucideIcon }[] = [
   { name: 'Roll Back Malaria', role: 'National programme', text: 'We have distributed malaria vector control products across Nigeria as part of the national programme since we opened.', icon: HeartPulse },
@@ -134,9 +151,9 @@ export const milestones = [
 export const news = [
   { tag: 'Free Trade Zone', date: 'February 2026', title: 'Harvestfield Free Trade Zone receives operating licences', text: 'Harvestfield Industries received both the Declaration of Licence and the Operation Licence for a Free Trade Zone focused on medical products in Ogun State, one of the few in Nigeria dedicated entirely to healthcare manufacturing.', href: '/free-trade-zone' },
   { tag: 'Food safety', date: 'National licence', title: 'Bringing Aflasafe to Nigerian farms', text: 'As national Aflasafe licence holder, we supply the biocontrol product that cuts aflatoxin in maize and groundnut by up to 99%.', href: '/products#aflasafe' },
-  { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#vector-control' },
+  { tag: 'Public health', date: 'Since 2000', title: 'Supporting Roll Back Malaria', text: 'Malaria vector control products distributed across Nigeria as part of the national programme since we opened.', href: '/products#public-health' },
   { tag: 'Food safety', date: 'Founding member', title: 'A founding member of the Food Convergence Initiative', text: 'Working with government and development partners on food safety and aflatoxin control.', href: '/about' },
-  { tag: 'Network', date: 'Nationwide', title: '33 offices across all six geopolitical zones', text: 'Walk in, call ahead, or send us a message and someone will get back to you the same day.', href: '/offices' },
+  { tag: 'Network', date: 'Nationwide', title: `${officeCount} offices across all six geopolitical zones`, text: 'Walk in, call ahead, or send us a message and someone will get back to you the same day.', href: '/offices' },
 ]
 
 export const contactTopics = [

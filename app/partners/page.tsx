@@ -4,16 +4,16 @@ import { ArrowUpRight, BadgeCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { distributionPartners, strategicPartners } from '@/lib/site-data'
+import { distributionPartners, officeCount, partnerNames, strategicPartners } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Partners',
-  description: 'Harvestfield is the authorized Nigerian distributor for BAYER, BASF, Dow, East-West Seeds and IITA, and works with national programmes.',
+  description: `Harvestfield partners with ${partnerNames.join(', ').replace(/, ([^,]*)$/, ' and $1')} in Nigeria, and works with national programmes.`,
 }
 
 const reasons = [
-  { value: '33', label: 'Offices and warehouses to reach farmers in every state' },
+  { value: String(officeCount), label: 'Offices and warehouses to reach farmers in every state' },
   { value: '6', label: 'Geopolitical zones covered by one distribution network' },
   { value: '26+', label: 'Years of trusted relationships in Nigerian agriculture' },
 ]
@@ -36,7 +36,7 @@ export default function PartnersPage() {
           <div className="hf-marquee-track">
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center gap-12 pr-12 sm:gap-20 sm:pr-20">
-                {[...distributionPartners, ...distributionPartners].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
+                {[...partnerNames, ...partnerNames].map((name, index) => <span key={`${name}-${index}`} className="whitespace-nowrap text-2xl font-bold tracking-[-0.03em] sm:text-3xl text-hf-forest/70">{name}</span>)}
               </div>
             ))}
           </div>
@@ -46,13 +46,16 @@ export default function PartnersPage() {
       <section className="mx-auto max-w-[1320px] px-5 py-14 sm:py-24 lg:px-10 lg:py-28">
         <SectionHeading eyebrow="Authorized distributor for" title={<>The brands farmers <em className="font-serif font-normal text-hf-moss">already trust.</em></>} text="Genuine products, sourced directly and distributed through our own network, so Nigerian farmers get world-class inputs at fair prices." />
         <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-5">
-          {distributionPartners.map((name, index) => (
-            <div key={name} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-3xl border border-white/80 bg-gradient-to-br from-white to-hf-sand/60 p-4 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.45)] sm:p-6 lg:aspect-[5/4] max-sm:aspect-auto max-sm:min-h-[7.375rem] max-sm:last:col-span-2" style={stagger(index, 80)}>
+          {distributionPartners.map(({ name, role, text, logo }, index) => (
+            <div key={name} className="hf-reveal hf-card hf-spotlight hf-spotlight-light group flex min-h-[12rem] flex-col gap-6 overflow-hidden rounded-3xl border border-white/80 bg-gradient-to-br from-white to-hf-sand/60 p-4 shadow-[inset_0_1px_0_#fff,0_20px_40px_-30px_rgba(23,60,43,.45)] sm:min-h-[16rem] sm:p-6 max-sm:last:col-span-2" style={stagger(index, 80)}>
               <span aria-hidden className="pointer-events-none absolute -right-3 -top-10 font-serif text-[6.875rem] leading-none sm:text-[150px] text-hf-forest/[0.05] transition-transform duration-700 group-hover:-translate-x-2 group-hover:scale-110">{name[0]}</span>
               <BadgeCheck size={20} className="relative text-hf-moss transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" />
               <div className="relative">
-                <p className="text-2xl font-bold tracking-[-0.04em] sm:text-3xl">{name}</p>
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-hf-sage sm:mt-2 sm:text-xs sm:tracking-[0.18em]">Authorized distributor</p>
+                {logo
+                  ? <img src={logo} alt={name} className="h-10 w-auto max-w-full object-contain sm:h-12" />
+                  : <p className="text-2xl font-bold leading-tight tracking-[-0.04em] sm:text-[1.75rem]">{name}</p>}
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-hf-sage sm:mt-2 sm:text-xs sm:tracking-[0.18em]">{role}</p>
+                <p className="mt-2 text-[13px] leading-5 text-hf-slate sm:mt-3">{text}</p>
               </div>
             </div>
           ))}

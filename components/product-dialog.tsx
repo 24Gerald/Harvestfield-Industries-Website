@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { catalogueGroups, type CatalogueItem, formulationOf, packshot } from '@/lib/catalogue'
+import { catalogueGroups, type CatalogueItem, divisionOf, formulationOf, packshot } from '@/lib/catalogue'
 
 /**
  * Full-screen product view: the pack shot takes most of the space (about 5:2 against the details),
@@ -42,13 +42,16 @@ export function ProductDialog({ items, slug, onChange }: { items: CatalogueItem[
   }
 
   const group = item ? catalogueGroups.find((g) => g.slug === item.group) : undefined
+  const division = group ? divisionOf(group) : undefined
   const formulation = item ? formulationOf(item) : undefined
+  const GroupIcon = group?.icon
   const facts = item
     ? ([
         ['Active ingredients', item.composition],
         ['Formulation', formulation],
         ['Pack size', item.pack],
-        ['Application rate', item.dose ?? 'Follow the label, or ask our team for the right rate for your crop.'],
+        // Equipment has no rate; chemical products fall back to the label
+        ['Application rate', item.dose ?? (item.composition ? 'Follow the label, or ask our team for the right rate for your crop.' : undefined)],
       ].filter(([, value]) => value) as [string, string][])
     : []
 
@@ -67,12 +70,21 @@ export function ProductDialog({ items, slug, onChange }: { items: CatalogueItem[
         <div className="grid h-full grid-rows-[minmax(0,5fr)_minmax(0,3fr)] sm:grid-cols-[minmax(0,5fr)_minmax(16rem,2fr)] sm:grid-rows-1">
           {/* Pack shot */}
           <div className="relative min-h-0 bg-[radial-gradient(ellipse_at_center,#fff_35%,#f3f3ea_100%)]">
-            <img
-              key={item.slug}
-              src={packshot(item.slug)}
-              alt={`${item.name} pack`}
-              className="absolute inset-0 h-full w-full object-contain p-4 mix-blend-multiply animate-in fade-in zoom-in-95 duration-500 sm:p-10"
-            />
+            {item.noImage
+              ? (
+                <div key={item.slug} className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-hf-forest/15 animate-in fade-in duration-500">
+                  {GroupIcon && <GroupIcon aria-hidden size={96} />}
+                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-hf-sage">Photo coming soon</span>
+                </div>
+              )
+              : (
+                <img
+                  key={item.slug}
+                  src={packshot(item.slug)}
+                  alt={`${item.name} pack`}
+                  className="absolute inset-0 h-full w-full object-contain p-4 mix-blend-multiply animate-in fade-in zoom-in-95 duration-500 sm:p-10"
+                />
+              )}
             {items.length > 1 && (
               <>
                 <button type="button" onClick={() => step(-1)} aria-label="Previous product" className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-hf-forest shadow-[0_8px_24px_-10px_rgba(23,60,43,.5)] ring-1 ring-hf-forest/10 transition hover:bg-hf-forest hover:text-white sm:left-5 sm:h-12 sm:w-12">
@@ -94,7 +106,7 @@ export function ProductDialog({ items, slug, onChange }: { items: CatalogueItem[
           {/* Details */}
           <aside className="flex min-h-0 flex-col overflow-y-auto overscroll-contain border-hf-line bg-hf-cream/60 px-5 pb-5 pt-4 max-sm:border-t sm:border-l sm:px-6 sm:pb-6 sm:pt-5">
             <div className="flex items-start justify-between gap-3">
-              <p className="eyebrow pt-2 text-[10px]">{group?.name}</p>
+              <p className="eyebrow pt-2 text-[10px]">{[division?.name, group?.name].filter(Boolean).join(' · ')}</p>
               <button type="button" onClick={() => ref.current?.close()} aria-label="Close" className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-hf-forest/[0.07] text-hf-forest transition-colors hover:bg-hf-forest hover:text-white sm:flex">
                 <X size={18} />
               </button>
@@ -111,7 +123,7 @@ export function ProductDialog({ items, slug, onChange }: { items: CatalogueItem[
               ))}
             </dl>
 
-            <p className="mt-3 text-[11px] leading-4 text-hf-sage">Always read the label and follow the safety advice before use.</p>
+            {item.composition && <p className="mt-3 text-[11px] leading-4 text-hf-sage">Always read the label and follow the safety advice before use.</p>}
 
             <div className="mt-auto pt-5">
               <Link href={`/contact?topic=products&item=${encodeURIComponent(item.name)}`} className="hf-btn hf-btn-gold w-full justify-center px-5 py-3 text-[13px]">

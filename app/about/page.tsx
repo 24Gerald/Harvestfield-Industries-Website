@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin, ShieldCheck, Sprout, Factory } from 'lucide-react
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { distributionPartners, milestones, photos } from '@/lib/site-data'
+import { milestones, officeCount, partnerNames, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { value: '33', label: 'Offices and warehouses' },
+  { value: String(officeCount), label: 'Offices and warehouses' },
   { value: '6', label: 'Geopolitical zones covered' },
   { value: '26+', label: 'Years in the field' },
   { value: '99%', label: 'Aflatoxin reduction with Aflasafe' },
@@ -22,7 +22,7 @@ const stats = [
 const values = [
   { icon: Sprout, title: 'World-class inputs, fair prices', text: 'The belief we started with in 2000, and the one we still hold every Nigerian farmer to.' },
   { icon: ShieldCheck, title: 'NAFDAC and ISO certified', text: 'Everything we distribute is NAFDAC certified, from crop protection to vector control, and Harvestfield Industries is ISO certified.' },
-  { icon: MapPin, title: 'Close to every farm', text: '33 offices and warehouses across all six geopolitical zones keep stock near the people who need it.' },
+  { icon: MapPin, title: 'Close to every farm', text: `${officeCount} offices and warehouses across all six geopolitical zones keep stock near the people who need it.` },
   { icon: Factory, title: 'Made in Nigeria, next', text: 'We are building the infrastructure to manufacture the health products Nigeria needs at home.' },
 ]
 
@@ -35,6 +35,7 @@ export default function AboutPage() {
         title={<>From the soil, <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">with purpose.</em></>}
         description="We distribute agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria. Now we are building the infrastructure to manufacture the health products Nigeria needs at home."
         focus="72% 30%"
+        compact
       >
         <Link href="/products" className="hf-btn hf-btn-lime px-6 py-4 text-sm">Explore our products <ArrowUpRight size={16} /></Link>
         <Link href="/contact" className="hf-btn hf-btn-glass px-6 py-4 text-sm">Talk to our team</Link>
@@ -61,7 +62,7 @@ export default function AboutPage() {
           <p className="mt-4 text-[1rem] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Twenty-six years later, we represent major names in global agriculture, distribute across Nigeria, hold the national Aflasafe licence, and are a founding member of the Food Convergence Initiative.</p>
           <p className="mt-4 text-[1rem] leading-6 text-hf-sage sm:mt-6 sm:text-base sm:leading-7">Today we are going further. With the Harvestfield Free Trade Zone in Ogun State and Harvestfield Healthcare FZE, its anchor operation, we are building the capacity to manufacture the health products Nigeria needs at home.</p>
           <div className="mt-6 flex flex-wrap gap-2 sm:mt-8">
-            {distributionPartners.map((partner) => <span key={partner} className="rounded-full border border-hf-line bg-white/60 px-3 py-1.5 text-xs font-bold tracking-wide sm:px-4 sm:py-2">{partner}</span>)}
+            {partnerNames.map((partner) => <span key={partner} className="rounded-full border border-hf-line bg-white/60 px-3 py-1.5 text-xs font-bold tracking-wide sm:px-4 sm:py-2">{partner}</span>)}
           </div>
         </div>
       </section>

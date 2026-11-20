@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { ContactFormWithQuery } from '@/components/contact-form'
 import { PageHero } from '@/components/page-hero'
-import { contact } from '@/lib/site-data'
+import { contact, officeCount } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const channels = [
   { icon: Phone, label: 'Call us', value: contact.phone, href: contact.phoneHref },
   { icon: Mail, label: 'Email us', value: contact.email, href: `mailto:${contact.email}` },
-  { icon: MapPin, label: 'Visit us', value: '33 offices in 6 zones', href: '/offices' },
+  { icon: MapPin, label: 'Visit us', value: `${officeCount} offices in 6 zones`, href: '/offices' },
 ]
 
 export default function ContactPage() {
