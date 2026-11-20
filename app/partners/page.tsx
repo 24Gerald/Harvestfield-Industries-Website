@@ -4,7 +4,7 @@ import { ArrowUpRight, BadgeCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { distributionPartners, officeCount, partnerNames, strategicPartners } from '@/lib/site-data'
+import { distributionPartners, officeCount, pageHeroImages, partnerNames, strategicPartners } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -26,7 +26,8 @@ export default function PartnersPage() {
         eyebrow="Our partners"
         title={<>Global names, <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">local reach.</em></>}
         description="We are the authorized Nigerian distributor for some of the most trusted names in global agriculture, and we work alongside public bodies to protect food and health."
-        focus="50% 40%"
+        image={pageHeroImages.partners}
+        focus="50% 50%"
       >
         <Link href="/contact?topic=partnerships" className="hf-btn hf-btn-lime px-6 py-4 text-sm">Become a partner <ArrowUpRight size={16} /></Link>
       </PageHero>

@@ -4,6 +4,7 @@ import { LeaderCard } from '@/components/leader-card'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { board, type Leader, management } from '@/lib/leadership'
+import { pageHeroImages } from '@/lib/site-data'
 import { cn, stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -31,7 +32,8 @@ export default function LeadershipPage() {
         eyebrow="Our leadership"
         title={<>The people behind <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">Harvestfield.</em></>}
         description="Our board of directors and executive management bring decades of experience across agriculture, public health, banking, finance and manufacturing."
-        focus="65% 30%"
+        image={pageHeroImages.leadership}
+        focus="50% 50%"
       />
 
       <section className="px-5 py-12 sm:py-20 lg:px-10 lg:py-24">

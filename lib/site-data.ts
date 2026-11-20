@@ -27,6 +27,20 @@ export const photos = {
 }
 /** Fallback still wherever there is no video or post cover */
 export const heroImage = photos.fieldTeam
+/**
+ * Banner photo for each inner page. Swap in the company's own photos as they arrive (put them in public/photos).
+ * The leadership office shot is a free Unsplash stock photo until a photo of Harvestfield's office is supplied.
+ */
+export const pageHeroImages = {
+  about: photos.fieldTeam,
+  leadership: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80',
+  products: photos.farmlandAerial,
+  partners: photos.farmlandAerialRoad,
+  freeTradeZone: photos.farmlandAerialRoad,
+  offices: photos.farmlandAerial,
+  media: photos.fieldTeam,
+  contact: photos.farmlandAerial,
+}
 export const isoLogo = `${basePath}/iso-logo.png`
 
 /**

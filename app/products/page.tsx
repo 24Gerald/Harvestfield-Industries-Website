@@ -8,7 +8,7 @@ import { ProductExplorer } from '@/components/product-explorer'
 import { SectionHeading } from '@/components/section-heading'
 import { catalogue } from '@/lib/catalogue'
 import { stagger } from '@/lib/utils'
-import { heroImage, officeCount, partnerNames } from '@/lib/site-data'
+import { heroImage, officeCount, pageHeroImages, partnerNames } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -29,7 +29,8 @@ export default function ProductsPage() {
         eyebrow="What we do"
         title={<>The right input for every <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">stage.</em></>}
         description="From germination to harvest to storage, and from the farm to public health: field-proven products that Nigerian farmers have relied on for over two decades."
-        focus="30% 60%"
+        image={pageHeroImages.products}
+        focus="50% 50%"
         aside={
           <ul className="grid gap-2 sm:gap-3">
             {assurances.map(({ icon: Icon, title, text }) => (

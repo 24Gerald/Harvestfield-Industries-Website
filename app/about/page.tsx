@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin, ShieldCheck, Sprout, Factory } from 'lucide-react
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { milestones, officeCount, partnerNames, photos } from '@/lib/site-data'
+import { milestones, officeCount, pageHeroImages, partnerNames, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -34,8 +34,8 @@ export default function AboutPage() {
         eyebrow="About Harvestfield"
         title={<>From the soil, <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">with purpose.</em></>}
         description="We distribute agrochemicals, vector-control products and farming equipment across all six geopolitical zones of Nigeria. Now we are building the infrastructure to manufacture the health products Nigeria needs at home."
-        focus="72% 30%"
-        compact
+        image={pageHeroImages.about}
+        focus="50% 50%"
       >
         <Link href="/products" className="hf-btn hf-btn-lime px-6 py-4 text-sm">Explore our products <ArrowUpRight size={16} /></Link>
         <Link href="/contact" className="hf-btn hf-btn-glass px-6 py-4 text-sm">Talk to our team</Link>

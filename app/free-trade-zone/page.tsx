@@ -4,7 +4,7 @@ import { ArrowUpRight, Anchor, Phone, Route, ShieldCheck } from 'lucide-react'
 import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { contact, ftzAudiences, ftzBenefits, ftzStats, ftzQuote, photos } from '@/lib/site-data'
+import { contact, ftzAudiences, ftzBenefits, ftzQuote, ftzStats, pageHeroImages, photos } from '@/lib/site-data'
 import { stagger } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -20,7 +20,8 @@ export default function FreeTradeZonePage() {
         eyebrow="Harvestfield FTZ · Ogun State"
         title={<>Nigeria&apos;s newest <em className="font-serif font-normal tracking-[-0.02em] text-hf-lime">medical manufacturing zone.</em></>}
         description="One of the few free zones in Nigeria dedicated entirely to healthcare manufacturing. And it is open for business."
-        focus="85% 20%"
+        image={pageHeroImages.freeTradeZone}
+        focus="50% 50%"
         aside={
           <div className="hf-glass-dark rounded-3xl p-5 sm:p-6">
             <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-hf-lime"><span className="hf-ping h-2 w-2 rounded-full bg-hf-lime text-hf-lime" /> Licensed · February 2026</div>
