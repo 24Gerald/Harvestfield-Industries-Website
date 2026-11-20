@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/admiring-dijkstra-fhrolk, main]
+    branches: [claude/admiring-dijkstra-fhrolk, claude/intelligent-allen-h99tw9, main]
   workflow_dispatch:
 
 permissions:
